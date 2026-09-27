@@ -1,7 +1,7 @@
 -- =====================================================================
 -- HTML & CSS Academy — Données initiales (généré par database/build-seed.php)
 -- Ne pas modifier à la main : éditez database/content/ puis relancez le script.
--- Contenu : 2 catégories, 6 cours, 10 modules, 28 leçons, 45 exercices, 104 questions, 4 projets, 13 badges.
+-- Contenu : 2 catégories, 6 cours, 20 modules, 52 leçons, 79 exercices, 183 questions, 4 projets, 13 badges.
 -- Comptes de DÉMONSTRATION (voir README.md) : à supprimer avant une mise en production.
 -- =====================================================================
 
@@ -39,11 +39,11 @@ INSERT INTO `settings` (`id`, `setting_key`, `setting_value`, `label`) VALUES
 (5, 'show_demo_accounts', '1', 'Afficher les comptes de démonstration sur la page de connexion');
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password_hash`, `role`, `is_active`, `bio`, `last_login_at`, `last_activity_at`, `created_at`) VALUES
-(1, 'Admin', 'Academy', 'admin@academy.test', '$2y$12$YHlwkMRkQI/dIbSWW4kJEOqFICoWxhEzfBT51rMnwM7BtqUchxcty', 'admin', 1, 'Compte administrateur de démonstration.', '2026-09-27 09:00:00', '2026-09-27 09:00:00', '2026-08-18 10:00:00'),
-(2, 'Léa', 'Martin', 'demo@academy.test', '$2y$12$2zelVQoZz5ZtV4vhXTIPVuo0JuHRs44MPUKzWdwa3YXuZwMspvkuO', 'student', 1, 'Apprenante de démonstration.', '2026-09-26 18:00:00', '2026-09-26 18:00:00', '2026-09-06 10:00:00'),
-(3, 'Karim', 'Benali', 'karim@academy.test', '$2y$12$2zelVQoZz5ZtV4vhXTIPVuo0JuHRs44MPUKzWdwa3YXuZwMspvkuO', 'student', 1, NULL, '2026-09-25 10:00:00', '2026-09-25 10:00:00', '2026-08-30 10:00:00'),
-(4, 'Sofia', 'Rossi', 'sofia@academy.test', '$2y$12$2zelVQoZz5ZtV4vhXTIPVuo0JuHRs44MPUKzWdwa3YXuZwMspvkuO', 'student', 1, NULL, '2026-09-27 08:00:00', '2026-09-27 08:00:00', '2026-08-23 10:00:00'),
-(5, 'Tom', 'Dubois', 'tom@academy.test', '$2y$12$2zelVQoZz5ZtV4vhXTIPVuo0JuHRs44MPUKzWdwa3YXuZwMspvkuO', 'student', 1, NULL, '2026-09-22 10:00:00', '2026-09-22 10:00:00', '2026-09-18 10:00:00');
+(1, 'Admin', 'Academy', 'admin@academy.test', '$2y$12$.jjZSzgP/5XVWePUuXg7XeFPrdJ/5hppmfaHjuHU38vH6G8T95P6i', 'admin', 1, 'Compte administrateur de démonstration.', '2026-09-27 09:00:00', '2026-09-27 09:00:00', '2026-08-18 10:00:00'),
+(2, 'Léa', 'Martin', 'demo@academy.test', '$2y$12$jRGPSrx4IMK7hL6Ap6il6u9W0TCw4Sq4aHhm1po9UOnw6QoPrQ1u.', 'student', 1, 'Apprenante de démonstration.', '2026-09-26 18:00:00', '2026-09-26 18:00:00', '2026-09-06 10:00:00'),
+(3, 'Karim', 'Benali', 'karim@academy.test', '$2y$12$jRGPSrx4IMK7hL6Ap6il6u9W0TCw4Sq4aHhm1po9UOnw6QoPrQ1u.', 'student', 1, NULL, '2026-09-25 10:00:00', '2026-09-25 10:00:00', '2026-08-30 10:00:00'),
+(4, 'Sofia', 'Rossi', 'sofia@academy.test', '$2y$12$jRGPSrx4IMK7hL6Ap6il6u9W0TCw4Sq4aHhm1po9UOnw6QoPrQ1u.', 'student', 1, NULL, '2026-09-27 08:00:00', '2026-09-27 08:00:00', '2026-08-23 10:00:00'),
+(5, 'Tom', 'Dubois', 'tom@academy.test', '$2y$12$jRGPSrx4IMK7hL6Ap6il6u9W0TCw4Sq4aHhm1po9UOnw6QoPrQ1u.', 'student', 1, NULL, '2026-09-22 10:00:00', '2026-09-22 10:00:00', '2026-09-18 10:00:00');
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `description`, `color`, `sort_order`) VALUES
 (1, 'HTML', 'html', 'Le langage de structure des pages web.', '#ff8a4c', 1),
@@ -69,7 +69,17 @@ INSERT INTO `modules` (`id`, `course_id`, `title`, `slug`, `description`, `sort_
 (7, 2, 'Les sélecteurs', 'css-selecteurs', 'Cibler précisément les éléments : type, classe, identifiant, combinateurs, cascade, spécificité et héritage.', 2),
 (8, 2, 'Couleurs et arrière-plans', 'css-couleurs-arriere-plans', 'Les formats de couleur (nom, hexadécimal, RGB, HSL, transparence) et les arrière-plans (couleur, image, taille, position).', 3),
 (9, 2, 'Typographie', 'css-typographie', 'Polices, tailles, graisses, hauteur de ligne, alignement, décoration du texte et unités de mesure.', 4),
-(10, 2, 'Le modèle de boîte', 'css-box-model', 'Content, padding, border, margin : comprendre comment chaque élément occupe l’espace, et box-sizing.', 5);
+(10, 2, 'Le modèle de boîte', 'css-box-model', 'Content, padding, border, margin : comprendre comment chaque élément occupe l’espace, et box-sizing.', 5),
+(11, 3, 'Les images', 'html-images', 'Intégrer des images accessibles et performantes : alt, dimensions, formats, figure, lazy loading et images responsives.', 1),
+(12, 3, 'Les listes', 'html-listes', 'Listes à puces, listes numérotées, listes imbriquées et listes de définitions.', 2),
+(13, 3, 'Les tableaux', 'html-tableaux', 'Présenter des données tabulaires : structure, en-têtes, légende, groupes de lignes et fusion de cellules.', 3),
+(14, 3, 'Les formulaires', 'html-formulaires', 'Recueillir des informations : form, input, types de champs, labels, listes, zones de texte, boutons et validation native.', 4),
+(15, 3, 'Attributs globaux, classes et identifiants', 'html-attributs-classes-ids', 'class et id en profondeur, attributs globaux (title, lang, hidden, data-*) et conteneurs génériques.', 5),
+(16, 4, 'La propriété display', 'css-display', 'Bloc, en ligne, inline-block, none : comprendre comment les éléments s’enchaînent dans le flux.', 1),
+(17, 4, 'Le positionnement', 'css-positionnement', 'position static, relative, absolute, fixed, sticky et gestion de la superposition avec z-index.', 2),
+(18, 4, 'Flexbox', 'css-flexbox', 'Le modèle de mise en page flexible : conteneur, axes, alignements, espacements, retour à la ligne et éléments flexibles.', 3),
+(19, 4, 'CSS Grid', 'css-grid', 'La mise en page en deux dimensions : colonnes, lignes, unité fr, placement, zones nommées et grilles adaptatives.', 4),
+(20, 4, 'Pseudo-classes et pseudo-éléments', 'css-pseudo-classes-elements', 'Réagir aux interactions (:hover, :focus), cibler selon la position (:nth-child) et générer du contenu (::before, ::after).', 5);
 
 INSERT INTO `lessons` (`id`, `module_id`, `title`, `slug`, `duration_minutes`, `introduction`, `objectives`, `prerequisites`, `theory`, `syntax_code`, `simple_html`, `simple_css`, `example_html`, `example_css`, `line_by_line`, `reference_items`, `common_mistakes`, `best_practices`, `practical`, `summary_points`, `challenge`, `is_published`, `sort_order`) VALUES
 (1, 1, 'Qu’est-ce que le HTML ?', 'qu-est-ce-que-html', 12, 'Chaque page que vous visitez — un article de presse, une boutique en ligne, un réseau social — est d’abord un **document HTML**. Avant les couleurs, les animations et les boutons interactifs, il y a une structure : un titre, des paragraphes, des images, des liens. Cette structure, c’est le HTML qui la décrit.
@@ -1917,7 +1927,1735 @@ La quasi-totalité des projets modernes l’applique à tous les éléments dès
   overflow: auto;
   border: 1px solid #cbd5e1;
   padding: 8px;
-}', '[["  width: 200px;","Même largeur déclarée pour les deux boîtes."],[".content { box-sizing: content-box; }","Comportement par défaut : 200 + 40 + 10 = 250px visibles."],[".border  { box-sizing: border-box; }","Padding et bordure inclus : 200px visibles."],["  max-height: 80px;","Hauteur plafonnée…"],["  overflow: auto;","…et défilement si le contenu dépasse."]]', '[["width / height","Dimensions."],["min-width / max-width","Bornes de largeur."],["min-height / max-height","Bornes de hauteur."],["box-sizing","`content-box` (défaut) ou `border-box`."],["overflow","Gestion du contenu qui dépasse."],["aspect-ratio","Proportions d’une boîte : `aspect-ratio: 16 / 9;`."]]', '["Fixer une `height` sur un bloc de texte.","Utiliser `width` fixe en pixels au lieu de `max-width` pour un conteneur.","Oublier `box-sizing: border-box` et accumuler les débordements.","Masquer un débordement avec `overflow: hidden` au lieu d’en corriger la cause."]', '["Commencer chaque feuille de style par la règle `box-sizing: border-box` globale.","Préférer `max-width` à `width` pour les conteneurs.","Préférer `min-height` à `height`.","`img { max-width: 100%; height: auto; }` dans tous les projets."]', 'Les « reset CSS » modernes (fichiers de base utilisés en début de projet) contiennent presque tous ces trois lignes : `box-sizing: border-box` global, `body { margin: 0 }` et `img { max-width: 100%; display: block; }`.', '["`box-sizing: border-box` : la largeur inclut padding et bordure.","`max-width` et `min-height` rendent les boîtes souples.","`overflow` gère le contenu qui dépasse."]', 'Créez trois colonnes de `width: 33.333%` avec padding et bordure, côte à côte (`display: inline-block` ou `float`), qui tiennent sur une ligne grâce à `border-box`.', 1, 4);
+}', '[["  width: 200px;","Même largeur déclarée pour les deux boîtes."],[".content { box-sizing: content-box; }","Comportement par défaut : 200 + 40 + 10 = 250px visibles."],[".border  { box-sizing: border-box; }","Padding et bordure inclus : 200px visibles."],["  max-height: 80px;","Hauteur plafonnée…"],["  overflow: auto;","…et défilement si le contenu dépasse."]]', '[["width / height","Dimensions."],["min-width / max-width","Bornes de largeur."],["min-height / max-height","Bornes de hauteur."],["box-sizing","`content-box` (défaut) ou `border-box`."],["overflow","Gestion du contenu qui dépasse."],["aspect-ratio","Proportions d’une boîte : `aspect-ratio: 16 / 9;`."]]', '["Fixer une `height` sur un bloc de texte.","Utiliser `width` fixe en pixels au lieu de `max-width` pour un conteneur.","Oublier `box-sizing: border-box` et accumuler les débordements.","Masquer un débordement avec `overflow: hidden` au lieu d’en corriger la cause."]', '["Commencer chaque feuille de style par la règle `box-sizing: border-box` globale.","Préférer `max-width` à `width` pour les conteneurs.","Préférer `min-height` à `height`.","`img { max-width: 100%; height: auto; }` dans tous les projets."]', 'Les « reset CSS » modernes (fichiers de base utilisés en début de projet) contiennent presque tous ces trois lignes : `box-sizing: border-box` global, `body { margin: 0 }` et `img { max-width: 100%; display: block; }`.', '["`box-sizing: border-box` : la largeur inclut padding et bordure.","`max-width` et `min-height` rendent les boîtes souples.","`overflow` gère le contenu qui dépasse."]', 'Créez trois colonnes de `width: 33.333%` avec padding et bordure, côte à côte (`display: inline-block` ou `float`), qui tiennent sur une ligne grâce à `border-box`.', 1, 4),
+(29, 11, 'La balise img et le texte alternatif', 'la-balise-img', 14, 'Une image vaut mille mots… sauf pour ceux qui ne peuvent pas la voir : personnes aveugles utilisant un lecteur d’écran, connexion trop lente, moteur de recherche. Pour eux, seul compte le **texte alternatif**. Apprendre à insérer une image, c’est donc aussi apprendre à la décrire.', '["Insérer une image avec `<img>`","Rédiger un attribut `alt` pertinent","Gérer les images décoratives","Comprendre les chemins d’images"]', '["Liens relatifs, absolus, ancres"]', '## La syntaxe
+
+```html
+<img src="images/chat.jpg" alt="Chat roux endormi sur un coussin bleu">
+```
+
+- `<img>` est un **élément vide** : pas de balise fermante ;
+- `src` (*source*) : le chemin de l’image (relatif ou absolu, comme pour les liens) ;
+- `alt` (*alternative*) : le texte qui **remplace** l’image quand elle n’est pas vue.
+
+## Pourquoi `alt` est indispensable
+
+1. Les **lecteurs d’écran** lisent le `alt` à la place de l’image.
+2. Si l’image ne se charge pas, le `alt` s’affiche à sa place.
+3. Les **moteurs de recherche** l’utilisent pour comprendre et indexer l’image.
+
+L’attribut `alt` est **obligatoire** en HTML valide.
+
+## Rédiger un bon `alt`
+
+Demandez-vous : « Si je décrivais cette page au téléphone, que dirais-je de cette image ? »
+
+| Image | ❌ Mauvais alt | ✅ Bon alt |
+|---|---|---|
+| Photo produit | `alt="image1.jpg"` | `alt="Baskets blanches en cuir, semelle gomme"` |
+| Graphique | `alt="graphique"` | `alt="Ventes 2025 : hausse de 30 % au second semestre"` |
+| Logo cliquable vers l’accueil | `alt="logo"` | `alt="Boulangerie Dupain — accueil"` |
+
+Inutile de commencer par « Image de… » : le lecteur d’écran annonce déjà qu’il s’agit d’une image.
+
+## Les images décoratives
+
+Si une image est purement décorative (un ornement, une illustration d’ambiance qui n’apporte aucune information), on laisse un **`alt` vide** :
+
+```html
+<img src="decor-vague.svg" alt="">
+```
+
+Le lecteur d’écran l’ignore alors. Ne supprimez pas l’attribut : sans `alt`, certains lecteurs d’écran lisent le nom du fichier !
+
+## `title` n’est pas `alt`
+
+`title` affiche une info-bulle au survol de la souris ; il n’est pas fiable pour l’accessibilité et ne remplace jamais `alt`.', '<img src="chemin/image.jpg" alt="Description de l’image">', NULL, NULL, '<h1>Notre boulangerie</h1>
+<img src="https://placehold.co/400x250/png?text=Vitrine" alt="Vitrine de la boulangerie avec baguettes et croissants alignés" width="400" height="250">
+<p>
+  <img src="https://placehold.co/24x24/png" alt="">
+  Pains cuits sur place chaque matin.
+</p>
+<a href="#">
+  <img src="https://placehold.co/120x40/png?text=Logo" alt="Boulangerie Dupain — retour à l’accueil" width="120" height="40">
+</a>', NULL, '[["<img src=\\"…\\" alt=\\"Vitrine de la boulangerie…\\"","Image informative : le `alt` décrit ce qu’elle montre."],["width=\\"400\\" height=\\"250\\">","Dimensions réelles : le navigateur réserve la place avant le chargement."],["<img src=\\"…\\" alt=\\"\\">","Icône décorative : `alt` vide, ignorée par les lecteurs d’écran."],["<a href=\\"#\\"><img … alt=\\"Boulangerie Dupain — retour à l’accueil\\"","Image-lien : le `alt` décrit la destination du lien."]]', '[["<img>","Élément vide d’image."],["src","Chemin de l’image."],["alt","Texte alternatif (obligatoire ; vide si décorative)."],["width / height","Dimensions intrinsèques en pixels (sans unité)."]]', '["Oublier l’attribut `alt`.","Mettre le nom du fichier ou « image » dans le `alt`.","Décrire une image décorative (bruit inutile pour le lecteur d’écran).","Mauvais chemin : majuscules/minuscules différentes (`Chat.JPG` ≠ `chat.jpg` sur un serveur).","Écrire `</img>`."]', '["Un `alt` concis (une phrase) qui transmet l’information utile.","`alt=\\"\\"` pour les images décoratives.","Toujours indiquer `width` et `height`.","Noms de fichiers descriptifs : `vitrine-boulangerie.jpg`."]', 'Sur un site e-commerce, le `alt` des photos produit améliore le référencement dans Google Images et rend la boutique utilisable par les clients aveugles. Les CMS comme WordPress proposent un champ « Texte alternatif » pour chaque image importée.', '["`<img src=\\"…\\" alt=\\"…\\">`, élément vide.","Le `alt` remplace l’image pour ceux qui ne la voient pas.","Image décorative → `alt=\\"\\"`.","Indiquez `width` et `height`."]', 'Choisissez trois images d’un site que vous aimez et rédigez pour chacune un `alt` pertinent. Vérifiez ensuite le `alt` réel avec les outils de développement.', 1, 1),
+(30, 11, 'Formats, figure, lazy loading et images responsives', 'images-formats-figure-performance', 16, 'Les images représentent souvent plus de la moitié du poids d’une page. Une photo mal optimisée peut ralentir un site de plusieurs secondes sur mobile. Dans cette leçon : choisir le bon format, légender une image, différer son chargement et servir la bonne taille à chaque écran.', '["Choisir entre JPEG, PNG, WebP, AVIF et SVG","Légender une image avec `<figure>` et `<figcaption>`","Utiliser `loading=\\"lazy\\"`","Découvrir `srcset` et `<picture>`"]', '["La balise img et le texte alternatif"]', '## Les formats d’image
+
+| Format | Idéal pour | Remarques |
+|---|---|---|
+| JPEG | Photos | Compression avec perte, pas de transparence |
+| PNG | Captures d’écran, transparence | Fichiers lourds pour les photos |
+| WebP | Photos et transparence | 25–35 % plus léger que JPEG, très bien supporté |
+| AVIF | Photos | Encore plus léger, support récent |
+| SVG | Logos, icônes, illustrations | Vectoriel : net à toutes les tailles, très léger |
+| GIF | (À éviter) | Préférez une vidéo courte pour les animations |
+
+## `<figure>` et `<figcaption>`
+
+Pour une image accompagnée d’une **légende** (photo d’article, schéma, graphique) :
+
+```html
+<figure>
+  <img src="tour-eiffel.jpg" alt="La tour Eiffel illuminée de nuit">
+  <figcaption>La tour Eiffel, construite pour l’Exposition universelle de 1889.</figcaption>
+</figure>
+```
+
+La légende est liée sémantiquement à l’image. `<figure>` peut aussi contenir un extrait de code, une citation ou un tableau.
+
+## Le chargement différé : `loading="lazy"`
+
+```html
+<img src="photo.jpg" alt="…" loading="lazy" width="800" height="600">
+```
+
+L’image n’est téléchargée que lorsqu’elle approche de la zone visible. Gain énorme sur les pages longues. **N’utilisez pas** `lazy` pour l’image principale en haut de page : elle doit s’afficher immédiatement.
+
+## Images responsives : `srcset` et `sizes`
+
+Inutile d’envoyer une image de 2000px à un téléphone de 400px. `srcset` propose plusieurs tailles, le navigateur choisit :
+
+```html
+<img
+  src="paysage-800.jpg"
+  srcset="paysage-400.jpg 400w, paysage-800.jpg 800w, paysage-1600.jpg 1600w"
+  sizes="(max-width: 600px) 100vw, 800px"
+  alt="Lac de montagne au lever du soleil">
+```
+
+## `<picture>` : plusieurs formats
+
+```html
+<picture>
+  <source srcset="photo.avif" type="image/avif">
+  <source srcset="photo.webp" type="image/webp">
+  <img src="photo.jpg" alt="…">
+</picture>
+```
+
+Le navigateur prend le premier format qu’il sait lire ; `<img>` sert de solution de repli (et porte le `alt`).
+
+> [!TIP] Compressez toujours vos images avant de les publier (outils gratuits : Squoosh, TinyPNG). Une photo de 4 Mo sortie d’un appareil peut souvent descendre à 150 Ko sans différence visible.', '<figure>
+  <img src="…" alt="…" loading="lazy">
+  <figcaption>Légende</figcaption>
+</figure>', NULL, NULL, '<article>
+  <h1>Voyage en Islande</h1>
+  <figure>
+    <img src="https://placehold.co/600x350/png?text=Cascade" alt="Cascade de Skógafoss entourée de falaises verdoyantes" width="600" height="350">
+    <figcaption>Skógafoss, l’une des plus grandes cascades d’Islande (60 m).</figcaption>
+  </figure>
+  <p>Le lendemain, direction les plages de sable noir…</p>
+  <figure>
+    <img src="https://placehold.co/600x350/png?text=Plage+noire" alt="Plage de sable noir de Reynisfjara sous un ciel gris" width="600" height="350" loading="lazy">
+    <figcaption>Reynisfjara et ses colonnes de basalte.</figcaption>
+  </figure>
+</article>', NULL, '[["<figure>","Conteneur qui associe l’image à sa légende."],["<img … width=\\"600\\" height=\\"350\\">","Première image : chargée immédiatement (pas de lazy)."],["<figcaption>…</figcaption>","Légende visible, liée à l’image."],["… loading=\\"lazy\\">","Image plus bas dans la page : chargement différé."]]', '[["<figure>","Contenu illustratif autonome (image, schéma, code)."],["<figcaption>","Légende d’une figure."],["loading=\\"lazy\\"","Chargement différé."],["srcset / sizes","Plusieurs tailles d’image au choix du navigateur."],["<picture> / <source>","Plusieurs formats ou cadrages."]]', '["Publier des photos de plusieurs Mo non compressées.","Utiliser PNG pour des photos.","Mettre `loading=\\"lazy\\"` sur l’image principale en haut de page.","Répéter la légende mot pour mot dans le `alt`.","Oublier `<img>` dans `<picture>`."]', '["WebP/AVIF pour les photos, SVG pour logos et icônes.","`loading=\\"lazy\\"` sous la ligne de flottaison.","Toujours `width` et `height` pour éviter les sauts de mise en page.","Compresser et redimensionner avant publication."]', 'Google mesure la vitesse de chargement (Core Web Vitals) et en tient compte dans le classement. Les images mal dimensionnées sont la première cause de lenteur ; `srcset`, `loading="lazy"` et WebP règlent l’essentiel du problème.', '["Photo → JPEG/WebP/AVIF ; logo/icône → SVG.","`<figure>` + `<figcaption>` pour une image légendée.","`loading=\\"lazy\\"` pour les images hors écran.","`srcset` et `<picture>` adaptent l’image à l’appareil."]', 'Créez une galerie de 6 photos légendées avec `<figure>`, dont les 4 dernières en `loading="lazy"`.', 1, 2);
+
+INSERT INTO `lessons` (`id`, `module_id`, `title`, `slug`, `duration_minutes`, `introduction`, `objectives`, `prerequisites`, `theory`, `syntax_code`, `simple_html`, `simple_css`, `example_html`, `example_css`, `line_by_line`, `reference_items`, `common_mistakes`, `best_practices`, `practical`, `summary_points`, `challenge`, `is_published`, `sort_order`) VALUES
+(31, 12, 'Listes à puces et listes numérotées', 'listes-ordonnees-et-non-ordonnees', 12, 'Ingrédients d’une recette, étapes d’un tutoriel, menu de navigation, liste de fonctionnalités : les listes sont partout sur le Web, parfois là où on ne les voit pas. Les coder correctement aide les lecteurs d’écran à annoncer « liste de 5 éléments » — une information précieuse.', '["Créer une liste non ordonnée `<ul>`","Créer une liste ordonnée `<ol>`","Utiliser les attributs `start`, `reversed`, `type`"]', '["Les paragraphes"]', '## Liste non ordonnée : `<ul>`
+
+Quand l’**ordre n’a pas d’importance** (ingrédients, fonctionnalités) :
+
+```html
+<ul>
+  <li>Farine</li>
+  <li>Œufs</li>
+  <li>Lait</li>
+</ul>
+```
+
+`<ul>` (*unordered list*) contient des `<li>` (*list item*). Le navigateur affiche des puces.
+
+## Liste ordonnée : `<ol>`
+
+Quand l’**ordre compte** (étapes, classement) :
+
+```html
+<ol>
+  <li>Mélanger la farine et les œufs.</li>
+  <li>Ajouter le lait progressivement.</li>
+  <li>Laisser reposer une heure.</li>
+</ol>
+```
+
+La numérotation est automatique : insérez une étape, tout se renumérote.
+
+## Attributs de `<ol>`
+
+- `start="5"` : commence à 5 ;
+- `reversed` : compte à rebours (top 10) ;
+- `type="A"`, `"a"`, `"I"`, `"i"` : lettres ou chiffres romains (quand le type fait partie du sens, par exemple des articles de loi numérotés en romains).
+
+## La règle d’or
+
+Un `<ul>` ou `<ol>` ne contient **que** des `<li>`. Le texte, les liens, les images vont **dans** les `<li>`.
+
+## Une liste invisible
+
+Un menu de navigation est sémantiquement une liste de liens. On le code en `<ul>`, puis on retire les puces en CSS (`list-style: none`). La sémantique reste, l’apparence change.', '<ul>
+  <li>Élément</li>
+</ul>
+<ol>
+  <li>Étape 1</li>
+</ol>', NULL, NULL, '<h1>Crêpes faciles</h1>
+<h2>Ingrédients</h2>
+<ul>
+  <li>250 g de farine</li>
+  <li>4 œufs</li>
+  <li>50 cl de lait</li>
+  <li>Une pincée de sel</li>
+</ul>
+<h2>Préparation</h2>
+<ol>
+  <li>Versez la farine dans un saladier.</li>
+  <li>Ajoutez les œufs et mélangez.</li>
+  <li>Incorporez le lait petit à petit.</li>
+  <li>Laissez reposer <strong>1 heure</strong>.</li>
+</ol>
+<h2>Top 3 des garnitures</h2>
+<ol reversed>
+  <li>Sucre et citron</li>
+  <li>Confiture</li>
+  <li>Pâte à tartiner</li>
+</ol>', NULL, '[["<ul>","Liste non ordonnée : l’ordre des ingrédients n’a pas d’importance."],["  <li>250 g de farine</li>","Chaque élément dans un `<li>`."],["<ol>","Liste ordonnée : les étapes doivent être suivies dans l’ordre."],["  <li>Laissez reposer <strong>1 heure</strong>.</li>","Un `<li>` peut contenir des éléments en ligne."],["<ol reversed>","Numérotation décroissante : 3, 2, 1."]]', '[["<ul>","Liste non ordonnée."],["<ol>","Liste ordonnée."],["<li>","Élément de liste."],["start / reversed / type","Attributs de numérotation de `<ol>`."]]', '["Écrire les puces à la main (`- Farine<br>`).","Placer du texte ou un `<p>` directement dans `<ul>` sans `<li>`.","Numéroter manuellement dans une `<ol>` (« 1. Mélanger »).","Choisir `<ol>` pour son apparence et non pour le sens."]', '["Choisir `<ul>` ou `<ol>` selon que l’ordre a un sens.","Styler les puces en CSS (`list-style`).","Coder les menus comme des listes de liens."]', 'Presque tous les menus de navigation du Web sont codés `<nav><ul><li><a>…</a></li></ul></nav>`. Les lecteurs d’écran annoncent alors « navigation, liste de 5 éléments ».', '["`<ul>` : ordre sans importance ; `<ol>` : ordre significatif.","Seuls des `<li>` dans une liste.","La numérotation de `<ol>` est automatique."]', 'Codez le classement de vos 5 films préférés du 5e au 1er avec `reversed`.', 1, 1),
+(32, 12, 'Listes imbriquées et listes de définitions', 'listes-imbriquees-et-definitions', 12, 'Un sommaire à plusieurs niveaux, un menu avec sous-menus, un glossaire, une FAQ… Ces structures reposent sur deux techniques : **imbriquer** des listes, et utiliser la liste de **définitions** `<dl>`, souvent méconnue mais très utile.', '["Imbriquer une liste dans un élément de liste","Créer une liste de définitions `<dl>`, `<dt>`, `<dd>`"]', '["Listes à puces et listes numérotées"]', '## Imbriquer des listes
+
+Une sous-liste se place **à l’intérieur d’un `<li>`**, après son texte :
+
+```html
+<ul>
+  <li>Fruits
+    <ul>
+      <li>Pommes</li>
+      <li>Poires</li>
+    </ul>
+  </li>
+  <li>Légumes</li>
+</ul>
+```
+
+Erreur fréquente : placer le `<ul>` imbriqué **entre** deux `<li>`, directement dans la liste parente. C’est invalide.
+
+On peut mélanger : une `<ol>` dans une `<ul>` et inversement.
+
+## La liste de définitions : `<dl>`
+
+Pour des paires **terme / description** :
+
+```html
+<dl>
+  <dt>HTML</dt>
+  <dd>Langage de structure des pages web.</dd>
+  <dt>CSS</dt>
+  <dd>Langage de mise en forme.</dd>
+</dl>
+```
+
+- `<dl>` : *description list* ;
+- `<dt>` : *description term* (le terme) ;
+- `<dd>` : *description details* (la description).
+
+Un terme peut avoir plusieurs descriptions, et plusieurs termes peuvent partager une description.
+
+## Quand utiliser `<dl>` ?
+
+Glossaires, fiches techniques (« Poids : 1,2 kg »), métadonnées (« Auteur : … », « Date : … »), FAQ simples.', '<li>Parent
+  <ul><li>Enfant</li></ul>
+</li>
+<dl><dt>Terme</dt><dd>Définition</dd></dl>', NULL, NULL, '<h2>Sommaire</h2>
+<ol>
+  <li>Introduction</li>
+  <li>Les bases
+    <ol>
+      <li>Balises</li>
+      <li>Attributs</li>
+    </ol>
+  </li>
+  <li>Conclusion</li>
+</ol>
+
+<h2>Fiche technique</h2>
+<dl>
+  <dt>Poids</dt>
+  <dd>1,2 kg</dd>
+  <dt>Autonomie</dt>
+  <dd>12 heures</dd>
+  <dt>Couleurs</dt>
+  <dd>Noir</dd>
+  <dd>Argent</dd>
+</dl>', NULL, '[["  <li>Les bases","Le `<li>` parent contient son texte…"],["    <ol>","…puis la sous-liste, toujours à l’intérieur du `<li>`."],["  </li>","Le `<li>` parent se ferme après la sous-liste."],["<dl>","Liste de définitions pour une fiche technique."],["  <dt>Poids</dt>","Le terme."],["  <dd>1,2 kg</dd>","Sa description."],["  <dd>Noir</dd> <dd>Argent</dd>","Un terme peut avoir plusieurs descriptions."]]', '[["<dl>","Liste de définitions."],["<dt>","Terme."],["<dd>","Description du terme."]]', '["Placer la sous-liste entre deux `<li>` au lieu de dedans.","Oublier de fermer le `<li>` parent après la sous-liste.","Utiliser un tableau pour de simples paires terme/valeur."]', '["Indenter soigneusement les listes imbriquées.","Limiter l’imbrication à 2 ou 3 niveaux.","Utiliser `<dl>` pour les paires clé/valeur."]', 'Les « méga-menus » des grands sites e-commerce sont des listes imbriquées : Catégorie > Sous-catégorie > Produit. Les fiches produits utilisent souvent `<dl>` pour les caractéristiques.', '["Une sous-liste se place dans un `<li>`.","`<dl>` / `<dt>` / `<dd>` pour les paires terme/description."]', 'Codez le plan d’un site : Accueil, Services (avec 3 sous-pages), Blog (avec 2 catégories contenant chacune 2 articles), Contact.', 1, 2),
+(33, 13, 'Structure d’un tableau', 'structure-d-un-tableau', 14, 'Horaires d’ouverture, grille tarifaire, résultats sportifs, comparatif de produits : dès que des données se lisent **en lignes et en colonnes**, le tableau HTML est l’outil adapté. À condition de bien déclarer les en-têtes, sans quoi un lecteur d’écran ne peut pas savoir à quoi correspond une cellule.', '["Construire un tableau avec `<table>`, `<tr>`, `<td>`","Déclarer des en-têtes avec `<th>` et `scope`","Ajouter une légende avec `<caption>`"]', '["Les listes"]', '## La structure de base
+
+Un tableau se construit **ligne par ligne** :
+
+```html
+<table>
+  <tr>
+    <td>Lundi</td>
+    <td>Fermé</td>
+  </tr>
+  <tr>
+    <td>Mardi</td>
+    <td>9 h – 19 h</td>
+  </tr>
+</table>
+```
+
+- `<table>` : le tableau ;
+- `<tr>` (*table row*) : une ligne ;
+- `<td>` (*table data*) : une cellule de données.
+
+## Les en-têtes : `<th>`
+
+Les cellules d’en-tête utilisent `<th>` (*table header*). Le navigateur les met en gras et centrées, mais surtout, elles donnent le **sens** des données.
+
+L’attribut `scope` précise ce que l’en-tête décrit :
+
+- `scope="col"` : l’en-tête d’une **colonne** ;
+- `scope="row"` : l’en-tête d’une **ligne**.
+
+Grâce à cela, un lecteur d’écran annonce « Mardi, Horaires : 9 h – 19 h » au lieu d’une suite de cellules sans contexte.
+
+## La légende : `<caption>`
+
+`<caption>` donne un **titre au tableau**. C’est le premier enfant de `<table>` :
+
+```html
+<table>
+  <caption>Horaires d’ouverture de la boutique</caption>
+  …
+</table>
+```
+
+## Quand NE PAS utiliser un tableau
+
+Pendant des années, les sites entiers étaient mis en page avec des tableaux. **C’est révolu** : un tableau sert uniquement à des **données tabulaires**. Pour la mise en page, on utilise CSS (Flexbox, Grid).
+
+> [!TIP] Test simple : les cellules ont-elles un sens si on lit « en-tête de ligne + en-tête de colonne » ? Si oui, c’est un vrai tableau.', '<table>
+  <caption>Titre</caption>
+  <tr><th scope="col">En-tête</th></tr>
+  <tr><td>Donnée</td></tr>
+</table>', NULL, NULL, '<table>
+  <caption>Horaires d’ouverture</caption>
+  <tr>
+    <th scope="col">Jour</th>
+    <th scope="col">Matin</th>
+    <th scope="col">Après-midi</th>
+  </tr>
+  <tr>
+    <th scope="row">Lundi</th>
+    <td>Fermé</td>
+    <td>14 h – 19 h</td>
+  </tr>
+  <tr>
+    <th scope="row">Mardi</th>
+    <td>9 h – 12 h</td>
+    <td>14 h – 19 h</td>
+  </tr>
+</table>', 'table {
+  border-collapse: collapse;
+  font-family: system-ui, sans-serif;
+}
+
+caption {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+th {
+  background: #f1f5f9;
+}', '[["<caption>Horaires d’ouverture</caption>","Titre du tableau, juste après `<table>`."],["<th scope=\\"col\\">Jour</th>","En-tête de colonne."],["<th scope=\\"row\\">Lundi</th>","En-tête de ligne : il décrit toutes les cellules de sa ligne."],["<td>Fermé</td>","Cellule de données."],["border-collapse: collapse;","(CSS) Fusionne les bordures doubles entre cellules."]]', '[["<table>","Tableau."],["<tr>","Ligne."],["<th>","Cellule d’en-tête (`scope=\\"col\\"` ou `\\"row\\"`)."],["<td>","Cellule de données."],["<caption>","Légende / titre du tableau."]]', '["Utiliser un tableau pour la mise en page.","Mettre les en-têtes dans des `<td>` en gras au lieu de `<th>`.","Oublier `<caption>`.","Des lignes avec un nombre de cellules différent.","Styler le tableau avec les attributs obsolètes `border`, `cellpadding`."]', '["Toujours des `<th>` avec `scope`.","Une `<caption>` descriptive.","Le style en CSS (`border-collapse`, padding)."]', 'Les grilles tarifaires (« Formule / Prix / Engagement »), les calendriers de matchs ou les comparatifs techniques sont de vrais tableaux. Sur mobile, on les place dans un conteneur `overflow-x: auto` pour qu’ils défilent horizontalement.', '["`<table>` > `<tr>` > `<th>`/`<td>`.","`<th scope>` associe les en-têtes aux données.","`<caption>` titre le tableau.","Tableau = données, jamais mise en page."]', 'Créez votre emploi du temps de la semaine (jours en colonnes, créneaux en lignes) avec en-têtes et légende.', 1, 1),
+(34, 13, 'thead, tbody, tfoot et fusion de cellules', 'tableaux-avances', 14, 'Un relevé bancaire a un en-tête, des lignes d’opérations et une ligne de total. Un planning a des cellules qui couvrent plusieurs créneaux. HTML sait représenter tout cela : groupes de lignes et cellules fusionnées.', '["Structurer un tableau avec `<thead>`, `<tbody>`, `<tfoot>`","Fusionner des cellules avec `colspan` et `rowspan`"]', '["Structure d’un tableau"]', '## Les groupes de lignes
+
+- `<thead>` : les lignes d’en-tête ;
+- `<tbody>` : le corps des données (il peut y en avoir plusieurs) ;
+- `<tfoot>` : le pied (totaux, résumés).
+
+```html
+<table>
+  <thead>
+    <tr><th scope="col">Article</th><th scope="col">Prix</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Clavier</td><td>49 €</td></tr>
+    <tr><td>Souris</td><td>25 €</td></tr>
+  </tbody>
+  <tfoot>
+    <tr><th scope="row">Total</th><td>74 €</td></tr>
+  </tfoot>
+</table>
+```
+
+Avantages : structure claire, style ciblé (`thead th { … }`), et à l’impression d’un long tableau, l’en-tête peut être répété sur chaque page.
+
+## Fusionner des cellules
+
+- `colspan="2"` : la cellule s’étend sur **2 colonnes** ;
+- `rowspan="3"` : la cellule s’étend sur **3 lignes**.
+
+```html
+<tr>
+  <td colspan="2">Fermé toute la journée</td>
+</tr>
+```
+
+Quand une cellule en fusionne plusieurs, on **retire** les cellules qu’elle recouvre : chaque ligne doit rester cohérente avec le nombre de colonnes.
+
+> [!WARN] Les fusions complexes rendent un tableau difficile à comprendre avec un lecteur d’écran. Utilisez-les avec parcimonie, ou scindez le tableau en plusieurs tableaux plus simples.', '<thead>…</thead><tbody>…</tbody><tfoot>…</tfoot>
+<td colspan="2">…</td>
+<td rowspan="2">…</td>', NULL, NULL, '<table>
+  <caption>Commande n° 1042</caption>
+  <thead>
+    <tr>
+      <th scope="col">Article</th>
+      <th scope="col">Quantité</th>
+      <th scope="col">Prix</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Carnet</td><td>2</td><td>12 €</td></tr>
+    <tr><td>Stylo</td><td>5</td><td>7,50 €</td></tr>
+    <tr><td colspan="2">Livraison offerte</td><td>0 €</td></tr>
+  </tbody>
+  <tfoot>
+    <tr><th scope="row" colspan="2">Total</th><td>19,50 €</td></tr>
+  </tfoot>
+</table>', 'table { border-collapse: collapse; font-family: system-ui, sans-serif; }
+th, td { border: 1px solid #cbd5e1; padding: 8px 12px; }
+thead th { background: #1e3a8a; color: white; }
+tfoot { font-weight: bold; background: #f1f5f9; }
+tbody tr:nth-child(even) { background: #f8fafc; }', '[["<thead>","Groupe des lignes d’en-tête."],["<tbody>","Corps du tableau."],["<td colspan=\\"2\\">Livraison offerte</td>","Cellule fusionnée sur 2 colonnes : la ligne n’a que 2 cellules."],["<tfoot>","Pied du tableau pour le total."],["<th scope=\\"row\\" colspan=\\"2\\">Total</th>","En-tête de ligne fusionné sur 2 colonnes."]]', '[["<thead> / <tbody> / <tfoot>","Groupes de lignes."],["colspan","Nombre de colonnes couvertes."],["rowspan","Nombre de lignes couvertes."]]', '["Oublier de supprimer les cellules recouvertes par une fusion.","Placer des `<td>` directement dans `<table>` en mélangeant avec `<tbody>`.","Multiplier les fusions au point de rendre le tableau illisible."]', '["Toujours `<thead>` et `<tbody>` pour les tableaux de données.","Un `<tfoot>` pour les totaux.","Des fusions simples et rares."]', 'Les factures, relevés et paniers de commande en ligne sont des tableaux avec `<tfoot>` pour les sous-totaux, taxes et total. Le style « zébré » (`nth-child(even)`) améliore la lecture des longues listes.', '["`<thead>`, `<tbody>`, `<tfoot>` structurent le tableau.","`colspan` / `rowspan` fusionnent des cellules.","Retirez les cellules recouvertes par une fusion."]', 'Créez un planning hebdomadaire où une réunion de 2 heures occupe deux lignes grâce à `rowspan`.', 1, 2),
+(35, 14, 'L’élément form et les champs de saisie', 'form-et-input', 15, 'Inscription, connexion, recherche, commande, contact : les formulaires sont le principal moyen d’**interaction** entre un site et ses visiteurs. Un formulaire mal conçu fait perdre des clients ; un formulaire bien construit est rapide à remplir, accessible et fiable.', '["Créer un formulaire avec `<form>`","Comprendre `action`, `method` et `name`","Créer des champs `<input>`","Associer un `<label>` à chaque champ"]', '["Les tableaux","Les liens"]', '## L’élément `<form>`
+
+```html
+<form action="/inscription" method="post">
+  …champs…
+</form>
+```
+
+- `action` : l’adresse (un script côté serveur, par exemple en PHP) qui **reçoit** les données ;
+- `method` : comment les envoyer :
+  - `get` : les données sont ajoutées à l’URL (`?q=chat`). Pour les **recherches** et filtres ;
+  - `post` : les données sont envoyées dans le corps de la requête. Pour tout ce qui **modifie** des données ou contient des informations sensibles (mot de passe).
+
+> [!INFO] HTML ne traite pas les données : il les envoie. Le traitement (enregistrement en base, envoi d’e-mail) est le rôle d’un langage serveur comme PHP.
+
+## Le champ `<input>`
+
+```html
+<input type="text" id="prenom" name="prenom">
+```
+
+- `type` : le type de champ (texte, e-mail, mot de passe… voir leçon suivante) ;
+- `name` : le **nom de la donnée** envoyée au serveur (`prenom=Léa`). **Sans `name`, le champ n’est pas envoyé !**
+- `id` : identifiant unique, utilisé par le label ;
+- `value` : valeur par défaut ;
+- `placeholder` : texte d’exemple affiché dans le champ vide.
+
+## Le `<label>` : indispensable
+
+Chaque champ doit avoir une **étiquette visible** reliée au champ :
+
+```html
+<label for="email">Adresse e-mail</label>
+<input type="email" id="email" name="email">
+```
+
+L’attribut `for` du label reprend l’`id` du champ. Bénéfices :
+
+- le lecteur d’écran annonce « Adresse e-mail, champ de saisie » ;
+- cliquer sur le texte du label place le curseur dans le champ (zone de clic plus grande, précieuse sur mobile et pour les cases à cocher).
+
+> [!WARN] Le `placeholder` ne remplace **jamais** un label : il disparaît dès que l’on tape, il est souvent peu contrasté et mal lu par certaines technologies d’assistance.
+
+## Le bouton d’envoi
+
+```html
+<button type="submit">S’inscrire</button>
+```', '<form action="…" method="post">
+  <label for="id">Libellé</label>
+  <input type="text" id="id" name="nom">
+  <button type="submit">Envoyer</button>
+</form>', NULL, NULL, '<form action="/newsletter" method="post">
+  <h2>Inscription à la newsletter</h2>
+
+  <label for="prenom">Prénom</label>
+  <input type="text" id="prenom" name="prenom" autocomplete="given-name">
+
+  <label for="email">Adresse e-mail</label>
+  <input type="email" id="email" name="email" placeholder="exemple@domaine.fr" autocomplete="email">
+
+  <button type="submit">Je m’inscris</button>
+</form>', 'form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 320px;
+  font-family: system-ui, sans-serif;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+button {
+  padding: 10px;
+  border: 0;
+  border-radius: 6px;
+  background: #4f46e5;
+  color: white;
+  font-weight: bold;
+}', '[["<form action=\\"/newsletter\\" method=\\"post\\">","Les données seront envoyées en POST à l’adresse /newsletter."],["<label for=\\"prenom\\">Prénom</label>","Étiquette reliée au champ d’`id=\\"prenom\\"`."],["<input type=\\"text\\" id=\\"prenom\\" name=\\"prenom\\" …>","`name` = nom de la donnée envoyée ; `autocomplete` aide le navigateur à préremplir."],["<input type=\\"email\\" … placeholder=\\"…\\">","Le placeholder montre un exemple, en complément du label."],["<button type=\\"submit\\">","Bouton qui envoie le formulaire."]]', '[["<form>","Formulaire. Attributs `action` et `method`."],["<input>","Champ de saisie (élément vide)."],["name","Nom de la donnée envoyée au serveur."],["<label for=\\"…\\">","Étiquette associée à un champ."],["placeholder","Exemple affiché dans le champ vide."],["autocomplete","Aide au remplissage automatique."]]', '["Oublier `name` : la donnée n’est pas envoyée.","Utiliser un placeholder comme seul libellé.","Un `for` qui ne correspond à aucun `id`.","Envoyer un mot de passe en `method=\\"get\\"` (il apparaît dans l’URL et l’historique)."]', '["Un label visible pour chaque champ.","`method=\\"post\\"` pour les données sensibles ou modifiantes.","Des attributs `autocomplete` pour faciliter la saisie.","Demander uniquement les informations nécessaires."]', 'Sur cette plateforme, la page d’inscription est un `<form method="post">` : chaque champ a un `<label>`, un `name` et un `autocomplete`. Côté serveur, PHP lit `$_POST[''email'']`, valide la valeur et crée le compte.', '["`<form action method>` envoie les données.","`name` est indispensable pour l’envoi.","Chaque champ a un `<label for>` relié à son `id`.","GET pour chercher, POST pour modifier."]', 'Créez un formulaire de recherche en `method="get"` avec un champ `name="q"`. Soumettez-le et observez l’URL.', 1, 1),
+(36, 14, 'Les types de champs', 'types-de-champs', 16, 'Sur mobile, un champ `type="email"` affiche un clavier avec le « @ », un champ `type="tel"` un pavé numérique. Choisir le bon type, c’est offrir la bonne interface **gratuitement** et bénéficier de la validation du navigateur.', '["Utiliser les types email, password, number, tel, url, date, search","Créer des cases à cocher et des boutons radio","Grouper des champs avec `<fieldset>` et `<legend>`"]', '["L’élément form et les champs de saisie"]', '## Les principaux types
+
+| Type | Usage | Bonus |
+|---|---|---|
+| `text` | Texte court | — |
+| `email` | Adresse e-mail | Clavier @, vérification du format |
+| `password` | Mot de passe | Caractères masqués |
+| `number` | Nombre | Flèches, `min`, `max`, `step` |
+| `tel` | Téléphone | Pavé numérique mobile |
+| `url` | Adresse web | Vérification du format |
+| `date`, `time` | Date, heure | Sélecteur natif |
+| `search` | Recherche | Bouton d’effacement |
+| `range` | Curseur | `min`, `max` |
+| `color` | Couleur | Sélecteur de couleur |
+| `file` | Fichier | Explorateur de fichiers |
+
+## Cases à cocher : `checkbox`
+
+Pour des choix **indépendants** (zéro, un ou plusieurs) :
+
+```html
+<input type="checkbox" id="news" name="newsletter" value="oui">
+<label for="news">Recevoir la newsletter</label>
+```
+
+`checked` coche la case par défaut.
+
+## Boutons radio : `radio`
+
+Pour **un seul choix** parmi plusieurs. Les boutons d’un même groupe partagent le **même `name`** :
+
+```html
+<input type="radio" id="petit" name="taille" value="S">
+<label for="petit">Petit</label>
+<input type="radio" id="moyen" name="taille" value="M">
+<label for="moyen">Moyen</label>
+```
+
+`value` est la donnée envoyée (`taille=M`).
+
+## Grouper : `<fieldset>` et `<legend>`
+
+Un groupe de radios ou de cases doit être entouré d’un `<fieldset>` avec une `<legend>` qui pose la question :
+
+```html
+<fieldset>
+  <legend>Taille du café</legend>
+  …boutons radio…
+</fieldset>
+```
+
+Le lecteur d’écran annonce alors « Taille du café, groupe — Petit, bouton radio ».', '<input type="email" …>
+<input type="checkbox" …>
+<fieldset><legend>Question</legend> radios… </fieldset>', NULL, NULL, '<form action="/commande" method="post">
+  <label for="mail">E-mail</label>
+  <input type="email" id="mail" name="email">
+
+  <label for="nb">Nombre de cafés</label>
+  <input type="number" id="nb" name="quantite" min="1" max="10" value="1">
+
+  <label for="retrait">Heure de retrait</label>
+  <input type="time" id="retrait" name="heure">
+
+  <fieldset>
+    <legend>Taille</legend>
+    <input type="radio" id="t-s" name="taille" value="S" checked>
+    <label for="t-s">Petit</label>
+    <input type="radio" id="t-l" name="taille" value="L">
+    <label for="t-l">Grand</label>
+  </fieldset>
+
+  <input type="checkbox" id="sucre" name="sucre" value="1">
+  <label for="sucre">Avec sucre</label>
+
+  <button type="submit">Commander</button>
+</form>', NULL, '[["<input type=\\"email\\" …>","Clavier adapté sur mobile et vérification du format."],["<input type=\\"number\\" … min=\\"1\\" max=\\"10\\" value=\\"1\\">","Nombre entre 1 et 10, valeur par défaut 1."],["<input type=\\"time\\" …>","Sélecteur d’heure natif."],["<fieldset><legend>Taille</legend>","Groupe de boutons radio avec sa question."],["<input type=\\"radio\\" … name=\\"taille\\" value=\\"S\\" checked>","Même `name` pour le groupe ; `checked` = choix par défaut."],["<input type=\\"checkbox\\" …>","Choix indépendant (oui/non)."]]', '[["type=\\"email|password|number|tel|url\\"","Types de saisie spécialisés."],["type=\\"date|time\\"","Sélecteurs de date et d’heure."],["type=\\"checkbox\\"","Case à cocher."],["type=\\"radio\\"","Choix unique dans un groupe (même `name`)."],["checked","Coché par défaut."],["<fieldset> / <legend>","Groupe de champs et son intitulé."]]', '["Des radios d’un même groupe avec des `name` différents (on peut tout cocher).","Oublier `value` sur les radios et checkboxes.","Utiliser `type=\\"number\\"` pour un code postal ou un numéro de carte (zéros initiaux perdus) : préférez `text` + `inputmode=\\"numeric\\"`.","Des radios sans `<fieldset>`/`<legend>`."]', '["Choisir le type le plus précis.","Grouper radios et cases avec `<fieldset>`.","Placer le label après la case à cocher / le radio."]', 'Les tunnels de commande utilisent tous ces types : `email` pour le contact, `tel` pour la livraison, `radio` pour le mode de livraison, `checkbox` pour les conditions générales. Chaque bon choix de type réduit les erreurs de saisie.', '["Le type adapte clavier, interface et validation.","Checkbox = choix indépendants ; radio = choix unique (même `name`).","`<fieldset>` + `<legend>` pour grouper."]', 'Créez un formulaire de réservation d’hôtel : dates d’arrivée et de départ, nombre de personnes (1 à 6), type de chambre (radio), options (checkbox).', 1, 2),
+(37, 14, 'Listes déroulantes, zones de texte et boutons', 'select-textarea-button', 13, 'Choisir son pays dans une liste, écrire un long message, envoyer ou réinitialiser un formulaire : trois nouveaux éléments complètent votre boîte à outils — `<select>`, `<textarea>` et `<button>`.', '["Créer une liste déroulante avec `<select>` et `<option>`","Créer une zone de texte multiligne","Connaître les types de boutons"]', '["Les types de champs"]', '## `<select>` : la liste déroulante
+
+```html
+<label for="pays">Pays</label>
+<select id="pays" name="pays">
+  <option value="">— Choisissez —</option>
+  <option value="fr">France</option>
+  <option value="be" selected>Belgique</option>
+  <option value="ca">Canada</option>
+</select>
+```
+
+- `value` : la donnée envoyée ; le texte de l’option est ce que voit l’utilisateur ;
+- `selected` : option choisie par défaut ;
+- `<optgroup label="…">` regroupe des options ;
+- `multiple` permet plusieurs choix (peu ergonomique : préférez des cases à cocher).
+
+Quand l’utiliser ? Pour **plus de 5 ou 6 choix**. En dessous, des boutons radio sont plus rapides (tout est visible en un coup d’œil).
+
+## `<textarea>` : texte long
+
+```html
+<label for="msg">Votre message</label>
+<textarea id="msg" name="message" rows="5"></textarea>
+```
+
+Contrairement à `<input>`, `<textarea>` a une balise fermante ; la valeur par défaut s’écrit **entre** les balises. `rows` règle la hauteur initiale ; `maxlength` limite le nombre de caractères.
+
+## `<button>` : trois types
+
+| Type | Effet |
+|---|---|
+| `submit` | Envoie le formulaire (par défaut dans un form) |
+| `reset` | Remet les valeurs initiales (rarement utile, souvent frustrant) |
+| `button` | Ne fait rien par défaut (utilisé avec JavaScript) |
+
+> [!TIP] Précisez toujours le `type` d’un bouton. Un `<button>` sans type dans un formulaire est un bouton d’envoi : un bouton « Afficher le mot de passe » mal typé enverrait le formulaire !
+
+## Le texte du bouton
+
+Préférez une action précise à « Envoyer » : « Créer mon compte », « Réserver ma table », « Recevoir le devis ».', '<select name="…"><option value="…">…</option></select>
+<textarea name="…" rows="5"></textarea>
+<button type="submit">…</button>', NULL, NULL, '<form action="/contact" method="post">
+  <label for="sujet">Sujet</label>
+  <select id="sujet" name="sujet">
+    <option value="">— Choisissez un sujet —</option>
+    <optgroup label="Commandes">
+      <option value="suivi">Suivi de commande</option>
+      <option value="retour">Retour produit</option>
+    </optgroup>
+    <option value="autre">Autre demande</option>
+  </select>
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="5" maxlength="1000"></textarea>
+
+  <button type="submit">Envoyer ma demande</button>
+</form>', NULL, '[["<select id=\\"sujet\\" name=\\"sujet\\">","Liste déroulante, reliée à son label."],["<option value=\\"\\">— Choisissez un sujet —</option>","Option vide : oblige à faire un choix conscient."],["<optgroup label=\\"Commandes\\">","Groupe d’options avec un intitulé."],["<textarea … rows=\\"5\\" maxlength=\\"1000\\"></textarea>","Zone multiligne, 5 lignes visibles, 1000 caractères maximum."],["<button type=\\"submit\\">Envoyer ma demande</button>","Bouton d’envoi avec un texte précis."]]', '[["<select>","Liste déroulante."],["<option value selected>","Option (valeur envoyée, sélection par défaut)."],["<optgroup label>","Groupe d’options."],["<textarea rows maxlength>","Zone de texte multiligne."],["<button type>","`submit`, `reset` ou `button`."]]', '["Écrire `<textarea value=\\"…\\">` : la valeur se place entre les balises.","Laisser des espaces ou retours à la ligne entre `<textarea>` et `</textarea>` (ils deviennent du contenu).","Un `<select>` pour 2 ou 3 choix.","Oublier le `type` des boutons."]', '["Radios pour peu de choix, select au-delà de 6.","Une option vide par défaut dans un select obligatoire.","Des textes de boutons orientés action."]', 'Les formulaires de contact d’entreprise combinent presque toujours ces trois éléments. Côté serveur, le script vérifie que la valeur du `<select>` fait bien partie des options autorisées : on ne fait jamais confiance aux données envoyées.', '["`<select>` + `<option value>` pour les longues listes.","`<textarea>` pour le texte long, valeur entre les balises.","Toujours préciser `type` sur `<button>`."]', 'Créez un formulaire « Signaler un bug » : page concernée (select avec optgroup), gravité (radio), description (textarea), capture (file), bouton d’envoi.', 1, 3),
+(38, 14, 'La validation native des formulaires', 'validation-native-formulaires', 14, 'Le navigateur sait vérifier un formulaire **avant** son envoi : champ obligatoire vide, e-mail mal formé, nombre hors limites… Quelques attributs suffisent. Mais attention : cette validation est un confort pour l’utilisateur, **jamais une sécurité**.', '["Utiliser `required`, `minlength`, `maxlength`, `min`, `max`, `pattern`","Comprendre les limites de la validation côté client","Aider l’utilisateur avec des messages clairs"]', '["Listes déroulantes, zones de texte et boutons"]', '## Les attributs de validation
+
+| Attribut | Rôle | Exemple |
+|---|---|---|
+| `required` | Champ obligatoire | `<input required>` |
+| `minlength` / `maxlength` | Longueur du texte | `minlength="8"` |
+| `min` / `max` / `step` | Bornes numériques ou de date | `min="18"` |
+| `pattern` | Expression régulière | `pattern="[0-9]{5}"` |
+| `type` | Format (email, url…) | `type="email"` |
+
+Si une règle n’est pas respectée, le navigateur **bloque l’envoi** et affiche un message près du champ.
+
+```html
+<label for="cp">Code postal (5 chiffres)</label>
+<input id="cp" name="cp" required pattern="[0-9]{5}" inputmode="numeric">
+```
+
+## Indiquer les champs obligatoires
+
+Signalez-les **visuellement et textuellement** : « (obligatoire) » ou un astérisque expliqué en haut du formulaire (« Les champs marqués * sont obligatoires »). La couleur seule ne suffit pas.
+
+## Donner des instructions à l’avance
+
+Les contraintes (« 8 caractères minimum, dont un chiffre ») doivent être visibles **avant** la saisie, par exemple dans un texte d’aide relié au champ par `aria-describedby`.
+
+## Validation client ≠ sécurité
+
+N’importe qui peut désactiver la validation (outils de développement, attribut `novalidate`, requête envoyée directement). Le serveur doit **toujours revérifier** toutes les données. Sur cette plateforme, par exemple, PHP valide chaque champ de l’inscription même si le navigateur l’a déjà fait.
+
+> [!WARN] La validation HTML sert l’expérience utilisateur. La validation serveur sert la sécurité et l’intégrité des données. Il faut les deux.', '<input type="email" required>
+<input type="password" minlength="8" required>
+<input type="number" min="1" max="99">
+<input pattern="[0-9]{5}">', NULL, NULL, '<form action="/inscription" method="post">
+  <p>Tous les champs sont obligatoires.</p>
+
+  <label for="pseudo">Pseudo (3 à 20 caractères)</label>
+  <input id="pseudo" name="pseudo" required minlength="3" maxlength="20">
+
+  <label for="courriel">E-mail</label>
+  <input type="email" id="courriel" name="email" required>
+
+  <label for="age">Âge</label>
+  <input type="number" id="age" name="age" required min="16" max="120">
+
+  <label for="mdp">Mot de passe</label>
+  <input type="password" id="mdp" name="password" required minlength="8" aria-describedby="mdp-aide">
+  <small id="mdp-aide">8 caractères minimum.</small>
+
+  <button type="submit">Créer mon compte</button>
+</form>', NULL, '[["<p>Tous les champs sont obligatoires.</p>","Information donnée avant la saisie."],["<input … required minlength=\\"3\\" maxlength=\\"20\\">","Obligatoire, entre 3 et 20 caractères."],["<input type=\\"email\\" … required>","Format e-mail vérifié par le navigateur."],["<input type=\\"number\\" … min=\\"16\\" max=\\"120\\">","Âge borné."],["aria-describedby=\\"mdp-aide\\"","Relie le champ à son texte d’aide (lu par les lecteurs d’écran)."]]', '[["required","Champ obligatoire."],["minlength / maxlength","Longueur minimale / maximale."],["min / max / step","Bornes numériques."],["pattern","Expression régulière à respecter."],["novalidate","Sur `<form>` : désactive la validation native."],["aria-describedby","Relie un champ à un texte d’aide."]]', '["Compter uniquement sur la validation HTML pour la sécurité.","Des contraintes non expliquées (l’utilisateur découvre la règle après l’erreur).","Signaler les champs obligatoires uniquement par la couleur rouge.","Un `pattern` trop strict qui refuse des valeurs valides (noms composés, numéros internationaux)."]', '["Expliquer les contraintes avant la saisie.","Toujours revalider côté serveur.","Garder des règles raisonnables."]', 'Les formulaires professionnels combinent la validation native (réaction immédiate), un peu de JavaScript (messages personnalisés en français) et une validation serveur (sécurité). C’est l’approche utilisée sur cette plateforme.', '["`required`, `minlength`, `min`, `pattern`… bloquent un envoi invalide.","Expliquez les contraintes à l’avance.","La validation côté client n’est jamais une sécurité : le serveur revérifie tout."]', 'Créez un formulaire de réservation avec validation : nom obligatoire, e-mail, nombre de personnes de 1 à 8, date minimale aujourd’hui (attribut `min` sur `type="date"`).', 1, 4),
+(39, 15, 'Classes et identifiants en HTML', 'classes-et-identifiants', 12, 'Vous avez utilisé `class` et `id` en CSS. Côté HTML, ils sont bien plus qu’un crochet pour le style : l’`id` sert aux ancres, aux labels et à l’accessibilité ; la `class` décrit des familles d’éléments. Bien les nommer rend un projet compréhensible par toute une équipe.', '["Appliquer une ou plusieurs classes","Respecter l’unicité des id","Nommer classes et identifiants de façon cohérente","Découvrir la convention BEM"]', '["Sélecteurs de type, de classe et d’identifiant (CSS)"]', '## `class` : des familles d’éléments
+
+```html
+<article class="carte carte--promo">…</article>
+<article class="carte">…</article>
+```
+
+- plusieurs classes séparées par des **espaces** ;
+- la même classe sur autant d’éléments que nécessaire ;
+- l’ordre des classes dans l’attribut n’a pas d’importance.
+
+## `id` : un élément unique
+
+Un `id` doit être **unique dans la page**. Il sert à :
+
+- les **ancres** : `href="#contact"` ;
+- les **labels** : `<label for="email">` ;
+- l’**accessibilité** : `aria-describedby="aide-mdp"` ;
+- **JavaScript** : `document.getElementById(''menu'')`.
+
+## Règles de nommage
+
+- lettres minuscules, chiffres, tirets : `carte-produit`, `menu-principal` ;
+- pas d’espace, pas d’accent, ne commence pas par un chiffre ;
+- un nom qui décrit le **rôle** : `.alerte`, `.prix-barre`, pas `.rouge` ou `.gauche`.
+
+## La convention BEM
+
+Très utilisée en entreprise : **B**loc, **É**lément, **M**odificateur.
+
+```html
+<div class="carte carte--mise-en-avant">
+  <h3 class="carte__titre">…</h3>
+  <p class="carte__texte">…</p>
+</div>
+```
+
+- `carte` : le bloc ;
+- `carte__titre` : un élément du bloc (deux underscores) ;
+- `carte--mise-en-avant` : une variante (deux tirets).
+
+On sait immédiatement à quoi sert chaque classe et où se trouve son style.', '<div class="bloc bloc--variante" id="unique">…</div>', NULL, NULL, '<section id="offres">
+  <h2>Nos offres</h2>
+  <article class="offre">
+    <h3 class="offre__titre">Découverte</h3>
+    <p class="offre__prix">9 € / mois</p>
+  </article>
+  <article class="offre offre--populaire">
+    <h3 class="offre__titre">Pro</h3>
+    <p class="offre__prix">19 € / mois</p>
+  </article>
+</section>
+<p><a href="#offres">Revoir les offres</a></p>', '.offre {
+  display: inline-block;
+  width: 160px;
+  padding: 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-family: system-ui, sans-serif;
+}
+
+.offre--populaire {
+  border: 2px solid #7c3aed;
+  background: #f5f3ff;
+}
+
+.offre__prix {
+  font-size: 1.25rem;
+  font-weight: bold;
+}', '[["<section id=\\"offres\\">","Identifiant unique : cible de l’ancre en bas de page."],["<article class=\\"offre\\">","Bloc « offre » réutilisé."],["<h3 class=\\"offre__titre\\">","Élément du bloc (convention BEM)."],["<article class=\\"offre offre--populaire\\">","Deux classes : le bloc + sa variante."],["<a href=\\"#offres\\">","Lien vers l’`id`."]]', '[["class","Une ou plusieurs classes, séparées par des espaces."],["id","Identifiant unique dans la page."],["bloc__element","BEM : élément d’un bloc."],["bloc--modificateur","BEM : variante d’un bloc."]]', '["Deux attributs `class` sur le même élément.","Le même `id` utilisé plusieurs fois.","Des noms avec espaces ou accents : `class=\\"carte produit\\"` crée deux classes.","Des noms basés sur l’apparence."]', '["Des noms en minuscules avec tirets.","Des noms selon le rôle.","Une convention (comme BEM) appliquée dans tout le projet."]', 'Dans une équipe, un développeur qui lit `class="panier__ligne panier__ligne--vide"` comprend instantanément la structure, sans ouvrir le CSS. C’est l’intérêt d’une convention partagée.', '["`class` : plusieurs, réutilisables ; `id` : unique.","Noms en minuscules, tirets, selon le rôle.","BEM : `bloc__element--modificateur`."]', 'Codez trois cartes de profil en BEM (`profil`, `profil__nom`, `profil__role`, `profil--admin`).', 1, 1),
+(40, 15, 'Attributs globaux, div et span', 'attributs-globaux', 13, 'Certains attributs fonctionnent sur **tous** les éléments : `title`, `lang`, `hidden`, `tabindex`, `data-*`… Et deux éléments n’ont **aucun sens** particulier : `<div>` et `<span>`. Savoir quand les utiliser — et surtout quand ne pas le faire — distingue un HTML propre d’une « soupe de div ».', '["Utiliser les attributs globaux courants","Stocker des données avec `data-*`","Choisir entre `<div>`, `<span>` et une balise sémantique"]', '["Classes et identifiants en HTML"]', '## Les attributs globaux utiles
+
+| Attribut | Rôle |
+|---|---|
+| `id`, `class` | Identification, style |
+| `title` | Info-bulle (complément, jamais indispensable) |
+| `lang` | Langue du contenu de l’élément |
+| `hidden` | Masque l’élément (pour tout le monde, lecteurs d’écran compris) |
+| `tabindex` | Ordre de tabulation (`0` = focusable, `-1` = focusable par script) |
+| `data-*` | Données personnalisées |
+| `dir` | Sens d’écriture (`rtl` pour l’arabe, l’hébreu) |
+| `contenteditable` | Rend le contenu éditable |
+
+## Les attributs `data-*`
+
+Ils stockent des informations destinées au CSS ou au JavaScript, sans détourner d’autres attributs :
+
+```html
+<li data-categorie="fruits" data-prix="2.50">Pommes</li>
+```
+
+En CSS : `[data-categorie="fruits"] { … }`. En JavaScript : `element.dataset.prix`.
+
+## `<div>` et `<span>` : les conteneurs neutres
+
+- `<div>` : conteneur **bloc** sans signification ;
+- `<span>` : conteneur **en ligne** sans signification.
+
+On les utilise **uniquement quand aucune balise sémantique ne convient**, généralement pour appliquer un style ou regrouper des éléments pour la mise en page :
+
+```html
+<p>Prix : <span class="prix">19 €</span></p>
+<div class="grille">…</div>
+```
+
+## La « soupe de div »
+
+```html
+<div class="header"><div class="nav"><div class="item">…
+```
+
+Ce code fonctionne, mais il n’a aucun sens pour les lecteurs d’écran et les moteurs de recherche. Le niveau 3 vous apprendra les balises sémantiques (`<header>`, `<nav>`, `<main>`, `<article>`…) qui remplacent avantageusement la plupart de ces div.
+
+> [!TIP] Réflexe : avant d’écrire `<div>`, demandez-vous « existe-t-il une balise qui décrit ce contenu ? ». Si oui, utilisez-la.', '<div class="…">bloc neutre</div>
+<span class="…">texte en ligne neutre</span>
+<li data-id="42">…</li>', NULL, NULL, '<div class="catalogue">
+  <p>Prix du jour : <span class="prix">3,20 €</span> le kilo.</p>
+  <ul>
+    <li data-categorie="fruits">Pommes</li>
+    <li data-categorie="legumes">Carottes</li>
+    <li data-categorie="fruits">Poires</li>
+  </ul>
+  <p lang="en" title="Citation de John Lennon">Life is what happens while you are busy making other plans.</p>
+  <p hidden>Ce paragraphe est masqué.</p>
+</div>', '.catalogue {
+  font-family: system-ui, sans-serif;
+  padding: 16px;
+  background: #f8fafc;
+}
+
+.prix {
+  font-weight: bold;
+  color: #15803d;
+}
+
+[data-categorie="fruits"] {
+  color: #c2410c;
+}', '[["<div class=\\"catalogue\\">","Conteneur neutre utilisé pour le style (fond, marges)."],["<span class=\\"prix\\">3,20 €</span>","Conteneur en ligne neutre : on veut juste styler le prix."],["<li data-categorie=\\"fruits\\">","Donnée personnalisée, exploitée par le CSS."],["<p lang=\\"en\\" title=\\"…\\">","Langue locale et info-bulle."],["<p hidden>","Élément masqué pour tous."]]', '[["title","Info-bulle."],["lang / dir","Langue et sens d’écriture."],["hidden","Masque l’élément."],["tabindex","Participation à la navigation clavier."],["data-*","Données personnalisées."],["<div> / <span>","Conteneurs neutres bloc / en ligne."]]', '["Utiliser des `<div>` partout au lieu de balises sémantiques.","Utiliser `<div>` à l’intérieur d’un `<p>` (bloc dans un paragraphe).","Mettre des informations essentielles uniquement dans `title`.","Utiliser `tabindex` avec des valeurs positives (1, 2, 3…) qui brouillent l’ordre naturel."]', '["Une balise sémantique dès qu’elle existe ; div/span en dernier recours.","`data-*` pour les données destinées aux scripts.","`tabindex` limité à `0` et `-1`."]', 'Les filtres des boutiques (« Afficher : fruits / légumes ») utilisent souvent `data-*` : JavaScript lit `data-categorie` pour masquer ou afficher les produits, sans toucher aux classes de style.', '["Les attributs globaux s’appliquent à tous les éléments.","`data-*` stocke des données personnalisées.","`<div>`/`<span>` n’ont aucun sens : à utiliser en dernier recours."]', 'Reprenez une page existante et remplacez chaque `<div>` qui pourrait être une balise plus précise (titre, liste, paragraphe…).', 1, 2);
+
+INSERT INTO `lessons` (`id`, `module_id`, `title`, `slug`, `duration_minutes`, `introduction`, `objectives`, `prerequisites`, `theory`, `syntax_code`, `simple_html`, `simple_css`, `example_html`, `example_css`, `line_by_line`, `reference_items`, `common_mistakes`, `best_practices`, `practical`, `summary_points`, `challenge`, `is_published`, `sort_order`) VALUES
+(41, 16, 'block, inline et inline-block', 'block-inline-inline-block', 14, 'Pourquoi deux paragraphes s’empilent-ils alors que deux liens se suivent sur la même ligne ? Pourquoi `width` n’a-t-il aucun effet sur un lien ? Tout est question de **type d’affichage**. La propriété `display` est la clé de toute mise en page CSS.', '["Distinguer éléments bloc et en ligne","Utiliser `inline-block`","Changer le type d’affichage d’un élément"]', '["Le modèle de boîte"]', '## Le flux normal
+
+Sans CSS de mise en page, les éléments se placent dans le **flux normal** : de haut en bas pour les blocs, de gauche à droite pour le contenu en ligne.
+
+## `display: block`
+
+Exemples par défaut : `<div>`, `<p>`, `<h1>`, `<ul>`, `<section>`.
+
+- commence sur une **nouvelle ligne** ;
+- occupe **toute la largeur** disponible ;
+- accepte `width`, `height`, `margin` et `padding` dans toutes les directions.
+
+## `display: inline`
+
+Exemples par défaut : `<a>`, `<span>`, `<strong>`, `<em>`.
+
+- se place **dans la ligne**, à la suite du texte ;
+- sa largeur = celle de son contenu ;
+- **ignore** `width` et `height` ;
+- les marges verticales n’écartent pas les lignes.
+
+## `display: inline-block`
+
+Le meilleur des deux : l’élément reste **dans la ligne**, mais accepte `width`, `height`, `padding` et `margin` comme un bloc. Idéal pour un **bouton** créé à partir d’un lien :
+
+```css
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+}
+```
+
+## Changer le type
+
+N’importe quel élément peut changer de type d’affichage **sans perdre son sens HTML** :
+
+```css
+nav li { display: inline-block; } /* menu horizontal */
+img { display: block; }             /* supprime l’espace sous l’image */
+```
+
+> [!INFO] Les images sont `inline` par défaut : c’est pourquoi un petit espace apparaît parfois sous elles (réservé aux lettres descendantes comme « g » ou « p »). `display: block` le supprime.
+
+## Et après ?
+
+`display` accepte aussi `flex` et `grid`, les deux systèmes de mise en page modernes que vous verrez dans les modules suivants.', 'display: block;
+display: inline;
+display: inline-block;', NULL, NULL, '<p>Un paragraphe est un bloc.</p>
+<p>Voici des <a class="lien" href="#">liens</a> <a class="lien" href="#">en ligne</a>.</p>
+<a class="btn" href="#">Bouton inline-block</a>
+<a class="btn" href="#">Autre bouton</a>
+<span class="bloc">Un span transformé en bloc</span>', 'p {
+  background: #e0f2fe;
+}
+
+.lien {
+  width: 300px;  /* ignoré : élément inline */
+  background: #fde68a;
+}
+
+.btn {
+  display: inline-block;
+  width: 180px;
+  padding: 10px;
+  margin: 8px 4px;
+  text-align: center;
+  background: #1d4ed8;
+  color: white;
+  text-decoration: none;
+}
+
+.bloc {
+  display: block;
+  margin-top: 12px;
+  padding: 8px;
+  background: #dcfce7;
+}', '[["p { background: #e0f2fe; }","Le fond couvre toute la largeur : le paragraphe est un bloc."],["  width: 300px;  /* ignoré */","Un élément inline ignore `width`."],["  display: inline-block;","Le lien reste dans la ligne mais accepte largeur et marges."],["  width: 180px;","Pris en compte grâce à inline-block."],["  display: block;","Le span prend toute la largeur et passe à la ligne."]]', '[["display: block","Nouvelle ligne, toute la largeur, dimensions acceptées."],["display: inline","Dans la ligne, taille du contenu, width/height ignorés."],["display: inline-block","Dans la ligne, dimensions acceptées."]]', '["Donner `width` ou `margin-top` à un lien inline et ne pas comprendre pourquoi rien ne change.","Changer une balise HTML pour obtenir un comportement d’affichage (au lieu de `display`).","Oublier l’espace créé entre des éléments inline-block par les espaces du code HTML."]', '["Garder la balise HTML pour le sens, régler l’affichage en CSS.","Utiliser `inline-block` pour des boutons, Flexbox pour aligner des séries d’éléments.","`img { display: block; }` dans le reset."]', 'Les boutons des sites sont très souvent des liens `<a>` en `display: inline-block` avec du padding. Et avant Flexbox, les menus horizontaux étaient faits avec des `<li>` en `inline-block`.', '["block : nouvelle ligne, pleine largeur.","inline : dans le texte, sans dimensions.","inline-block : dans la ligne, avec dimensions.","`display` change l’affichage sans changer le sens."]', 'Transformez une liste `<ul>` de 4 liens en menu horizontal avec `display: inline-block` sur les `<li>`, sans puces.', 1, 1),
+(42, 16, 'Masquer des éléments : none, visibility, opacity', 'display-none-visibility-overflow', 12, 'Menu mobile fermé, message affiché après une action, texte réservé aux lecteurs d’écran… Il existe plusieurs façons de masquer un élément en CSS, et elles n’ont **pas du tout** les mêmes effets, notamment sur l’accessibilité.', '["Distinguer `display: none`, `visibility: hidden` et `opacity: 0`","Masquer visuellement un texte tout en le laissant aux lecteurs d’écran"]', '["block, inline et inline-block"]', '## Trois façons de masquer
+
+| Méthode | Place occupée | Visible | Lecteur d’écran | Cliquable |
+|---|---|---|---|---|
+| `display: none` | Non | Non | Non | Non |
+| `visibility: hidden` | **Oui** | Non | Non | Non |
+| `opacity: 0` | **Oui** | Non | **Oui** | **Oui** |
+
+- `display: none` : l’élément disparaît complètement, comme s’il n’existait pas. Utilisé pour les menus fermés, les onglets inactifs.
+- `visibility: hidden` : l’emplacement reste réservé (un trou dans la page).
+- `opacity: 0` : invisible mais toujours présent et interactif — attention aux pièges (un bouton invisible mais cliquable !). Utile pour les animations d’apparition.
+
+## Masquer visuellement, garder pour l’accessibilité
+
+Parfois, on veut un texte **lu par les lecteurs d’écran mais pas affiché** (par exemple « Ouvrir le menu » sur un bouton icône). On utilise une classe utilitaire classique :
+
+```css
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+```
+
+Cette plateforme l’utilise sur ses boutons icônes.
+
+> [!WARN] Ne masquez jamais un contenu important uniquement pour gagner de la place : sur mobile, réorganisez plutôt la mise en page.', 'display: none;
+visibility: hidden;
+opacity: 0;', NULL, NULL, '<div class="ligne">
+  <span class="case">A</span>
+  <span class="case cache-none">B</span>
+  <span class="case">C</span>
+</div>
+<div class="ligne">
+  <span class="case">A</span>
+  <span class="case cache-visibility">B</span>
+  <span class="case">C</span>
+</div>
+<button type="button"><span aria-hidden="true">☰</span><span class="sr-only">Ouvrir le menu</span></button>', '.case {
+  display: inline-block;
+  width: 60px;
+  padding: 12px 0;
+  margin: 4px;
+  text-align: center;
+  background: #c7d2fe;
+}
+
+.cache-none { display: none; }            /* C se décale vers la gauche */
+.cache-visibility { visibility: hidden; } /* un trou reste à la place de B */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}', '[[".cache-none { display: none; }","B disparaît totalement : C prend sa place."],[".cache-visibility { visibility: hidden; }","B est invisible mais sa place reste réservée."],["<span aria-hidden=\\"true\\">☰</span>","L’icône est ignorée par les lecteurs d’écran."],["<span class=\\"sr-only\\">Ouvrir le menu</span>","Texte invisible à l’écran mais lu par les lecteurs d’écran."]]', '[["display: none","Retire l’élément de la mise en page et de l’accessibilité."],["visibility: hidden","Invisible, place conservée."],["opacity: 0","Transparent, toujours présent et interactif."],[".sr-only","Masque visuellement en gardant l’accessibilité."]]', '["Utiliser `opacity: 0` pour masquer un bouton : il reste cliquable.","Masquer un label avec `display: none` : le champ perd son nom accessible.","Masquer du contenu important sur mobile."]', '["`display: none` pour ce qui ne doit pas exister à ce moment (menu fermé).","La classe `.sr-only` pour les textes réservés aux lecteurs d’écran.","Tester avec un lecteur d’écran ou l’inspecteur d’accessibilité."]', 'Un menu « burger » sur mobile est souvent en `display: none` tant qu’il est fermé, et passe en `display: block` (ou flex) quand l’utilisateur l’ouvre — c’est le cas du menu de cette plateforme.', '["`display: none` : disparaît complètement.","`visibility: hidden` : invisible, place gardée.","`opacity: 0` : invisible mais présent.","`.sr-only` : caché à l’écran, lu par les lecteurs d’écran."]', 'Créez un bouton-icône « panier » dont le texte « Voir le panier (3 articles) » est réservé aux lecteurs d’écran.', 1, 2),
+(43, 17, 'position : relative et absolute', 'position-relative-absolute', 16, 'Un badge « -20 % » dans le coin d’une photo, une icône à l’intérieur d’un champ, une bulle de notification sur une cloche : ces éléments « flottent » à un endroit précis. C’est le travail de `position: absolute`… à condition de comprendre son partenaire indispensable, `position: relative`.', '["Comprendre `static` et `relative`","Positionner un élément en `absolute` par rapport à son parent","Utiliser `top`, `right`, `bottom`, `left` et `inset`"]', '["La propriété display"]', '## `static` (par défaut)
+
+L’élément suit le flux normal. Les propriétés `top`, `left`… n’ont aucun effet.
+
+## `relative`
+
+L’élément reste dans le flux (sa place est conservée), mais on peut le **décaler** par rapport à sa position normale :
+
+```css
+.decale { position: relative; top: 10px; left: 20px; }
+```
+
+Son usage principal n’est pas là : `position: relative` sert surtout de **repère** pour ses enfants en `absolute`.
+
+## `absolute`
+
+L’élément **sort du flux** : les autres éléments se comportent comme s’il n’existait pas. Il se positionne par rapport à son **ancêtre positionné** le plus proche (un parent en `relative`, `absolute`, `fixed` ou `sticky`). S’il n’y en a aucun, c’est la page entière.
+
+```css
+.carte { position: relative; }      /* le repère */
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;                       /* coin supérieur droit de la carte */
+}
+```
+
+C’est le duo classique : **parent `relative`, enfant `absolute`**.
+
+## Les propriétés de décalage
+
+`top`, `right`, `bottom`, `left` indiquent la distance au bord correspondant du repère. `inset: 0;` équivaut à `top: 0; right: 0; bottom: 0; left: 0;` (l’élément couvre tout le parent — utile pour un voile sur une image).
+
+## Centrer un élément absolu
+
+```css
+.centre {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+```
+
+> [!WARN] N’utilisez pas `absolute` pour construire toute une mise en page : les éléments ne tiennent plus compte les uns des autres et tout se chevauche dès que le contenu change. Flexbox et Grid sont faits pour ça.', '.parent { position: relative; }
+.enfant { position: absolute; top: 0; right: 0; }', NULL, NULL, '<article class="produit">
+  <img src="https://placehold.co/280x180/png?text=Casque" alt="Casque audio sans fil noir" width="280" height="180">
+  <span class="badge">-20 %</span>
+  <h3>Casque sans fil</h3>
+  <p><del>99 €</del> 79 €</p>
+</article>', '.produit {
+  position: relative;
+  width: 280px;
+  font-family: system-ui, sans-serif;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.produit img {
+  display: block;
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #dc2626;
+  color: white;
+  font-weight: bold;
+}
+
+.produit h3,
+.produit p {
+  margin: 8px 12px;
+}', '[["  position: relative;","La carte devient le repère de positionnement."],["  position: absolute;","Le badge sort du flux…"],["  top: 12px;","…et se place à 12px du haut de la carte…"],["  right: 12px;","…et à 12px de son bord droit."],["  overflow: hidden;","Les coins arrondis s’appliquent aussi à l’image."]]', '[["position: static","Flux normal (défaut)."],["position: relative","Décalage relatif, place conservée ; repère pour les enfants absolus."],["position: absolute","Hors flux, positionné par rapport à l’ancêtre positionné."],["top / right / bottom / left","Décalages depuis les bords."],["inset","Raccourci des quatre décalages."]]', '["Oublier `position: relative` sur le parent : l’élément se place par rapport à toute la page.","Construire une mise en page entière en `absolute`.","Définir à la fois `left` et `right` avec une largeur fixe et s’étonner du résultat."]', '["Duo parent `relative` / enfant `absolute` pour les éléments décoratifs ou superposés.","Réserver `absolute` aux petits éléments (badges, icônes, voiles)."]', 'Les vignettes de vidéos (durée en bas à droite), les pastilles de notification, les boutons « fermer » en haut à droite des fenêtres modales : tous utilisent ce duo relative/absolute.', '["`relative` : décalage léger, sert surtout de repère.","`absolute` : hors flux, placé par rapport à l’ancêtre positionné.","Duo : parent `relative`, enfant `absolute`."]', 'Créez une icône de cloche avec une pastille rouge « 3 » positionnée en haut à droite.', 1, 1),
+(44, 17, 'fixed, sticky et z-index', 'fixed-sticky-z-index', 14, 'Un en-tête qui reste visible pendant le défilement, un bouton « retour en haut » toujours accessible, des en-têtes de tableau qui suivent le lecteur… Et quand des éléments se superposent, qui passe devant ? Place à `fixed`, `sticky` et `z-index`.', '["Fixer un élément à l’écran avec `fixed`","Créer un élément collant avec `sticky`","Gérer la superposition avec `z-index`"]', '["position : relative et absolute"]', '## `position: fixed`
+
+L’élément est positionné par rapport à la **fenêtre** et **ne bouge plus** pendant le défilement. Il sort du flux.
+
+```css
+.retour-haut {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+```
+
+Attention : un en-tête fixe **recouvre** le haut du contenu. Il faut compenser (par exemple `padding-top` sur le body).
+
+## `position: sticky`
+
+Hybride : l’élément se comporte comme `relative`… jusqu’à atteindre le seuil défini (`top: 0`), puis il « colle » tant que son parent est visible.
+
+```css
+.en-tete {
+  position: sticky;
+  top: 0;
+}
+```
+
+Sans `top` (ou `bottom`), `sticky` ne fait rien. Il ne fonctionne pas si un ancêtre a `overflow: hidden`.
+
+L’en-tête de cette plateforme utilise `sticky`.
+
+## `z-index` : l’ordre de superposition
+
+Quand des éléments positionnés se chevauchent, `z-index` décide qui est **devant** : la valeur la plus élevée passe au-dessus.
+
+```css
+.modale { position: fixed; z-index: 100; }
+.en-tete { position: sticky; z-index: 10; }
+```
+
+- `z-index` ne fonctionne que sur les éléments **positionnés** (ou les enfants de flex/grid) ;
+- il s’applique à l’intérieur d’un **contexte d’empilement** : un enfant avec `z-index: 9999` ne peut pas passer devant un élément extérieur si son parent est lui-même derrière.
+
+> [!TIP] Définissez une échelle de z-index pour tout le projet (10 en-tête, 50 menus déroulants, 100 modales, 500 notifications) au lieu d’empiler des `9999`.', 'position: fixed; bottom: 20px; right: 20px;
+position: sticky; top: 0;
+z-index: 10;', NULL, NULL, '<header class="barre">En-tête collant (sticky)</header>
+<main class="contenu">
+  <p>Faites défiler l’aperçu : l’en-tête reste en haut.</p>
+  <p>Ligne 2</p><p>Ligne 3</p><p>Ligne 4</p><p>Ligne 5</p>
+  <p>Ligne 6</p><p>Ligne 7</p><p>Ligne 8</p><p>Ligne 9</p>
+  <p>Ligne 10</p><p>Ligne 11</p><p>Ligne 12</p>
+</main>
+<a class="retour" href="#">↑ Haut</a>', 'body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+.barre {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 12px 16px;
+  background: #0f172a;
+  color: white;
+}
+
+.contenu {
+  padding: 0 16px;
+}
+
+.retour {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 20;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f59e0b;
+  color: #111;
+  text-decoration: none;
+}', '[["  position: sticky;","L’en-tête défile normalement…"],["  top: 0;","…puis colle au haut de l’écran."],["  z-index: 10;","Il passe devant le contenu qui défile dessous."],["  position: fixed;","Le bouton est fixé par rapport à la fenêtre."],["  right: 16px; bottom: 16px;","Toujours en bas à droite."]]', '[["position: fixed","Fixé par rapport à la fenêtre."],["position: sticky","Collant à partir d’un seuil (`top`)."],["z-index","Ordre de superposition des éléments positionnés."]]', '["Oublier `top: 0` avec `sticky`.","Un parent en `overflow: hidden` qui bloque `sticky`.","Un en-tête `fixed` qui masque le début du contenu.","Des `z-index: 99999` en escalade.","Utiliser `z-index` sur un élément non positionné."]', '["Préférer `sticky` à `fixed` pour les en-têtes (pas de compensation nécessaire).","Une échelle de z-index documentée.","Vérifier que les éléments fixes ne masquent rien sur mobile."]', 'Les bannières de cookies, les boutons de chat en bas à droite et les barres de navigation mobiles en bas d’écran sont des éléments `fixed` avec un `z-index` élevé.', '["`fixed` : collé à la fenêtre.","`sticky` + `top` : collant pendant le défilement.","`z-index` : qui passe devant (éléments positionnés)."]', 'Créez une longue page avec un sommaire latéral en `position: sticky` qui reste visible pendant la lecture.', 1, 2),
+(45, 18, 'Flexbox : le conteneur et les axes', 'flexbox-le-conteneur', 16, 'Aligner des éléments côte à côte, les espacer régulièrement, centrer verticalement : pendant des années, ces tâches demandaient des astuces compliquées. **Flexbox** les rend simples. C’est l’outil de mise en page que vous utiliserez le plus souvent, pour les menus, les barres d’outils, les cartes, les formulaires…', '["Créer un conteneur flex","Comprendre l’axe principal et l’axe secondaire","Changer la direction avec `flex-direction`","Espacer les éléments avec `gap`"]', '["La propriété display","Le modèle de boîte"]', '## Le principe
+
+Flexbox agit sur **deux niveaux** :
+
+- le **conteneur** (le parent), auquel on applique `display: flex` ;
+- les **éléments flexibles** (ses enfants directs), qui s’organisent automatiquement.
+
+```css
+.menu { display: flex; }
+```
+
+Instantanément, les enfants de `.menu` se placent **côte à côte**, sur une ligne.
+
+## Les deux axes
+
+- l’**axe principal** (*main axis*) : la direction dans laquelle les éléments s’enchaînent. Par défaut, horizontal (de gauche à droite) ;
+- l’**axe secondaire** (*cross axis*) : perpendiculaire au premier.
+
+Toutes les propriétés d’alignement de Flexbox font référence à ces deux axes, **pas** à « horizontal » et « vertical ».
+
+## `flex-direction`
+
+Change l’axe principal :
+
+| Valeur | Axe principal |
+|---|---|
+| `row` (défaut) | Horizontal, de gauche à droite |
+| `row-reverse` | Horizontal, de droite à gauche |
+| `column` | Vertical, de haut en bas |
+| `column-reverse` | Vertical, de bas en haut |
+
+Avec `column`, l’axe principal devient **vertical** : les propriétés d’alignement « tournent » avec lui.
+
+## `gap` : l’espacement
+
+```css
+.menu { display: flex; gap: 16px; }
+```
+
+`gap` crée un espace **entre** les éléments (pas avant le premier ni après le dernier). Fini les marges à retirer sur le dernier élément !
+
+> [!INFO] Seuls les **enfants directs** du conteneur deviennent des éléments flexibles. Les petits-enfants suivent le flux normal, sauf si leur propre parent est aussi en `display: flex`.', '.conteneur {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}', NULL, NULL, '<nav class="menu">
+  <a href="#">Accueil</a>
+  <a href="#">Cours</a>
+  <a href="#">Projets</a>
+  <a href="#">Contact</a>
+</nav>
+<div class="pile">
+  <div class="bloc">1</div>
+  <div class="bloc">2</div>
+  <div class="bloc">3</div>
+</div>', '.menu {
+  display: flex;
+  gap: 20px;
+  padding: 12px 16px;
+  background: #111827;
+  font-family: system-ui, sans-serif;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.pile {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+  width: 120px;
+}
+
+.bloc {
+  padding: 12px;
+  background: #a5b4fc;
+  text-align: center;
+}', '[["  display: flex;","Le nav devient un conteneur flex : ses liens s’alignent en ligne."],["  gap: 20px;","Espace régulier entre les liens."],["  flex-direction: column;","Axe principal vertical : les blocs s’empilent."],["  gap: 8px;","L’espacement suit l’axe principal (vertical ici)."]]', '[["display: flex","Crée un conteneur flex."],["flex-direction","`row`, `row-reverse`, `column`, `column-reverse`."],["gap","Espacement entre les éléments (aussi `row-gap`, `column-gap`)."],["display: inline-flex","Conteneur flex qui se comporte comme un élément en ligne."]]', '["Appliquer `display: flex` sur les enfants au lieu du parent.","Penser « horizontal/vertical » au lieu d’« axe principal/secondaire ».","Utiliser des marges sur chaque élément au lieu de `gap`."]', '["Flexbox pour les alignements sur une dimension (une ligne OU une colonne).","`gap` pour les espacements entre éléments.","Garder le HTML dans l’ordre logique de lecture."]', 'L’en-tête de cette plateforme est un conteneur flex : le logo, le menu et les boutons de compte sont alignés sur une ligne, avec des espaces gérés par `gap`.', '["`display: flex` sur le parent.","Axe principal (défini par `flex-direction`) et axe secondaire.","`gap` espace les éléments."]', 'Créez une barre d’outils avec 5 boutons alignés en ligne, puis passez-la en colonne en changeant une seule propriété.', 1, 1),
+(46, 18, 'Flexbox : aligner et centrer', 'flexbox-alignements', 16, '« Comment centrer une div ? » a longtemps été la question la plus posée par les développeurs web. Avec Flexbox, la réponse tient en trois lignes. Cette leçon vous apprend à placer les éléments exactement où vous le souhaitez, sur les deux axes.', '["Aligner sur l’axe principal avec `justify-content`","Aligner sur l’axe secondaire avec `align-items`","Centrer parfaitement un élément","Aligner un élément isolé avec `align-self` et `margin-left: auto`"]', '["Flexbox : le conteneur et les axes"]', '## `justify-content` : l’axe principal
+
+| Valeur | Effet |
+|---|---|
+| `flex-start` | Au début (défaut) |
+| `flex-end` | À la fin |
+| `center` | Au centre |
+| `space-between` | Premier et dernier aux extrémités, espace réparti entre |
+| `space-around` | Espace autour de chaque élément |
+| `space-evenly` | Espaces strictement égaux |
+
+`space-between` est parfait pour un en-tête : logo à gauche, menu à droite.
+
+## `align-items` : l’axe secondaire
+
+| Valeur | Effet |
+|---|---|
+| `stretch` | Étire les éléments sur toute la hauteur (défaut) |
+| `flex-start` | En haut |
+| `flex-end` | En bas |
+| `center` | Centrés |
+| `baseline` | Alignés sur la ligne de base du texte |
+
+## Centrer parfaitement
+
+```css
+.parent {
+  display: flex;
+  justify-content: center; /* axe principal */
+  align-items: center;     /* axe secondaire */
+  min-height: 300px;
+}
+```
+
+Pour voir le centrage vertical, le conteneur doit être **plus haut** que son contenu.
+
+## Aligner un seul élément
+
+- `align-self` sur un enfant remplace `align-items` pour lui seul ;
+- `margin-left: auto` sur un enfant **pousse** cet élément (et les suivants) vers la droite : très pratique pour un bouton « Connexion » à droite d’un menu.
+
+> [!TIP] Si `flex-direction: column`, les rôles tournent : `justify-content` agit verticalement et `align-items` horizontalement.', 'justify-content: space-between;
+align-items: center;', NULL, NULL, '<header class="entete">
+  <strong class="logo">Studio</strong>
+  <nav class="liens">
+    <a href="#">Projets</a>
+    <a href="#">Équipe</a>
+  </nav>
+  <a class="connexion" href="#">Connexion</a>
+</header>
+<section class="hero">
+  <p class="centre">Je suis parfaitement centré</p>
+</section>', '.entete {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 20px;
+  background: #0f172a;
+  font-family: system-ui, sans-serif;
+}
+
+.entete a, .logo { color: white; text-decoration: none; }
+.liens { display: flex; gap: 16px; }
+
+.connexion {
+  margin-left: auto;
+  padding: 6px 14px;
+  border: 1px solid white;
+  border-radius: 6px;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 220px;
+  background: #ecfeff;
+}
+
+.centre {
+  padding: 16px 24px;
+  background: white;
+  border-radius: 8px;
+}', '[["  align-items: center;","Logo, menu et bouton centrés verticalement dans la barre."],[".liens { display: flex; gap: 16px; }","Un conteneur flex peut en contenir un autre."],["  margin-left: auto;","Pousse le bouton de connexion tout à droite."],["  justify-content: center;","Centrage sur l’axe principal (horizontal)…"],["  align-items: center;","…et sur l’axe secondaire (vertical)."],["  min-height: 220px;","Hauteur suffisante pour voir le centrage vertical."]]', '[["justify-content","Alignement sur l’axe principal."],["align-items","Alignement sur l’axe secondaire."],["align-self","Alignement d’un seul élément."],["margin-left: auto","Pousse un élément à l’extrémité."]]', '["Confondre `justify-content` et `align-items`.","Vouloir centrer verticalement dans un conteneur sans hauteur.","Oublier que les axes s’inversent en `column`."]', '["`space-between` pour logo + navigation.","`align-items: center` pour aligner icônes et textes.","`margin-left: auto` pour isoler un élément à droite."]', 'La combinaison `display: flex; align-items: center; gap: …` est probablement la ligne de CSS la plus écrite au monde : bouton avec icône, avatar + nom, logo + titre…', '["`justify-content` = axe principal.","`align-items` = axe secondaire.","Centrer : `justify-content: center` + `align-items: center`.","`margin-left: auto` pousse un élément."]', 'Créez une carte de profil : avatar à gauche, nom et métier à côté (centrés verticalement), bouton « Suivre » poussé à droite.', 1, 2),
+(47, 18, 'Flexbox : wrap, flex-grow, flex-shrink et flex-basis', 'flexbox-elements-flexibles', 17, 'Jusqu’ici, les éléments gardaient leur taille. Mais Flexbox porte bien son nom : les éléments peuvent **grandir**, **rétrécir** et **passer à la ligne** pour occuper l’espace intelligemment. C’est ce qui permet de créer des grilles de cartes qui s’adaptent à la largeur de l’écran.', '["Autoriser le retour à la ligne avec `flex-wrap`","Comprendre `flex-grow`, `flex-shrink`, `flex-basis`","Utiliser le raccourci `flex`","Réordonner avec `order`"]', '["Flexbox : aligner et centrer"]', '## `flex-wrap`
+
+Par défaut (`nowrap`), tous les éléments restent sur **une seule ligne**, quitte à rétrécir ou déborder. Avec `flex-wrap: wrap`, ils passent à la ligne quand la place manque.
+
+## Les trois propriétés des éléments
+
+- `flex-basis` : la **taille de départ** de l’élément sur l’axe principal (`200px`, `30%`, `auto`) ;
+- `flex-grow` : la part de l’**espace restant** que l’élément peut prendre (`0` = ne grandit pas, `1` = grandit) ;
+- `flex-shrink` : la capacité à **rétrécir** quand la place manque (`1` = oui par défaut, `0` = jamais).
+
+Exemple : trois éléments avec `flex-grow: 1` se partagent l’espace libre à parts égales. Si l’un a `flex-grow: 2`, il reçoit deux parts.
+
+## Le raccourci `flex`
+
+```css
+.item { flex: 1; }          /* flex: 1 1 0 : grandit, rétrécit, base 0 → parts égales */
+.item { flex: 1 1 250px; }  /* base 250px, puis grandit/rétrécit */
+.item { flex: none; }       /* taille fixe */
+```
+
+## La grille de cartes responsive
+
+```css
+.cartes { display: flex; flex-wrap: wrap; gap: 16px; }
+.carte  { flex: 1 1 250px; }
+```
+
+Chaque carte vise 250px ; il y en a autant que possible par ligne, et elles s’étirent pour remplir la ligne. **Sans aucune media query !**
+
+## `order`
+
+Change l’ordre d’**affichage** d’un élément (défaut `0`). À utiliser avec prudence : l’ordre de lecture au clavier et par les lecteurs d’écran reste celui du HTML.
+
+> [!TIP] Pour une grille à deux dimensions stricte (lignes ET colonnes alignées), CSS Grid est souvent plus adapté. Flexbox excelle pour les alignements sur une dimension.', '.conteneur { display: flex; flex-wrap: wrap; }
+.element { flex: 1 1 250px; }', NULL, NULL, '<div class="barre">
+  <input class="recherche" type="search" placeholder="Rechercher…" aria-label="Rechercher">
+  <button type="button">OK</button>
+</div>
+<div class="cartes">
+  <article class="carte">Carte 1</article>
+  <article class="carte">Carte 2</article>
+  <article class="carte">Carte 3</article>
+  <article class="carte">Carte 4</article>
+  <article class="carte">Carte 5</article>
+</div>', '.barre {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.recherche {
+  flex: 1;        /* prend toute la place disponible */
+  padding: 8px;
+}
+
+.cartes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.carte {
+  flex: 1 1 180px;
+  padding: 24px;
+  border-radius: 12px;
+  background: #ddd6fe;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+}', '[["  flex: 1;        /* prend toute la place */","Le champ grandit ; le bouton garde sa taille naturelle."],["  flex-wrap: wrap;","Les cartes passent à la ligne quand la place manque."],["  flex: 1 1 180px;","Base 180px, puis chaque carte grandit pour remplir la ligne."]]', '[["flex-wrap","`nowrap` (défaut), `wrap`."],["flex-grow","Capacité à grandir (proportion de l’espace libre)."],["flex-shrink","Capacité à rétrécir."],["flex-basis","Taille de départ."],["flex","Raccourci grow shrink basis."],["order","Ordre d’affichage."]]', '["Oublier `flex-wrap: wrap` et voir les éléments s’écraser.","Utiliser `order` pour réorganiser tout le contenu (l’ordre de tabulation devient incohérent).","Confondre `flex-basis` et `width` quand les deux sont définis."]', '["`flex: 1` pour l’élément qui doit occuper l’espace restant (champ de recherche).","`flex-wrap` + `flex: 1 1 <base>` pour des grilles souples.","Garder l’ordre HTML logique."]', 'Les barres de recherche (champ extensible + bouton), les pieds de page multi-colonnes et les listes de fonctionnalités qui passent de 3 à 1 colonne sur mobile utilisent exactement ces propriétés.', '["`flex-wrap: wrap` autorise le retour à la ligne.","`flex: grow shrink basis`.","`flex: 1` = occupe l’espace disponible.","`flex: 1 1 250px` + wrap = grille responsive sans media query."]', 'Créez un pied de page avec 4 colonnes (`flex: 1 1 200px`) qui passent sur 2 puis 1 colonne quand l’aperçu rétrécit.', 1, 3),
+(48, 19, 'Grid : colonnes, lignes et unité fr', 'grid-les-bases', 16, 'Flexbox aligne sur **une** dimension. **CSS Grid** travaille sur **deux** : lignes ET colonnes à la fois. C’est l’outil idéal pour les galeries, les tableaux de bord et la structure générale d’une page.', '["Créer une grille avec `display: grid`","Définir des colonnes avec `grid-template-columns`","Utiliser l’unité `fr` et `repeat()`","Espacer avec `gap`"]', '["Flexbox"]', '## Créer une grille
+
+```css
+.galerie {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  gap: 16px;
+}
+```
+
+Les enfants directs se placent automatiquement dans les cases, de gauche à droite, puis ligne suivante.
+
+## L’unité `fr`
+
+`fr` (*fraction*) partage l’**espace disponible** :
+
+```css
+grid-template-columns: 1fr 1fr 1fr;  /* 3 colonnes égales */
+grid-template-columns: 2fr 1fr;      /* la 1re colonne est deux fois plus large */
+grid-template-columns: 250px 1fr;    /* barre latérale fixe + contenu flexible */
+```
+
+## `repeat()`
+
+```css
+grid-template-columns: repeat(4, 1fr); /* = 1fr 1fr 1fr 1fr */
+```
+
+## Les lignes
+
+- `grid-template-rows` définit la hauteur des lignes : `grid-template-rows: auto 1fr auto;` ;
+- les lignes supplémentaires créées automatiquement suivent `grid-auto-rows`.
+
+## `gap`
+
+Comme en Flexbox : `gap: 16px;` ou `row-gap` / `column-gap`.
+
+## Aligner le contenu des cases
+
+- `justify-items` / `align-items` : alignement du contenu dans chaque case ;
+- `place-items: center;` : raccourci pour centrer sur les deux axes.
+
+> [!INFO] Flexbox ou Grid ? Flexbox : le **contenu** dicte la taille (une ligne d’éléments de tailles variables). Grid : la **structure** dicte la place (des colonnes alignées). On les combine souvent : Grid pour la page, Flexbox dans les composants.', '.grille {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}', NULL, NULL, '<div class="tableau">
+  <div class="tuile">Visiteurs<br><strong>12 480</strong></div>
+  <div class="tuile">Inscriptions<br><strong>342</strong></div>
+  <div class="tuile">Ventes<br><strong>58</strong></div>
+  <div class="tuile large">Graphique d’activité</div>
+  <div class="tuile">Tâches</div>
+</div>', '.tableau {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(90px, auto);
+  gap: 12px;
+  font-family: system-ui, sans-serif;
+}
+
+.tuile {
+  padding: 16px;
+  border-radius: 12px;
+  background: #e0e7ff;
+}
+
+.large {
+  grid-column: span 2;
+  background: #c7d2fe;
+}', '[["  display: grid;","Le conteneur devient une grille."],["  grid-template-columns: repeat(3, 1fr);","Trois colonnes de largeur égale."],["  grid-auto-rows: minmax(90px, auto);","Chaque ligne mesure au moins 90px et grandit si nécessaire."],["  gap: 12px;","Espace entre lignes et colonnes."],["  grid-column: span 2;","Cette tuile occupe deux colonnes (détaillé à la leçon suivante)."]]', '[["display: grid","Crée une grille."],["grid-template-columns","Définit les colonnes."],["grid-template-rows / grid-auto-rows","Définit les lignes."],["fr","Fraction de l’espace disponible."],["repeat(n, taille)","Répète une définition de piste."],["gap","Espacement entre les cases."]]', '["Écrire `grid-template-columns: 3;` (il faut définir chaque colonne ou utiliser `repeat`).","Utiliser des `%` et `gap` ensemble et déborder (préférez `fr`).","Appliquer `display: grid` aux enfants au lieu du parent."]', '["`fr` plutôt que `%` pour partager l’espace.","`repeat()` pour les colonnes identiques.","Grid pour la structure, Flexbox pour les alignements internes."]', 'Les tableaux de bord (comme l’espace administrateur de cette plateforme) sont construits avec Grid : une grille de 12 colonnes dans laquelle chaque carte occupe 4, 6 ou 12 colonnes.', '["`display: grid` + `grid-template-columns`.","`fr` partage l’espace disponible.","`repeat(3, 1fr)` = 3 colonnes égales.","`gap` espace les cases."]', 'Créez une mise en page « barre latérale de 240px + contenu flexible » avec Grid.', 1, 1),
+(49, 19, 'Grid : placement et zones nommées', 'grid-placement-et-zones', 16, 'Un en-tête sur toute la largeur, une barre latérale à gauche, le contenu au centre, un pied de page en bas : avec `grid-template-areas`, vous **dessinez** cette structure directement dans le CSS, avec des mots.', '["Placer un élément avec `grid-column` et `grid-row`","Faire couvrir plusieurs cases avec `span`","Nommer des zones avec `grid-template-areas`"]', '["Grid : colonnes, lignes et unité fr"]', '## Les lignes de grille
+
+Une grille de 3 colonnes possède **4 lignes verticales**, numérotées de 1 à 4. On place un élément en indiquant ses lignes de début et de fin :
+
+```css
+.titre { grid-column: 1 / 4; }  /* de la ligne 1 à la ligne 4 : toute la largeur */
+.titre { grid-column: 1 / -1; } /* -1 = dernière ligne, quelle que soit la grille */
+```
+
+## `span`
+
+```css
+.grande { grid-column: span 2; } /* couvre 2 colonnes */
+.haute  { grid-row: span 2; }    /* couvre 2 lignes */
+```
+
+## Les zones nommées
+
+On dessine la mise en page dans le conteneur :
+
+```css
+.page {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-areas:
+    "entete entete"
+    "menu   contenu"
+    "pied   pied";
+}
+```
+
+Puis on affecte chaque enfant à sa zone :
+
+```css
+.entete  { grid-area: entete; }
+.menu    { grid-area: menu; }
+.contenu { grid-area: contenu; }
+.pied    { grid-area: pied; }
+```
+
+Chaque chaîne de caractères représente une **ligne** ; chaque mot, une **colonne**. Un point `.` représente une case vide. Les zones doivent être **rectangulaires**.
+
+> [!TIP] Pour une version mobile, il suffit de redéfinir `grid-template-areas` dans une media query (une seule colonne) : le HTML ne change pas.', 'grid-template-areas:
+  "entete entete"
+  "menu contenu";
+.entete { grid-area: entete; }', NULL, NULL, '<div class="page">
+  <header class="entete">En-tête</header>
+  <nav class="menu">Menu</nav>
+  <main class="contenu">Contenu principal</main>
+  <aside class="pub">Encart</aside>
+  <footer class="pied">Pied de page</footer>
+</div>', '.page {
+  display: grid;
+  grid-template-columns: 140px 1fr 140px;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "entete  entete  entete"
+    "menu    contenu pub"
+    "pied    pied    pied";
+  gap: 8px;
+  min-height: 320px;
+  font-family: system-ui, sans-serif;
+}
+
+.page > * { padding: 12px; border-radius: 8px; }
+.entete  { grid-area: entete;  background: #fde68a; }
+.menu    { grid-area: menu;    background: #bfdbfe; }
+.contenu { grid-area: contenu; background: #e2e8f0; }
+.pub     { grid-area: pub;     background: #fbcfe8; }
+.pied    { grid-area: pied;    background: #bbf7d0; }', '[["  grid-template-columns: 140px 1fr 140px;","Deux colonnes latérales fixes, une centrale flexible."],["  grid-template-rows: auto 1fr auto;","L’en-tête et le pied s’adaptent au contenu, le milieu prend le reste."],["    \\"entete  entete  entete\\"","Première ligne : l’en-tête couvre les trois colonnes."],["    \\"menu    contenu pub\\"","Deuxième ligne : trois zones distinctes."],[".entete  { grid-area: entete; … }","L’élément est affecté à sa zone nommée."]]', '[["grid-column / grid-row","Lignes de début / fin : `1 / 3`, `span 2`."],["grid-template-areas","Dessin des zones de la grille."],["grid-area","Zone occupée par un élément."],["-1","Dernière ligne de grille."]]', '["Des zones non rectangulaires (en L) : la déclaration est ignorée.","Un nombre de colonnes différent d’une chaîne à l’autre.","Oublier les guillemets dans `grid-template-areas`.","Des fautes de frappe entre le nom dans les zones et dans `grid-area`."]', '["Des noms de zones explicites.","Aligner visuellement les chaînes dans le code.","Redéfinir les zones dans les media queries pour le responsive."]', 'La structure « en-tête / menu latéral / contenu / pied » des applications web et des sites de documentation se code en quelques lignes avec `grid-template-areas`, et devient une colonne unique sur mobile en redéfinissant uniquement les zones.', '["`grid-column: 1 / -1` : toute la largeur.","`span n` : couvrir plusieurs cases.","`grid-template-areas` dessine la page, `grid-area` place les éléments."]', 'Réalisez une page magazine : un grand article occupant 2 colonnes et 2 lignes, entouré de 4 petits articles.', 1, 2),
+(50, 19, 'Grilles adaptatives : auto-fit et minmax', 'grid-adaptative', 14, 'Voici l’une des lignes de CSS les plus puissantes jamais écrites : une grille qui passe toute seule de 4 colonnes sur grand écran à 1 colonne sur téléphone, **sans aucune media query**. Elle combine `repeat()`, `auto-fit` et `minmax()`.', '["Comprendre `minmax()`","Utiliser `auto-fit` et `auto-fill`","Créer une grille responsive sans media query"]', '["Grid : placement et zones nommées"]', '## `minmax(min, max)`
+
+Définit une taille **comprise entre** un minimum et un maximum :
+
+```css
+grid-template-columns: minmax(200px, 1fr) 2fr;
+```
+
+La première colonne ne descend jamais sous 200px, mais peut grandir jusqu’à 1fr.
+
+## `auto-fit` : autant de colonnes que possible
+
+```css
+.cartes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+```
+
+Lecture : « crée **autant de colonnes que possible**, chacune d’au moins **220px**, puis étire-les pour **remplir** la ligne ».
+
+- sur 1000px : 4 colonnes ;
+- sur 600px : 2 colonnes ;
+- sur 360px : 1 colonne.
+
+## `auto-fit` ou `auto-fill` ?
+
+Les deux créent le maximum de colonnes. La différence apparaît quand il y a **peu d’éléments** :
+
+- `auto-fit` : les colonnes vides sont **supprimées**, les éléments s’étirent pour remplir la ligne ;
+- `auto-fill` : les colonnes vides sont **conservées**, les éléments gardent leur largeur.
+
+## Éviter le débordement sur très petit écran
+
+Si l’écran est plus étroit que le minimum (220px), la grille déborde. Astuce robuste :
+
+```css
+grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+```
+
+`min(100%, 220px)` prend la plus petite des deux valeurs. C’est la technique utilisée sur cette plateforme pour ses grilles de cartes.', 'grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));', NULL, NULL, '<section class="cartes">
+  <article class="carte"><h3>HTML</h3><p>Structure</p></article>
+  <article class="carte"><h3>CSS</h3><p>Style</p></article>
+  <article class="carte"><h3>Flexbox</h3><p>Alignement</p></article>
+  <article class="carte"><h3>Grid</h3><p>Mise en page</p></article>
+  <article class="carte"><h3>Responsive</h3><p>Adaptation</p></article>
+</section>', '.cartes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
+  gap: 12px;
+  font-family: system-ui, sans-serif;
+}
+
+.carte {
+  padding: 16px;
+  border-radius: 12px;
+  background: #0f172a;
+  color: white;
+}
+
+.carte h3 { margin: 0 0 4px; }
+.carte p { margin: 0; color: #94a3b8; }', '[["  grid-template-columns: repeat(auto-fit, …);","Autant de colonnes que la largeur le permet."],["minmax(min(100%, 160px), 1fr)","Chaque colonne : au moins 160px (ou 100 % si l’écran est plus petit), au plus 1fr."],["  gap: 12px;","Espacement constant quel que soit le nombre de colonnes."]]', '[["minmax(min, max)","Taille bornée."],["auto-fit","Crée le maximum de colonnes, supprime les vides."],["auto-fill","Crée le maximum de colonnes, garde les vides."],["min() / max()","Plus petite / plus grande de plusieurs valeurs."]]', '["Écrire `repeat(auto-fit, 1fr)` sans taille minimale (une seule colonne).","Un minimum trop grand qui provoque un débordement sur mobile.","Confondre `auto-fit` et `auto-fill` quand il y a peu d’éléments."]', '["La formule `repeat(auto-fit, minmax(min(100%, X), 1fr))` pour les grilles de cartes.","Choisir le minimum selon le contenu (lisibilité d’une carte)."]', 'Les grilles de produits, d’articles de blog ou de membres d’équipe utilisent cette formule : le contenu s’adapte à tous les écrans sans écrire une seule media query.', '["`minmax()` borne une taille.","`repeat(auto-fit, minmax(220px, 1fr))` = grille responsive automatique.","`min(100%, 220px)` évite le débordement."]', 'Créez une galerie de 12 images qui affiche 6 colonnes sur grand écran et 2 sur mobile, uniquement avec `auto-fit`.', 1, 3);
+
+INSERT INTO `lessons` (`id`, `module_id`, `title`, `slug`, `duration_minutes`, `introduction`, `objectives`, `prerequisites`, `theory`, `syntax_code`, `simple_html`, `simple_css`, `example_html`, `example_css`, `line_by_line`, `reference_items`, `common_mistakes`, `best_practices`, `practical`, `summary_points`, `challenge`, `is_published`, `sort_order`) VALUES
+(51, 20, 'Les pseudo-classes', 'pseudo-classes', 16, 'Un bouton qui change de couleur au survol, un champ qui s’entoure de bleu quand on clique dedans, une ligne de tableau sur deux en gris : ces effets reposent sur les **pseudo-classes**. Elles ciblent un élément selon son **état** ou sa **position**, sans rien ajouter au HTML.', '["Styler les états `:hover`, `:focus`, `:active`, `:visited`","Rendre le focus clavier visible avec `:focus-visible`","Cibler par position avec `:first-child`, `:nth-child()`","Découvrir `:not()` et les états de formulaire"]', '["Cascade, spécificité et héritage","Les formulaires"]', '## Syntaxe
+
+Une pseudo-classe s’écrit avec **un seul deux-points**, collée au sélecteur :
+
+```css
+a:hover { color: crimson; }
+```
+
+## Les états d’interaction
+
+| Pseudo-classe | Quand ? |
+|---|---|
+| `:hover` | La souris survole l’élément |
+| `:focus` | L’élément a le focus (clic dans un champ, touche Tab) |
+| `:focus-visible` | Focus obtenu au clavier (idéal pour les contours) |
+| `:active` | Pendant le clic |
+| `:visited` | Lien déjà visité |
+
+Ordre recommandé pour les liens : `:link`, `:visited`, `:hover`, `:active` (moyen mnémotechnique : **LoVe HAte**).
+
+## Le focus : un enjeu d’accessibilité
+
+Les personnes qui naviguent au clavier voient **où** elles se trouvent grâce au contour de focus. Ne le supprimez **jamais** sans le remplacer :
+
+```css
+/* ❌ */ button:focus { outline: none; }
+/* ✅ */ button:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
+```
+
+> [!INFO] Sur mobile, il n’y a pas de survol : n’enfermez jamais une information importante dans un `:hover`.
+
+## Les pseudo-classes structurelles
+
+| Sélecteur | Cible |
+|---|---|
+| `:first-child` / `:last-child` | Premier / dernier enfant |
+| `:nth-child(2)` | Le 2e enfant |
+| `:nth-child(odd)` / `(even)` | Enfants impairs / pairs |
+| `:nth-child(3n)` | Un enfant sur trois |
+| `:not(.actif)` | Tout sauf ce qui correspond |
+
+```css
+tr:nth-child(even) { background: #f8fafc; }  /* tableau zébré */
+li:not(:last-child) { border-bottom: 1px solid #e5e7eb; }
+```
+
+## États de formulaire
+
+`:checked` (case cochée), `:disabled`, `:required`, `:invalid`, `:placeholder-shown`…
+
+```css
+input:invalid:not(:placeholder-shown) { border-color: crimson; }
+```', 'a:hover { … }
+button:focus-visible { … }
+li:nth-child(odd) { … }
+li:not(:last-child) { … }', NULL, NULL, '<nav class="menu">
+  <a href="#">Accueil</a>
+  <a href="#" class="actif">Cours</a>
+  <a href="#">Contact</a>
+</nav>
+<ul class="liste">
+  <li>Ligne 1</li>
+  <li>Ligne 2</li>
+  <li>Ligne 3</li>
+  <li>Ligne 4</li>
+</ul>
+<button class="btn" type="button">Survolez et tabulez</button>', 'body { font-family: system-ui, sans-serif; }
+
+.menu a {
+  padding: 6px 10px;
+  color: #334155;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.menu a:hover { background: #e2e8f0; }
+.menu a.actif { background: #1e293b; color: white; }
+
+.liste { list-style: none; padding: 0; max-width: 240px; }
+.liste li { padding: 8px; }
+.liste li:nth-child(even) { background: #f1f5f9; }
+.liste li:not(:last-child) { border-bottom: 1px solid #e2e8f0; }
+
+.btn {
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+}
+
+.btn:hover { background: #1d4ed8; }
+.btn:active { transform: scale(0.97); }
+.btn:focus-visible { outline: 3px solid #f59e0b; outline-offset: 3px; }', '[[".menu a:hover { background: #e2e8f0; }","Fond gris au survol."],[".liste li:nth-child(even)","Une ligne sur deux (les paires) : liste zébrée."],[".liste li:not(:last-child)","Une bordure sous chaque ligne sauf la dernière."],[".btn:active { transform: scale(0.97); }","Légère compression pendant le clic : retour tactile."],[".btn:focus-visible { outline: … }","Contour bien visible pour la navigation au clavier."]]', '[[":hover / :active","Survol / clic."],[":focus / :focus-visible","Focus / focus clavier."],[":first-child / :last-child","Premier / dernier enfant."],[":nth-child(n)","Enfant selon une formule."],[":not(sélecteur)","Négation."],[":checked / :disabled / :invalid","États de formulaire."]]', '["Supprimer le contour de focus (`outline: none`) sans alternative.","Mettre un espace avant les deux-points : `a :hover` cible les descendants survolés.","Réserver une information au survol (inaccessible au tactile).","Confondre `:nth-child` (tous types) et `:nth-of-type` (même type)."]', '["Un style `:focus-visible` pour chaque élément interactif.","Des états `:hover` et `:active` pour les boutons.","`:not(:last-child)` plutôt que d’annuler une bordure après coup."]', 'Sur cette plateforme, les liens de navigation changent de fond au survol, les options de quiz s’encadrent quand elles sont cochées (`:has(input:checked)`) et tous les éléments interactifs ont un contour de focus menthe.', '["Pseudo-classe = un `:`, cible un état ou une position.","`:hover`, `:focus-visible`, `:active` pour l’interaction.","`:nth-child()`, `:first-child`, `:not()` pour la structure.","Ne jamais supprimer le focus sans le remplacer."]', 'Créez un tableau zébré dont la ligne survolée se surligne, et un bouton avec des états hover, active et focus-visible distincts.', 1, 1),
+(52, 20, 'Les pseudo-éléments ::before et ::after', 'pseudo-elements', 14, 'Ajouter une icône avant chaque lien externe, des guillemets décoratifs autour d’une citation, un soulignement animé sous un menu… sans toucher au HTML. Les **pseudo-éléments** créent des éléments virtuels que seul le CSS connaît.', '["Créer du contenu avec `::before` et `::after`","Comprendre la propriété `content`","Styler `::first-letter`, `::first-line`, `::placeholder`, `::selection`","Connaître les limites d’accessibilité"]', '["Les pseudo-classes"]', '## Syntaxe
+
+Un pseudo-élément s’écrit avec **deux deux-points** :
+
+```css
+.lien-externe::after {
+  content: " ↗";
+}
+```
+
+- `::before` insère un élément virtuel **au début** du contenu de l’élément ;
+- `::after` l’insère **à la fin**.
+
+## `content` est obligatoire
+
+Sans la propriété `content`, le pseudo-élément n’existe pas. Pour un élément purement décoratif (forme, ligne), on utilise une chaîne vide :
+
+```css
+.titre::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #6366f1;
+}
+```
+
+`content` peut aussi afficher la valeur d’un attribut : `content: attr(data-label);`.
+
+## Pseudo-éléments typographiques
+
+| Pseudo-élément | Cible |
+|---|---|
+| `::first-letter` | Première lettre (lettrine) |
+| `::first-line` | Première ligne |
+| `::placeholder` | Texte d’exemple d’un champ |
+| `::selection` | Texte sélectionné par l’utilisateur |
+| `::marker` | Puce ou numéro d’une liste |
+
+## Accessibilité
+
+Le contenu généré par CSS n’est pas sélectionnable et il est **inconstamment lu** par les lecteurs d’écran. Règle : les pseudo-éléments servent à la **décoration**. Une information importante doit figurer dans le HTML.
+
+> [!TIP] Le célèbre effet « soulignement animé au survol » : un `::after` de largeur 0 qui passe à 100 % avec une transition (vous saurez l’animer au niveau 3).', '.el::before { content: "…"; }
+.el::after { content: ""; display: block; }', NULL, NULL, '<h2 class="titre">Nos valeurs</h2>
+<p class="intro">Liberté, curiosité et partage guident chacun de nos projets depuis dix ans.</p>
+<blockquote class="citation">Le design est l’âme de chaque création humaine.</blockquote>
+<p><a class="externe" href="https://developer.mozilla.org">Documentation MDN</a></p>', 'body { font-family: Georgia, serif; }
+
+.titre::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin-top: 8px;
+  border-radius: 2px;
+  background: #6366f1;
+}
+
+.intro::first-letter {
+  float: left;
+  font-size: 3em;
+  line-height: 1;
+  margin-right: 6px;
+  color: #6366f1;
+}
+
+.citation {
+  position: relative;
+  padding-left: 32px;
+  font-style: italic;
+}
+
+.citation::before {
+  content: "“";
+  position: absolute;
+  left: 0;
+  top: -12px;
+  font-size: 3em;
+  color: #a5b4fc;
+}
+
+.externe::after {
+  content: " ↗";
+}
+
+::selection {
+  background: #fde68a;
+}', '[[".titre::after { content: \\"\\"; display: block; … }","Une barre décorative sous le titre, sans HTML supplémentaire."],[".intro::first-letter { float: left; font-size: 3em; }","Lettrine façon magazine."],[".citation::before { content: \\"“\\"; position: absolute; }","Guillemet décoratif positionné par rapport à la citation."],[".externe::after { content: \\" ↗\\"; }","Flèche ajoutée après le texte du lien."],["::selection { background: #fde68a; }","Couleur du texte sélectionné."]]', '[["::before / ::after","Contenu généré au début / à la fin."],["content","Obligatoire : texte, `\\"\\"`, `attr()`."],["::first-letter / ::first-line","Première lettre / ligne."],["::placeholder","Texte d’exemple des champs."],["::selection","Sélection de l’utilisateur."],["::marker","Puces et numéros de liste."]]', '["Oublier `content` : rien ne s’affiche.","Utiliser `::before` sur un `<img>` ou un `<input>` (éléments sans contenu : ça ne fonctionne pas).","Placer une information essentielle dans `content`.","Confondre `:` (pseudo-classe) et `::` (pseudo-élément)."]', '["Pseudo-éléments pour la décoration uniquement.","`content: \\"\\"` + `display: block` pour les formes.","Parent en `position: relative` pour positionner un pseudo-élément."]', 'Les petites flèches des menus déroulants, les icônes « lien externe », les lignes décoratives sous les titres de section et les bulles de dialogue (triangle en `::after`) sont presque toujours des pseudo-éléments.', '["`::before` / `::after` + `content` créent des éléments virtuels.","`content: \\"\\"` pour une forme décorative.","Typographie : `::first-letter`, `::selection`, `::placeholder`.","Décoration uniquement : l’information va dans le HTML."]', 'Créez une bulle de dialogue avec un petit triangle en bas à gauche réalisé avec `::after` et des bordures.', 1, 2);
 
 INSERT INTO `exercises` (`id`, `lesson_id`, `title`, `slug`, `type`, `difficulty`, `instructions`, `starter_html`, `starter_css`, `solution_html`, `solution_css`, `validation_rules`, `hint`, `explanation`, `points`, `sort_order`) VALUES
 (1, 1, 'Votre premier titre', 'qu-est-ce-que-html-ex1', 'code', 1, 'Créez un titre de niveau 1 (`<h1>`) contenant exactement le texte **Bienvenue**.', '<!-- Écrivez votre code ci-dessous -->', NULL, '<h1>Bienvenue</h1>', NULL, '[{"t":"el","sel":"h1","msg":"La page contient un titre <h1>"},{"t":"el","sel":"h1","text":"Bienvenue","msg":"Le titre <h1> contient le texte « Bienvenue »"},{"t":"contains","s":"</h1>","msg":"La balise <h1> est correctement fermée avec </h1>"}]', 'Une balise s’ouvre avec `<h1>` et se ferme avec `</h1>`. Le texte se place entre les deux.', 'La balise `<h1>` indique le titre principal de la page. Le contenu se place entre la balise ouvrante `<h1>` et la balise fermante `</h1>`.', 15, 1),
@@ -2168,7 +3906,379 @@ p { font-size: 1.125rem; }
   width: 100%;
   padding: 20px;
   background: #fde68a;
-}', '[{"t":"css","sel":"*|*, *::before, *::after|*::before|.panneau","prop":"box-sizing","value":"border-box","msg":"box-sizing: border-box est appliqué"},{"t":"match","re":"\\\\*[^{]*\\\\{[^}]*box-sizing\\\\s*:\\\\s*border-box","in":"css","msg":"La règle utilise le sélecteur universel *"},{"t":"css","sel":".panneau","prop":"width","value":"100%","msg":"Le panneau garde width: 100%"}]', '`*, *::before, *::after { box-sizing: border-box; }`', 'Avec `border-box`, les 100 % incluent le padding : la boîte ne dépasse plus.', 15, 1);
+}', '[{"t":"css","sel":"*|*, *::before, *::after|*::before|.panneau","prop":"box-sizing","value":"border-box","msg":"box-sizing: border-box est appliqué"},{"t":"match","re":"\\\\*[^{]*\\\\{[^}]*box-sizing\\\\s*:\\\\s*border-box","in":"css","msg":"La règle utilise le sélecteur universel *"},{"t":"css","sel":".panneau","prop":"width","value":"100%","msg":"Le panneau garde width: 100%"}]', '`*, *::before, *::after { box-sizing: border-box; }`', 'Avec `border-box`, les 100 % incluent le padding : la boîte ne dépasse plus.', 15, 1),
+(46, 29, 'Insérer une image accessible', 'la-balise-img-ex1', 'code', 1, 'Insérez l’image `https://placehold.co/300x200/png` avec un texte alternatif **non vide** qui la décrit, et les attributs `width="300"` et `height="200"`.', '<h1>Ma photo de vacances</h1>', NULL, '<h1>Ma photo de vacances</h1>
+<img src="https://placehold.co/300x200/png" alt="Plage de sable blanc au coucher du soleil" width="300" height="200">', NULL, '[{"t":"attr","sel":"img","attr":"src","value":"https://placehold.co/300x200/png","msg":"L’image a la bonne source"},{"t":"attr","sel":"img","attr":"alt","nonempty":true,"msg":"Un texte alternatif non vide est présent"},{"t":"attr","sel":"img","attr":"width","value":"300","msg":"width=\\"300\\""},{"t":"attr","sel":"img","attr":"height","value":"200","msg":"height=\\"200\\""},{"t":"absent","s":"</img>","msg":"Pas de balise fermante </img>"}]', '`<img src="…" alt="…" width="300" height="200">`', 'Une image informative a toujours un `alt` qui la décrit, et ses dimensions évitent les décalages au chargement.', 15, 1),
+(47, 29, 'Image décorative', 'la-balise-img-ex2', 'qcm', 1, 'Choisissez la bonne réponse.', NULL, NULL, NULL, NULL, NULL, NULL, 'Un `alt` vide indique aux lecteurs d’écran d’ignorer l’image.', 10, 2),
+(48, 30, 'Une image légendée', 'images-formats-figure-performance-ex1', 'code', 2, 'Placez l’image dans un élément `<figure>` et ajoutez une légende `<figcaption>` contenant le texte **Le Mont-Saint-Michel**. Ajoutez aussi `loading="lazy"` à l’image.', '<img src="https://placehold.co/500x300/png" alt="Le Mont-Saint-Michel à marée haute" width="500" height="300">', NULL, '<figure>
+  <img src="https://placehold.co/500x300/png" alt="Le Mont-Saint-Michel à marée haute" width="500" height="300" loading="lazy">
+  <figcaption>Le Mont-Saint-Michel</figcaption>
+</figure>', NULL, '[{"t":"el","sel":"figure img","msg":"L’image est dans un <figure>"},{"t":"el","sel":"figure figcaption","text":"Le Mont-Saint-Michel","msg":"Une <figcaption> « Le Mont-Saint-Michel »"},{"t":"attr","sel":"img","attr":"loading","value":"lazy","msg":"loading=\\"lazy\\" sur l’image"},{"t":"attr","sel":"img","attr":"alt","nonempty":true,"msg":"Le texte alternatif est conservé"}]', '`<figure>` entoure l’image et la légende.', '`<figure>` regroupe l’image et sa `<figcaption>`, qui la légende.', 15, 1),
+(49, 31, 'Liste de courses', 'listes-ordonnees-et-non-ordonnees-ex1', 'code', 1, 'Créez une liste **non ordonnée** contenant trois éléments : **Pain**, **Beurre**, **Confiture**.', '<h2>Courses</h2>', NULL, '<h2>Courses</h2>
+<ul>
+  <li>Pain</li>
+  <li>Beurre</li>
+  <li>Confiture</li>
+</ul>', NULL, '[{"t":"el","sel":"ul","msg":"Une liste <ul> est présente"},{"t":"el","sel":"ul > li","count":3,"msg":"La liste contient 3 éléments <li>"},{"t":"el","sel":"li","text":"Pain","msg":"« Pain » est dans la liste"},{"t":"el","sel":"li","text":"Confiture","msg":"« Confiture » est dans la liste"}]', '`<ul>` puis un `<li>` par élément.', 'L’ordre des courses n’a pas d’importance : liste non ordonnée.', 15, 1),
+(50, 31, 'Des étapes numérotées', 'listes-ordonnees-et-non-ordonnees-ex2', 'fix', 1, 'Ces étapes sont numérotées à la main dans des paragraphes. Transformez-les en **liste ordonnée** `<ol>` (sans les numéros écrits à la main).', '<p>1. Ouvrir l’éditeur</p>
+<p>2. Écrire le code</p>
+<p>3. Enregistrer le fichier</p>', NULL, '<ol>
+  <li>Ouvrir l’éditeur</li>
+  <li>Écrire le code</li>
+  <li>Enregistrer le fichier</li>
+</ol>', NULL, '[{"t":"el","sel":"ol > li","count":3,"msg":"Une <ol> contient 3 <li>"},{"t":"el","sel":"li","text":"Ouvrir l’éditeur","msg":"Le premier élément est « Ouvrir l’éditeur » (sans numéro)"},{"t":"noel","sel":"p","msg":"Plus de paragraphes"}]', 'La numérotation est automatique dans une `<ol>`.', 'Des étapes dont l’ordre compte forment une liste ordonnée ; le navigateur numérote tout seul.', 10, 2);
+
+INSERT INTO `exercises` (`id`, `lesson_id`, `title`, `slug`, `type`, `difficulty`, `instructions`, `starter_html`, `starter_css`, `solution_html`, `solution_css`, `validation_rules`, `hint`, `explanation`, `points`, `sort_order`) VALUES
+(51, 32, 'Une sous-liste', 'listes-imbriquees-et-definitions-ex1', 'code', 2, 'Dans l’élément **Fruits**, ajoutez une sous-liste `<ul>` contenant **Pomme** et **Banane**.', '<ul>
+  <li>Fruits</li>
+  <li>Légumes</li>
+</ul>', NULL, '<ul>
+  <li>Fruits
+    <ul>
+      <li>Pomme</li>
+      <li>Banane</li>
+    </ul>
+  </li>
+  <li>Légumes</li>
+</ul>', NULL, '[{"t":"el","sel":"ul > li > ul > li","count":2,"msg":"Une sous-liste de 2 éléments est dans un <li>"},{"t":"el","sel":"li li","text":"Pomme","msg":"« Pomme » est dans la sous-liste"},{"t":"el","sel":"li li","text":"Banane","msg":"« Banane » est dans la sous-liste"},{"t":"el","sel":"ul > li","min":4,"msg":"« Légumes » est toujours présent"}]', 'Le `</li>` de « Fruits » doit venir après le `</ul>` de la sous-liste.', 'La sous-liste appartient à l’élément « Fruits » : elle se place à l’intérieur de son `<li>`.', 15, 1),
+(52, 32, 'Un glossaire', 'listes-imbriquees-et-definitions-ex2', 'code', 1, 'Créez une liste de définitions `<dl>` avec le terme **URL** et sa définition **Adresse d’une ressource sur le Web**.', NULL, NULL, '<dl>
+  <dt>URL</dt>
+  <dd>Adresse d’une ressource sur le Web</dd>
+</dl>', NULL, '[{"t":"el","sel":"dl dt","text":"URL","msg":"Un terme <dt> « URL »"},{"t":"el","sel":"dl dd","contains":"Adresse d’une ressource","msg":"Une définition <dd>"}]', '`<dl><dt>…</dt><dd>…</dd></dl>`', '`<dt>` contient le terme, `<dd>` sa description.', 15, 2),
+(53, 33, 'Un tableau de prix', 'structure-d-un-tableau-ex1', 'code', 2, 'Créez un tableau avec une `<caption>` **Tarifs**, une ligne d’en-têtes (`<th scope="col">`) **Produit** et **Prix**, puis deux lignes de données : **Café / 2 €** et **Thé / 2,50 €**.', NULL, NULL, '<table>
+  <caption>Tarifs</caption>
+  <tr>
+    <th scope="col">Produit</th>
+    <th scope="col">Prix</th>
+  </tr>
+  <tr>
+    <td>Café</td>
+    <td>2 €</td>
+  </tr>
+  <tr>
+    <td>Thé</td>
+    <td>2,50 €</td>
+  </tr>
+</table>', NULL, '[{"t":"el","sel":"table caption","text":"Tarifs","msg":"La légende est « Tarifs »"},{"t":"el","sel":"th[scope=col]","count":2,"msg":"Deux en-têtes de colonne avec scope=\\"col\\""},{"t":"el","sel":"td","min":4,"msg":"Au moins 4 cellules de données"},{"t":"el","sel":"td","text":"Thé","msg":"Une cellule « Thé »"},{"t":"el","sel":"tr","count":3,"msg":"Trois lignes au total"}]', 'Une ligne `<tr>` d’en-têtes, puis une `<tr>` par produit.', 'Les en-têtes de colonnes en `<th scope="col">` donnent leur sens aux cellules de données.', 15, 1),
+(54, 34, 'Ajouter un pied de tableau', 'tableaux-avances-ex1', 'code', 2, 'Ajoutez un `<tfoot>` au tableau contenant une ligne : une cellule `<th scope="row">` **Total** et une cellule `<td>` **30 €**.', '<table>
+  <thead>
+    <tr><th scope="col">Article</th><th scope="col">Prix</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Livre</td><td>18 €</td></tr>
+    <tr><td>Magazine</td><td>12 €</td></tr>
+  </tbody>
+</table>', NULL, '<table>
+  <thead>
+    <tr><th scope="col">Article</th><th scope="col">Prix</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Livre</td><td>18 €</td></tr>
+    <tr><td>Magazine</td><td>12 €</td></tr>
+  </tbody>
+  <tfoot>
+    <tr><th scope="row">Total</th><td>30 €</td></tr>
+  </tfoot>
+</table>', NULL, '[{"t":"el","sel":"table tfoot","msg":"Le tableau contient un <tfoot>"},{"t":"el","sel":"tfoot th[scope=row]","text":"Total","msg":"Un en-tête de ligne « Total »"},{"t":"el","sel":"tfoot td","text":"30 €","msg":"Une cellule « 30 € »"}]', 'Le `<tfoot>` se place après le `</tbody>`.', '`<tfoot>` regroupe les lignes de synthèse comme les totaux.', 15, 1),
+(55, 34, 'Fusion de colonnes', 'tableaux-avances-ex2', 'qcm', 1, 'Choisissez la bonne réponse.', NULL, NULL, NULL, NULL, NULL, NULL, 'La cellule fusionnée occupe 2 colonnes : il en reste 1.', 10, 2),
+(56, 35, 'Un champ bien étiqueté', 'form-et-input-ex1', 'code', 1, 'Dans le formulaire, ajoutez un `<label>` **Ville** relié (avec `for`) à un champ texte d’`id` `ville` et de `name` `ville`.', '<form action="/meteo" method="get">
+
+  <button type="submit">Voir la météo</button>
+</form>', NULL, '<form action="/meteo" method="get">
+  <label for="ville">Ville</label>
+  <input type="text" id="ville" name="ville">
+  <button type="submit">Voir la météo</button>
+</form>', NULL, '[{"t":"el","sel":"form label[for=ville]","text":"Ville","msg":"Un label « Ville » avec for=\\"ville\\""},{"t":"el","sel":"form input#ville","msg":"Un champ avec id=\\"ville\\""},{"t":"attr","sel":"input#ville","attr":"name","value":"ville","msg":"Le champ a name=\\"ville\\""}]', 'Le `for` du label et l’`id` du champ doivent être identiques.', 'Le label relié par `for`/`id` rend le champ accessible ; `name` permet l’envoi de la donnée.', 15, 1),
+(57, 35, 'GET ou POST ?', 'form-et-input-ex2', 'qcm', 1, 'Choisissez la bonne réponse.', NULL, NULL, NULL, NULL, NULL, NULL, 'POST : le mot de passe ne doit pas apparaître dans l’URL.', 10, 2),
+(58, 36, 'Un groupe de boutons radio', 'types-de-champs-ex1', 'code', 2, 'Créez un `<fieldset>` avec la `<legend>` **Mode de livraison** contenant deux boutons radio de même `name` `livraison` : **Domicile** (`value="domicile"`) et **Point relais** (`value="relais"`), chacun avec son `<label>`.', '<form action="/commande" method="post">
+
+</form>', NULL, '<form action="/commande" method="post">
+  <fieldset>
+    <legend>Mode de livraison</legend>
+    <input type="radio" id="domicile" name="livraison" value="domicile">
+    <label for="domicile">Domicile</label>
+    <input type="radio" id="relais" name="livraison" value="relais">
+    <label for="relais">Point relais</label>
+  </fieldset>
+</form>', NULL, '[{"t":"el","sel":"fieldset legend","text":"Mode de livraison","msg":"Une légende « Mode de livraison »"},{"t":"el","sel":"fieldset input[type=radio][name=livraison]","count":2,"msg":"Deux radios avec name=\\"livraison\\""},{"t":"el","sel":"input[value=domicile]","msg":"Une option value=\\"domicile\\""},{"t":"el","sel":"input[value=relais]","msg":"Une option value=\\"relais\\""},{"t":"el","sel":"label[for]","count":2,"msg":"Chaque radio a son label"}]', 'Même `name` pour les deux radios, `value` différentes, `id` différents.', 'Le `name` commun fait des radios un groupe à choix unique ; `fieldset`/`legend` donnent le contexte.', 15, 1),
+(59, 37, 'Formulaire de contact', 'select-textarea-button-ex1', 'code', 2, 'Complétez le formulaire : une liste `<select>` de `name` `service` avec au moins **3 options**, une zone `<textarea>` de `name` `message`, et un `<button type="submit">`. Chaque champ doit avoir un label.', '<form action="/contact" method="post">
+
+</form>', NULL, '<form action="/contact" method="post">
+  <label for="service">Service</label>
+  <select id="service" name="service">
+    <option value="">— Choisissez —</option>
+    <option value="vente">Ventes</option>
+    <option value="support">Support</option>
+  </select>
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="4"></textarea>
+  <button type="submit">Envoyer mon message</button>
+</form>', NULL, '[{"t":"el","sel":"select[name=service] option","min":3,"msg":"Un select name=\\"service\\" avec 3 options"},{"t":"el","sel":"textarea[name=message]","msg":"Une textarea name=\\"message\\""},{"t":"el","sel":"button[type=submit]","msg":"Un bouton type=\\"submit\\""},{"t":"el","sel":"label[for]","min":2,"msg":"Les champs ont des labels"}]', '`<select name="service">` avec des `<option>`, puis `<textarea name="message"></textarea>`.', 'Chaque élément de formulaire a un rôle : choix dans une liste, texte libre et envoi.', 15, 1),
+(60, 38, 'Rendre des champs obligatoires', 'validation-native-formulaires-ex1', 'code', 1, 'Ajoutez `required` aux deux champs, et `minlength="8"` au mot de passe.', '<form action="/connexion" method="post">
+  <label for="email">E-mail</label>
+  <input type="email" id="email" name="email">
+  <label for="mdp">Mot de passe</label>
+  <input type="password" id="mdp" name="password">
+  <button type="submit">Se connecter</button>
+</form>', NULL, '<form action="/connexion" method="post">
+  <label for="email">E-mail</label>
+  <input type="email" id="email" name="email" required>
+  <label for="mdp">Mot de passe</label>
+  <input type="password" id="mdp" name="password" required minlength="8">
+  <button type="submit">Se connecter</button>
+</form>', NULL, '[{"t":"el","sel":"input#email[required]","msg":"Le champ e-mail est obligatoire"},{"t":"el","sel":"input#mdp[required]","msg":"Le mot de passe est obligatoire"},{"t":"attr","sel":"input#mdp","attr":"minlength","value":"8","msg":"minlength=\\"8\\" sur le mot de passe"}]', '`required` est un attribut booléen : il s’écrit sans valeur.', 'Le navigateur bloquera l’envoi si un champ est vide ou si le mot de passe fait moins de 8 caractères.', 15, 1),
+(61, 38, 'Sécurité et validation', 'validation-native-formulaires-ex2', 'truefalse', 1, 'Vrai ou faux ?', NULL, NULL, NULL, NULL, NULL, NULL, 'Faux : la validation côté client se contourne facilement. Le serveur doit toujours revalider.', 10, 2),
+(62, 39, 'Deux classes sur un élément', 'classes-et-identifiants-ex1', 'code', 1, 'Donnez au bouton **les deux classes** `btn` et `btn--danger` (dans un seul attribut `class`).', '<button type="button">Supprimer</button>', '.btn { padding: 8px 16px; border: 0; border-radius: 6px; }
+.btn--danger { background: #dc2626; color: white; }', '<button type="button" class="btn btn--danger">Supprimer</button>', '.btn { padding: 8px 16px; border: 0; border-radius: 6px; }
+.btn--danger { background: #dc2626; color: white; }', '[{"t":"el","sel":"button.btn.btn--danger","msg":"Le bouton a les classes btn et btn--danger"},{"t":"match","re":"<button[^>]*class=\\"[^\\"]*\\"[^>]*>","msg":"Un seul attribut class"},{"t":"absent","s":"class=\\"btn\\" class","msg":"Pas d’attribut class dupliqué"}]', '`class="btn btn--danger"`', 'Plusieurs classes s’écrivent dans le même attribut, séparées par un espace.', 15, 1),
+(63, 40, 'Mettre un mot en valeur avec span', 'attributs-globaux-ex1', 'code', 1, 'Entourez **19,90 €** avec un `<span>` de classe `prix`, et ajoutez à l’élément `<li>` l’attribut `data-stock` avec la valeur `12`.', '<ul>
+  <li>T-shirt bio — 19,90 €</li>
+</ul>', '.prix { color: #15803d; font-weight: bold; }', '<ul>
+  <li data-stock="12">T-shirt bio — <span class="prix">19,90 €</span></li>
+</ul>', '.prix { color: #15803d; font-weight: bold; }', '[{"t":"el","sel":"li span.prix","text":"19,90 €","msg":"Le prix est dans un span.prix"},{"t":"attr","sel":"li","attr":"data-stock","value":"12","msg":"Le li a data-stock=\\"12\\""}]', '`<li data-stock="12">… <span class="prix">19,90 €</span></li>`', '`<span>` permet de styler un morceau de texte sans lui donner de sens ; `data-stock` stocke une donnée personnalisée.', 15, 1),
+(64, 41, 'Un lien bouton', 'block-inline-inline-block-ex1', 'code', 1, 'Le lien `.btn` ignore son `width`. Ajoutez `display: inline-block` pour que la largeur de `200px` et le padding s’appliquent.', '<a class="btn" href="#">S’inscrire</a>', '.btn {
+  width: 200px;
+  padding: 12px;
+  text-align: center;
+  background: #0f766e;
+  color: white;
+  text-decoration: none;
+}', NULL, '.btn {
+  display: inline-block;
+  width: 200px;
+  padding: 12px;
+  text-align: center;
+  background: #0f766e;
+  color: white;
+  text-decoration: none;
+}', '[{"t":"css","sel":".btn|a.btn","prop":"display","in":["inline-block","block"],"msg":"Le lien a display: inline-block"},{"t":"css","sel":".btn|a.btn","prop":"width","value":"200px","msg":"width: 200px est conservé"}]', 'Une seule déclaration à ajouter.', 'Un élément inline ignore `width` ; en `inline-block`, il accepte des dimensions tout en restant dans la ligne.', 15, 1),
+(65, 42, 'Masquer complètement', 'display-none-visibility-overflow-ex1', 'code', 1, 'Masquez complètement le paragraphe `.promo-expiree` pour qu’il ne prenne **plus aucune place** dans la page.', '<p>Bienvenue !</p>
+<p class="promo-expiree">Promotion terminée.</p>
+<p>Découvrez nos nouveautés.</p>', NULL, NULL, '.promo-expiree {
+  display: none;
+}', '[{"t":"css","sel":".promo-expiree|p.promo-expiree","prop":"display","value":"none","msg":".promo-expiree a display: none"}]', 'Une seule propriété retire l’élément de la mise en page.', '`display: none` retire l’élément de la mise en page ; `visibility: hidden` laisserait un vide.', 15, 1),
+(66, 43, 'Un badge dans le coin', 'position-relative-absolute-ex1', 'code', 2, 'Placez `.badge` dans le **coin supérieur gauche** de `.carte` : la carte doit être le repère (`position: relative`) et le badge `position: absolute` avec `top: 8px` et `left: 8px`.', '<div class="carte">
+  <span class="badge">Nouveau</span>
+  <p>Contenu de la carte, avec assez de texte pour voir le badge par-dessus.</p>
+</div>', '.carte {
+  width: 260px;
+  padding: 40px 16px 16px;
+  background: #f1f5f9;
+}
+
+.badge {
+  background: #16a34a;
+  color: white;
+  padding: 2px 8px;
+}', NULL, '.carte {
+  position: relative;
+  width: 260px;
+  padding: 40px 16px 16px;
+  background: #f1f5f9;
+}
+
+.badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #16a34a;
+  color: white;
+  padding: 2px 8px;
+}', '[{"t":"css","sel":".carte|div.carte","prop":"position","value":"relative","msg":"La carte est en position: relative"},{"t":"css","sel":".badge|span.badge|.carte .badge","prop":"position","value":"absolute","msg":"Le badge est en position: absolute"},{"t":"css","sel":".badge|span.badge|.carte .badge","prop":"top","value":"8px","msg":"top: 8px"},{"t":"css","sel":".badge|span.badge|.carte .badge","prop":"left","value":"8px","msg":"left: 8px"}]', 'Le parent sert de repère grâce à `position: relative`.', 'Un élément absolu se place par rapport à son ancêtre positionné le plus proche : ici la carte.', 15, 1),
+(67, 44, 'Un en-tête collant', 'fixed-sticky-z-index-ex1', 'code', 2, 'Rendez `.entete` collant en haut de l’écran : `position: sticky`, `top: 0` et un `z-index` de `10`.', '<header class="entete">Mon site</header>
+<p>Contenu 1</p><p>Contenu 2</p><p>Contenu 3</p><p>Contenu 4</p><p>Contenu 5</p><p>Contenu 6</p><p>Contenu 7</p><p>Contenu 8</p><p>Contenu 9</p><p>Contenu 10</p>', '.entete {
+  padding: 12px;
+  background: #1e40af;
+  color: white;
+}', NULL, '.entete {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 12px;
+  background: #1e40af;
+  color: white;
+}', '[{"t":"css","sel":".entete|header.entete","prop":"position","value":"sticky","msg":"position: sticky"},{"t":"css","sel":".entete|header.entete","prop":"top","in":["0","0px"],"msg":"top: 0"},{"t":"css","sel":".entete|header.entete","prop":"z-index","value":"10","msg":"z-index: 10"}]', 'Sans `top`, `sticky` n’a aucun effet.', '`sticky` + `top: 0` colle l’en-tête en haut ; `z-index` le fait passer devant le contenu.', 15, 1),
+(68, 45, 'Un menu horizontal', 'flexbox-le-conteneur-ex1', 'code', 1, 'Transformez `.menu` en conteneur flex (`display: flex`) avec un espacement `gap` de `24px`.', '<nav class="menu">
+  <a href="#">Accueil</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
+</nav>', '.menu a {
+  display: block;
+  padding: 8px;
+  background: #e0e7ff;
+}', NULL, '.menu {
+  display: flex;
+  gap: 24px;
+}
+
+.menu a {
+  display: block;
+  padding: 8px;
+  background: #e0e7ff;
+}', '[{"t":"css","sel":".menu|nav.menu|nav","prop":"display","value":"flex","msg":".menu est en display: flex"},{"t":"css","sel":".menu|nav.menu|nav","prop":"gap","value":"24px","msg":"gap: 24px"}]', 'Les propriétés s’appliquent au parent `.menu`, pas aux liens.', '`display: flex` place les enfants côte à côte ; `gap` les espace régulièrement.', 15, 1),
+(69, 45, 'Changer de direction', 'flexbox-le-conteneur-ex2', 'qcm', 1, 'Choisissez la bonne réponse.', NULL, NULL, NULL, NULL, NULL, NULL, '`column` rend l’axe principal vertical.', 10, 2),
+(70, 46, 'Centrer une boîte', 'flexbox-alignements-ex1', 'code', 2, 'Centrez `.message` horizontalement ET verticalement dans `.ecran` avec Flexbox (`display: flex`, `justify-content` et `align-items`).', '<div class="ecran">
+  <p class="message">Au centre !</p>
+</div>', '.ecran {
+  min-height: 250px;
+  background: #fef3c7;
+}
+
+.message {
+  padding: 12px 20px;
+  background: white;
+}', NULL, '.ecran {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+  background: #fef3c7;
+}
+
+.message {
+  padding: 12px 20px;
+  background: white;
+}', '[{"t":"css","sel":".ecran|div.ecran","prop":"display","value":"flex","msg":".ecran est un conteneur flex"},{"t":"css","sel":".ecran|div.ecran","prop":"justify-content","value":"center","msg":"justify-content: center"},{"t":"css","sel":".ecran|div.ecran","prop":"align-items","value":"center","msg":"align-items: center"}]', 'Tout se passe sur le parent `.ecran`.', '`justify-content` centre sur l’axe principal, `align-items` sur l’axe secondaire.', 15, 1),
+(71, 46, 'Logo à gauche, menu à droite', 'flexbox-alignements-ex2', 'fill', 1, 'Remplacez `______` par la valeur de `justify-content` qui place le logo tout à gauche et le menu tout à droite.', '<header class="barre"><strong>Logo</strong><nav>Menu</nav></header>', '.barre {
+  display: flex;
+  justify-content: ______;
+  padding: 12px;
+  background: #e2e8f0;
+}', NULL, '.barre {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  background: #e2e8f0;
+}', '[{"t":"absent","s":"______","in":"css","msg":"Le « ______ » est remplacé"},{"t":"css","sel":".barre|header.barre","prop":"justify-content","value":"space-between","msg":"justify-content: space-between"}]', 'L’espace est réparti « entre » les éléments.', '`space-between` colle le premier et le dernier élément aux extrémités.', 10, 2),
+(72, 47, 'Une grille de cartes souple', 'flexbox-elements-flexibles-ex1', 'code', 2, 'Faites passer les cartes à la ligne (`flex-wrap: wrap` sur `.grille`) et donnez à `.carte` la propriété `flex: 1 1 200px`.', '<div class="grille">
+  <div class="carte">A</div>
+  <div class="carte">B</div>
+  <div class="carte">C</div>
+  <div class="carte">D</div>
+</div>', '.grille {
+  display: flex;
+  gap: 12px;
+}
+
+.carte {
+  padding: 30px;
+  background: #bbf7d0;
+}', NULL, '.grille {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.carte {
+  flex: 1 1 200px;
+  padding: 30px;
+  background: #bbf7d0;
+}', '[{"t":"css","sel":".grille|div.grille","prop":"flex-wrap","value":"wrap","msg":"flex-wrap: wrap sur .grille"},{"t":"css","sel":".carte|div.carte|.grille .carte","prop":"flex","value":"1 1 200px","msg":"flex: 1 1 200px sur .carte"}]', 'Une propriété sur le parent, une sur les enfants.', 'Le retour à la ligne est autorisé par le conteneur ; chaque carte part de 200px puis s’étire.', 15, 1),
+(73, 48, 'Une galerie en 3 colonnes', 'grid-les-bases-ex1', 'code', 1, 'Transformez `.galerie` en grille de **3 colonnes égales** (`repeat(3, 1fr)`) avec un `gap` de `10px`.', '<div class="galerie">
+  <div class="photo">1</div><div class="photo">2</div><div class="photo">3</div>
+  <div class="photo">4</div><div class="photo">5</div><div class="photo">6</div>
+</div>', '.photo {
+  padding: 40px 0;
+  text-align: center;
+  background: #fecdd3;
+}', NULL, '.galerie {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.photo {
+  padding: 40px 0;
+  text-align: center;
+  background: #fecdd3;
+}', '[{"t":"css","sel":".galerie|div.galerie","prop":"display","value":"grid","msg":"display: grid"},{"t":"css","sel":".galerie|div.galerie","prop":"grid-template-columns","in":["repeat(3, 1fr)","1fr 1fr 1fr"],"msg":"Trois colonnes égales"},{"t":"css","sel":".galerie|div.galerie","prop":"gap","value":"10px","msg":"gap: 10px"}]', '`grid-template-columns: repeat(3, 1fr);`', 'Trois fractions égales de l’espace disponible forment trois colonnes identiques.', 15, 1),
+(74, 48, 'L’unité fr', 'grid-les-bases-ex2', 'qcm', 1, 'Choisissez la bonne réponse.', NULL, NULL, NULL, NULL, NULL, NULL, '4 parts au total : 800 ÷ 4 = 200px par part, donc 3 × 200 = 600px.', 10, 2),
+(75, 49, 'Une mise en page par zones', 'grid-placement-et-zones-ex1', 'code', 3, 'Complétez `.page` avec `grid-template-areas` : première ligne **"haut haut"**, seconde ligne **"cote principal"**. Affectez ensuite `.haut`, `.cote` et `.principal` à leurs zones avec `grid-area`.', '<div class="page">
+  <header class="haut">Haut</header>
+  <aside class="cote">Côté</aside>
+  <main class="principal">Principal</main>
+</div>', '.page {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 8px;
+}
+
+.page > * {
+  padding: 16px;
+  background: #e0f2fe;
+}', NULL, '.page {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-areas:
+    "haut haut"
+    "cote principal";
+  gap: 8px;
+}
+
+.page > * {
+  padding: 16px;
+  background: #e0f2fe;
+}
+
+.haut { grid-area: haut; }
+.cote { grid-area: cote; }
+.principal { grid-area: principal; }', '[{"t":"match","re":"grid-template-areas\\\\s*:\\\\s*\\"haut\\\\s+haut\\"\\\\s*\\"cote\\\\s+principal\\"","in":"css","msg":"Les zones \\"haut haut\\" / \\"cote principal\\" sont définies"},{"t":"css","sel":".haut|header.haut","prop":"grid-area","value":"haut","msg":".haut occupe la zone haut"},{"t":"css","sel":".cote|aside.cote","prop":"grid-area","value":"cote","msg":".cote occupe la zone cote"},{"t":"css","sel":".principal|main.principal","prop":"grid-area","value":"principal","msg":".principal occupe la zone principal"}]', 'Chaque ligne de la grille est une chaîne entre guillemets.', 'On dessine la grille avec des noms, puis chaque élément rejoint sa zone avec `grid-area`.', 15, 1);
+
+INSERT INTO `exercises` (`id`, `lesson_id`, `title`, `slug`, `type`, `difficulty`, `instructions`, `starter_html`, `starter_css`, `solution_html`, `solution_css`, `validation_rules`, `hint`, `explanation`, `points`, `sort_order`) VALUES
+(76, 50, 'Une grille responsive automatique', 'grid-adaptative-ex1', 'code', 2, 'Faites de `.produits` une grille avec `grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))` et un `gap` de `16px`.', '<div class="produits">
+  <div class="produit">Produit 1</div>
+  <div class="produit">Produit 2</div>
+  <div class="produit">Produit 3</div>
+  <div class="produit">Produit 4</div>
+</div>', '.produit {
+  padding: 24px;
+  background: #fef9c3;
+  text-align: center;
+}', NULL, '.produits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.produit {
+  padding: 24px;
+  background: #fef9c3;
+  text-align: center;
+}', '[{"t":"css","sel":".produits|div.produits","prop":"display","value":"grid","msg":"display: grid"},{"t":"css","sel":".produits|div.produits","prop":"grid-template-columns","in":["repeat(auto-fit, minmax(150px, 1fr))","repeat(auto-fill, minmax(150px, 1fr))"],"msg":"repeat(auto-fit, minmax(150px, 1fr))"},{"t":"css","sel":".produits|div.produits","prop":"gap","value":"16px","msg":"gap: 16px"}]', 'Recopiez exactement la formule : `repeat(auto-fit, minmax(150px, 1fr))`.', 'La grille crée autant de colonnes de 150px minimum que possible, puis les étire.', 15, 1),
+(77, 51, 'Un bouton interactif', 'pseudo-classes-ex1', 'code', 1, 'Ajoutez un état `:hover` à `.btn` qui change le `background` en `#15803d`, et un état `:focus-visible` avec `outline: 3px solid #f59e0b`.', '<button class="btn" type="button">Valider</button>', '.btn {
+  padding: 10px 20px;
+  border: 0;
+  background: #16a34a;
+  color: white;
+}', NULL, '.btn {
+  padding: 10px 20px;
+  border: 0;
+  background: #16a34a;
+  color: white;
+}
+
+.btn:hover {
+  background: #15803d;
+}
+
+.btn:focus-visible {
+  outline: 3px solid #f59e0b;
+}', '[{"t":"css","sel":".btn:hover|button.btn:hover|button:hover","prop":"background|background-color","value":"#15803d","msg":"Au survol, le fond devient #15803d"},{"t":"css","sel":".btn:focus-visible|button.btn:focus-visible|button:focus-visible","prop":"outline","value":"3px solid #f59e0b","msg":"Un contour de focus visible"}]', 'Deux nouvelles règles : `.btn:hover { … }` et `.btn:focus-visible { … }`.', 'Le survol donne un retour visuel à la souris, le focus-visible guide les utilisateurs du clavier.', 15, 1),
+(78, 51, 'Une liste zébrée', 'pseudo-classes-ex2', 'code', 2, 'Avec `:nth-child`, donnez un fond `#f1f5f9` aux éléments **pairs** (`even`) de la liste `.taches`.', '<ul class="taches">
+  <li>Acheter du pain</li>
+  <li>Réviser le CSS</li>
+  <li>Appeler Sam</li>
+  <li>Arroser les plantes</li>
+</ul>', NULL, NULL, '.taches li:nth-child(even) {
+  background: #f1f5f9;
+}', '[{"t":"css","sel":".taches li:nth-child(even)|li:nth-child(even)|.taches li:nth-child(2n)|li:nth-child(2n)","prop":"background|background-color","value":"#f1f5f9","msg":"Les éléments pairs ont un fond #f1f5f9"}]', '`li:nth-child(even)`', '`:nth-child(even)` cible le 2e, 4e, 6e… enfant.', 15, 2),
+(79, 52, 'Une barre sous le titre', 'pseudo-elements-ex1', 'code', 2, 'Avec `::after` sur `.titre`, créez une barre décorative : `content: ""`, `display: block`, `width: 50px`, `height: 3px` et `background: #ec4899`.', '<h2 class="titre">À propos</h2>', NULL, NULL, '.titre::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #ec4899;
+}', '[{"t":"css","sel":".titre::after|h2.titre::after|h2::after","prop":"content","in":["\\"\\"","''''"],"msg":"content: \\"\\" est défini"},{"t":"css","sel":".titre::after|h2.titre::after|h2::after","prop":"display","value":"block","msg":"display: block"},{"t":"css","sel":".titre::after|h2.titre::after|h2::after","prop":"width","value":"50px","msg":"width: 50px"},{"t":"css","sel":".titre::after|h2.titre::after|h2::after","prop":"height","value":"3px","msg":"height: 3px"},{"t":"css","sel":".titre::after|h2.titre::after|h2::after","prop":"background|background-color","value":"#ec4899","msg":"Fond rose #ec4899"}]', 'Sans `content`, le pseudo-élément n’existe pas.', 'Un `::after` vide transformé en bloc devient une forme décorative sous le titre.', 15, 1);
 
 INSERT INTO `questions` (`id`, `lesson_id`, `exercise_id`, `question`, `type`, `code_snippet`, `explanation`, `sort_order`) VALUES
 (1, NULL, 2, 'Quel langage est responsable de la **structure** et du **sens** du contenu d’une page web ?', 'single', NULL, NULL, 0),
@@ -2276,7 +4386,86 @@ INSERT INTO `questions` (`id`, `lesson_id`, `exercise_id`, `question`, `type`, `
 (101, 28, NULL, 'Avec `box-sizing: border-box`, `width: 300px; padding: 20px;` mesure…', 'single', NULL, 'La largeur déclarée inclut le padding : 300px.', 0),
 (102, 28, NULL, 'Quelle propriété empêche une image de dépasser de son conteneur ?', 'single', NULL, '`max-width: 100%` la limite à la largeur disponible.', 1),
 (103, 28, NULL, 'Quelle valeur d’`overflow` affiche une barre de défilement seulement si nécessaire ?', 'single', NULL, '`auto` n’ajoute la barre que si le contenu dépasse.', 2),
-(104, 28, NULL, 'Fixer une `height` sur un paragraphe est une bonne pratique.', 'truefalse', NULL, 'Faux : le contenu risque de déborder ; préférez `min-height`.', 3);
+(104, 28, NULL, 'Fixer une `height` sur un paragraphe est une bonne pratique.', 'truefalse', NULL, 'Faux : le contenu risque de déborder ; préférez `min-height`.', 3),
+(105, NULL, 47, 'Comment coder une image purement décorative (un ornement) ?', 'single', NULL, NULL, 0),
+(106, 29, NULL, 'Quel attribut contient le chemin de l’image ?', 'single', NULL, '`src` = source de l’image.', 0),
+(107, 29, NULL, 'Qui utilise l’attribut `alt` ?', 'single', NULL, 'Le texte alternatif sert à tous ces cas.', 1),
+(108, 29, NULL, 'L’attribut `title` peut remplacer `alt`.', 'truefalse', NULL, 'Faux : `title` n’est qu’une info-bulle, peu fiable pour l’accessibilité.', 2),
+(109, 30, NULL, 'Quel format pour un logo qui doit rester net à toutes les tailles ?', 'single', NULL, 'Le SVG est vectoriel.', 0),
+(110, 30, NULL, 'Que fait `loading="lazy"` ?', 'single', NULL, 'Le chargement est différé.', 1),
+(111, 30, NULL, 'Quel élément contient la légende d’une figure ?', 'single', NULL, '`<figcaption>`.', 2),
+(112, 30, NULL, 'Dans `<picture>`, la balise `<img>` est facultative.', 'truefalse', NULL, 'Faux : elle est obligatoire et sert de repli.', 3),
+(113, 31, NULL, 'Quelle balise pour les étapes d’une recette ?', 'single', NULL, 'L’ordre des étapes compte : `<ol>`.', 0),
+(114, 31, NULL, 'Quel est le seul enfant direct autorisé dans un `<ul>` ?', 'single', NULL, 'Seuls des `<li>` (et éventuellement des scripts/templates).', 1),
+(115, 31, NULL, 'Un menu de navigation se code généralement avec une liste.', 'truefalse', NULL, 'Vrai : c’est une liste de liens.', 2),
+(116, 32, NULL, 'Où place-t-on une sous-liste ?', 'single', NULL, 'Elle appartient à un élément : dans son `<li>`.', 0),
+(117, 32, NULL, 'Quelle balise contient le terme d’une liste de définitions ?', 'single', NULL, '`<dt>` = description term.', 1),
+(118, 32, NULL, 'Un `<dt>` peut avoir plusieurs `<dd>`.', 'truefalse', NULL, 'Vrai : plusieurs descriptions pour un même terme.', 2),
+(119, 33, NULL, 'Quelle balise crée une ligne de tableau ?', 'single', NULL, '`<tr>` = table row.', 0),
+(120, 33, NULL, 'À quoi sert `scope="row"` sur un `<th>` ?', 'single', NULL, 'Il associe l’en-tête aux cellules de sa ligne.', 1),
+(121, 33, NULL, 'Les tableaux sont recommandés pour la mise en page d’un site.', 'truefalse', NULL, 'Faux : la mise en page se fait en CSS.', 2),
+(122, NULL, 55, 'Dans un tableau de 3 colonnes, une ligne contient `<td colspan="2">`. Combien d’autres `<td>` faut-il dans cette ligne ?', 'single', NULL, NULL, 0),
+(123, 34, NULL, 'Quel élément contient la ligne des totaux ?', 'single', NULL, '`<tfoot>` est le pied du tableau.', 0),
+(124, 34, NULL, 'Quel attribut fusionne une cellule sur plusieurs lignes ?', 'single', NULL, '`rowspan` couvre plusieurs lignes.', 1),
+(125, 34, NULL, 'Un tableau peut contenir plusieurs `<tbody>`.', 'truefalse', NULL, 'Vrai : pour grouper des séries de lignes.', 2),
+(126, NULL, 57, 'Quelle méthode pour un formulaire de connexion (e-mail + mot de passe) ?', 'single', NULL, NULL, 0),
+(127, 35, NULL, 'Quel attribut détermine le nom de la donnée envoyée ?', 'single', NULL, '`name` : sans lui, le champ n’est pas envoyé.', 0),
+(128, 35, NULL, 'Comment relier un label à un champ ?', 'single', NULL, 'L’attribut `for` reprend l’`id` du champ.', 1),
+(129, 35, NULL, 'Le placeholder peut remplacer le label.', 'truefalse', NULL, 'Faux : il disparaît à la saisie et n’est pas fiable pour l’accessibilité.', 2),
+(130, 36, NULL, 'Quel type affiche un clavier avec « @ » sur mobile ?', 'single', NULL, '`type="email"`.', 0),
+(131, 36, NULL, 'Qu’ont en commun les boutons radio d’un même groupe ?', 'single', NULL, 'Le même `name` crée le groupe.', 1),
+(132, 36, NULL, 'Pour un code postal, `type="number"` est idéal.', 'truefalse', NULL, 'Faux : les zéros initiaux posent problème ; préférez `text` + `inputmode="numeric"`.', 2),
+(133, 37, NULL, 'Où s’écrit la valeur par défaut d’une `<textarea>` ?', 'single', NULL, 'Le contenu entre `<textarea>` et `</textarea>`.', 0),
+(134, 37, NULL, 'Quel type de bouton n’envoie pas le formulaire ?', 'single', NULL, '`type="button"` n’a pas d’action par défaut.', 1),
+(135, 37, NULL, 'Pour 3 choix exclusifs, des boutons radio sont plus rapides qu’un select.', 'truefalse', NULL, 'Vrai : toutes les options sont visibles d’un coup.', 2),
+(136, NULL, 61, 'Grâce à `required` et `pattern`, le serveur n’a plus besoin de vérifier les données reçues.', 'truefalse', NULL, NULL, 0),
+(137, 38, NULL, 'Quel attribut rend un champ obligatoire ?', 'single', NULL, '`required`.', 0),
+(138, 38, NULL, 'Quel attribut impose un format par expression régulière ?', 'single', NULL, '`pattern`.', 1),
+(139, 38, NULL, 'Pourquoi revalider côté serveur ?', 'single', NULL, 'Les données peuvent être envoyées sans passer par le formulaire.', 2),
+(140, 39, NULL, 'Combien de fois un même `id` peut-il apparaître dans une page ?', 'single', NULL, 'Un identifiant est unique.', 0),
+(141, 39, NULL, 'Que crée `class="carte produit"` ?', 'single', NULL, 'L’espace sépare deux classes.', 1),
+(142, 39, NULL, 'En BEM, `menu__lien` désigne…', 'single', NULL, 'Deux underscores = élément du bloc.', 2),
+(143, 40, NULL, 'Quelle est la différence entre `<div>` et `<span>` ?', 'single', NULL, 'Tous deux sont neutres ; l’un est bloc, l’autre en ligne.', 0),
+(144, 40, NULL, 'Quel attribut stocke une donnée personnalisée ?', 'single', NULL, 'Les attributs `data-*`.', 1),
+(145, 40, NULL, 'L’attribut `hidden` masque aussi l’élément pour les lecteurs d’écran.', 'truefalse', NULL, 'Vrai : il est masqué pour tout le monde.', 2),
+(146, 41, NULL, 'Quel est le type d’affichage par défaut d’un `<a>` ?', 'single', NULL, 'Les liens sont des éléments en ligne.', 0),
+(147, 41, NULL, 'Quel type accepte `width` tout en restant dans la ligne ?', 'single', NULL, '`inline-block`.', 1),
+(148, 41, NULL, 'Changer `display` modifie le sens sémantique de l’élément.', 'truefalse', NULL, 'Faux : seul l’affichage change.', 2),
+(149, 42, NULL, 'Quelle méthode conserve la place de l’élément masqué ?', 'single', NULL, '`visibility: hidden` réserve l’espace.', 0),
+(150, 42, NULL, 'Un élément en `opacity: 0` est-il encore cliquable ?', 'single', NULL, 'Oui : il est seulement transparent.', 1),
+(151, 42, NULL, '`display: none` masque aussi l’élément pour les lecteurs d’écran.', 'truefalse', NULL, 'Vrai.', 2),
+(152, 43, NULL, 'Par rapport à quoi se positionne un élément `absolute` ?', 'single', NULL, 'Le premier ancêtre avec une position autre que static.', 0),
+(153, 43, NULL, 'Un élément `relative` conserve-t-il sa place dans le flux ?', 'single', NULL, 'Oui, contrairement à `absolute`.', 1),
+(154, 43, NULL, '`inset: 0` équivaut à `top: 0; right: 0; bottom: 0; left: 0`.', 'truefalse', NULL, 'Vrai.', 2),
+(155, 44, NULL, 'Par rapport à quoi un élément `fixed` est-il positionné ?', 'single', NULL, 'La fenêtre (viewport).', 0),
+(156, 44, NULL, 'Que faut-il obligatoirement ajouter à `position: sticky` ?', 'single', NULL, 'Un seuil (`top`, `bottom`…).', 1),
+(157, 44, NULL, 'Un élément avec `z-index: 2` passe devant un élément avec `z-index: 1` (même contexte).', 'truefalse', NULL, 'Vrai.', 2),
+(158, NULL, 69, 'Quelle déclaration empile les éléments flexibles verticalement ?', 'single', NULL, NULL, 0),
+(159, 45, NULL, 'Sur quel élément applique-t-on `display: flex` ?', 'single', NULL, 'Sur le parent, qui devient conteneur flex.', 0),
+(160, 45, NULL, 'Quel est l’axe principal par défaut ?', 'single', NULL, '`flex-direction: row` par défaut.', 1),
+(161, 45, NULL, '`gap` ajoute aussi un espace avant le premier élément.', 'truefalse', NULL, 'Faux : seulement entre les éléments.', 2),
+(162, 46, NULL, 'Quelle propriété aligne les éléments sur l’axe secondaire ?', 'single', NULL, '`align-items`.', 0),
+(163, 46, NULL, 'Quelle valeur met les éléments aux extrémités avec l’espace réparti entre eux ?', 'single', NULL, '`space-between`.', 1),
+(164, 46, NULL, 'En `flex-direction: column`, `justify-content` agit verticalement.', 'truefalse', NULL, 'Vrai : l’axe principal est devenu vertical.', 2),
+(165, 47, NULL, 'Que signifie `flex: 1` ?', 'single', NULL, '`flex: 1` = `1 1 0` : il partage l’espace libre.', 0),
+(166, 47, NULL, 'Quelle propriété autorise le retour à la ligne ?', 'single', NULL, '`flex-wrap: wrap`.', 1),
+(167, 47, NULL, '`order` modifie aussi l’ordre de lecture par les lecteurs d’écran.', 'truefalse', NULL, 'Faux : seul l’affichage change, d’où le risque d’incohérence.', 2),
+(168, NULL, 74, 'Avec `grid-template-columns: 1fr 3fr;` dans un conteneur de 800px (sans gap), quelle est la largeur de la 2e colonne ?', 'single', NULL, NULL, 0),
+(169, 48, NULL, 'Que signifie l’unité `fr` ?', 'single', NULL, '`fr` = fraction.', 0),
+(170, 48, NULL, 'Quelle écriture équivaut à `1fr 1fr 1fr 1fr` ?', 'single', NULL, '`repeat(nombre, taille)`.', 1),
+(171, 48, NULL, 'Grid permet de contrôler lignes et colonnes en même temps.', 'truefalse', NULL, 'Vrai : c’est un système à deux dimensions.', 2),
+(172, 49, NULL, 'Que fait `grid-column: 1 / -1` ?', 'single', NULL, 'De la première à la dernière ligne verticale.', 0),
+(173, 49, NULL, 'Que représente un point `.` dans `grid-template-areas` ?', 'single', NULL, 'Une case sans zone.', 1),
+(174, 49, NULL, 'Une zone nommée peut avoir une forme en L.', 'truefalse', NULL, 'Faux : les zones doivent être rectangulaires.', 2),
+(175, 50, NULL, 'Que fait `minmax(200px, 1fr)` ?', 'single', NULL, 'Elle est bornée entre 200px et 1fr.', 0),
+(176, 50, NULL, 'Quel mot-clé supprime les colonnes vides ?', 'single', NULL, '`auto-fit`.', 1),
+(177, 50, NULL, 'Cette technique nécessite obligatoirement des media queries.', 'truefalse', NULL, 'Faux : c’est justement son intérêt.', 2),
+(178, 51, NULL, 'Quelle pseudo-classe cible un lien survolé ?', 'single', NULL, '`:hover`.', 0),
+(179, 51, NULL, 'Que cible `li:nth-child(odd)` ?', 'single', NULL, '`odd` = impairs (1, 3, 5…).', 1),
+(180, 51, NULL, 'Supprimer le contour de focus sans le remplacer nuit à l’accessibilité.', 'truefalse', NULL, 'Vrai : les utilisateurs du clavier ne savent plus où ils sont.', 2),
+(181, 52, NULL, 'Quelle propriété est obligatoire pour afficher un `::before` ?', 'single', NULL, '`content`.', 0),
+(182, 52, NULL, 'Combien de deux-points pour un pseudo-élément ?', 'single', NULL, '`::before`, `::after`…', 1),
+(183, 52, NULL, 'Un pseudo-élément peut contenir une information essentielle au contenu.', 'truefalse', NULL, 'Faux : il n’est pas fiable pour les lecteurs d’écran.', 2);
 
 INSERT INTO `answers` (`id`, `question_id`, `answer_text`, `is_correct`, `sort_order`) VALUES
 (1, 1, 'CSS', 0, 0),
@@ -2640,7 +4829,277 @@ INSERT INTO `answers` (`id`, `question_id`, `answer_text`, `is_correct`, `sort_o
 (357, 103, '`auto`', 1, 2),
 (358, 103, '`scroll`', 0, 3),
 (359, 104, 'Vrai', 0, 0),
-(360, 104, 'Faux', 1, 1);
+(360, 104, 'Faux', 1, 1),
+(361, 105, 'Sans attribut alt', 0, 0),
+(362, 105, '`alt="image décorative"`', 0, 1),
+(363, 105, '`alt=""`', 1, 2),
+(364, 105, '`alt="ornement.png"`', 0, 3),
+(365, 106, '`href`', 0, 0),
+(366, 106, '`src`', 1, 1),
+(367, 106, '`alt`', 0, 2),
+(368, 106, '`link`', 0, 3),
+(369, 107, 'Les lecteurs d’écran', 0, 0),
+(370, 107, 'Les moteurs de recherche', 0, 1),
+(371, 107, 'Le navigateur si l’image ne charge pas', 0, 2),
+(372, 107, 'Tous les trois', 1, 3),
+(373, 108, 'Vrai', 0, 0),
+(374, 108, 'Faux', 1, 1),
+(375, 109, 'JPEG', 0, 0),
+(376, 109, 'PNG', 0, 1),
+(377, 109, 'SVG', 1, 2),
+(378, 109, 'GIF', 0, 3),
+(379, 110, 'Compresse l’image', 0, 0),
+(380, 110, 'Retarde le téléchargement jusqu’à ce que l’image approche de l’écran', 1, 1),
+(381, 110, 'Floute l’image', 0, 2),
+(382, 110, 'Masque l’image', 0, 3),
+(383, 111, '`<caption>`', 0, 0),
+(384, 111, '`<legend>`', 0, 1),
+(385, 111, '`<figcaption>`', 1, 2),
+(386, 111, '`<label>`', 0, 3),
+(387, 112, 'Vrai', 0, 0),
+(388, 112, 'Faux', 1, 1),
+(389, 113, '`<ul>`', 0, 0),
+(390, 113, '`<ol>`', 1, 1),
+(391, 113, '`<dl>`', 0, 2),
+(392, 113, '`<list>`', 0, 3),
+(393, 114, '`<p>`', 0, 0),
+(394, 114, '`<li>`', 1, 1),
+(395, 114, '`<a>`', 0, 2),
+(396, 114, '`<div>`', 0, 3),
+(397, 115, 'Vrai', 1, 0),
+(398, 115, 'Faux', 0, 1),
+(399, 116, 'Entre deux `<li>`', 0, 0),
+(400, 116, 'Dans un `<li>`', 1, 1);
+
+INSERT INTO `answers` (`id`, `question_id`, `answer_text`, `is_correct`, `sort_order`) VALUES
+(401, 116, 'Après `</ul>`', 0, 2),
+(402, 116, 'Dans un `<dt>`', 0, 3),
+(403, 117, '`<dd>`', 0, 0),
+(404, 117, '`<dt>`', 1, 1),
+(405, 117, '`<li>`', 0, 2),
+(406, 117, '`<term>`', 0, 3),
+(407, 118, 'Vrai', 1, 0),
+(408, 118, 'Faux', 0, 1),
+(409, 119, '`<td>`', 0, 0),
+(410, 119, '`<tr>`', 1, 1),
+(411, 119, '`<th>`', 0, 2),
+(412, 119, '`<row>`', 0, 3),
+(413, 120, 'À fusionner des lignes', 0, 0),
+(414, 120, 'À indiquer que l’en-tête décrit sa ligne', 1, 1),
+(415, 120, 'À changer la couleur', 0, 2),
+(416, 120, 'À trier la ligne', 0, 3),
+(417, 121, 'Vrai', 0, 0),
+(418, 121, 'Faux', 1, 1),
+(419, 122, '0', 0, 0),
+(420, 122, '1', 1, 1),
+(421, 122, '2', 0, 2),
+(422, 122, '3', 0, 3),
+(423, 123, '`<thead>`', 0, 0),
+(424, 123, '`<tbody>`', 0, 1),
+(425, 123, '`<tfoot>`', 1, 2),
+(426, 123, '`<caption>`', 0, 3),
+(427, 124, '`colspan`', 0, 0),
+(428, 124, '`rowspan`', 1, 1),
+(429, 124, '`merge`', 0, 2),
+(430, 124, '`span`', 0, 3),
+(431, 125, 'Vrai', 1, 0),
+(432, 125, 'Faux', 0, 1),
+(433, 126, '`get`', 0, 0),
+(434, 126, '`post`', 1, 1),
+(435, 126, 'Peu importe', 0, 2),
+(436, 126, '`put`', 0, 3),
+(437, 127, '`id`', 0, 0),
+(438, 127, '`name`', 1, 1),
+(439, 127, '`value`', 0, 2),
+(440, 127, '`label`', 0, 3),
+(441, 128, '`for` du label = `name` du champ', 0, 0),
+(442, 128, '`for` du label = `id` du champ', 1, 1),
+(443, 128, '`id` du label = `id` du champ', 0, 2),
+(444, 128, 'Ce n’est pas possible', 0, 3),
+(445, 129, 'Vrai', 0, 0),
+(446, 129, 'Faux', 1, 1),
+(447, 130, '`text`', 0, 0),
+(448, 130, '`email`', 1, 1),
+(449, 130, '`url`', 0, 2),
+(450, 130, '`tel`', 0, 3),
+(451, 131, 'Le même `id`', 0, 0),
+(452, 131, 'Le même `name`', 1, 1),
+(453, 131, 'La même `value`', 0, 2),
+(454, 131, 'Rien', 0, 3),
+(455, 132, 'Vrai', 0, 0),
+(456, 132, 'Faux', 1, 1),
+(457, 133, 'Dans `value`', 0, 0),
+(458, 133, 'Entre les balises ouvrante et fermante', 1, 1),
+(459, 133, 'Dans `placeholder`', 0, 2),
+(460, 133, 'Dans `default`', 0, 3),
+(461, 134, '`submit`', 0, 0),
+(462, 134, '`button`', 1, 1),
+(463, 134, 'Sans type', 0, 2),
+(464, 134, 'Tous l’envoient', 0, 3),
+(465, 135, 'Vrai', 1, 0),
+(466, 135, 'Faux', 0, 1),
+(467, 136, 'Vrai', 1, 0),
+(468, 136, 'Faux', 0, 1),
+(469, 137, '`mandatory`', 0, 0),
+(470, 137, '`required`', 1, 1),
+(471, 137, '`needed`', 0, 2),
+(472, 137, '`validate`', 0, 3),
+(473, 138, '`format`', 0, 0),
+(474, 138, '`regex`', 0, 1),
+(475, 138, '`pattern`', 1, 2),
+(476, 138, '`match`', 0, 3),
+(477, 139, 'Pour la performance', 0, 0),
+(478, 139, 'Parce que la validation du navigateur peut être contournée', 1, 1),
+(479, 139, 'Pour le SEO', 0, 2),
+(480, 139, 'Ce n’est pas utile', 0, 3),
+(481, 140, 'Une fois', 1, 0),
+(482, 140, 'Deux fois', 0, 1),
+(483, 140, 'Illimité', 0, 2),
+(484, 140, 'Une fois par section', 0, 3),
+(485, 141, 'Une classe « carte produit »', 0, 0),
+(486, 141, 'Deux classes : carte et produit', 1, 1),
+(487, 141, 'Une erreur', 0, 2),
+(488, 141, 'Un id', 0, 3),
+(489, 142, 'une variante du menu', 0, 0),
+(490, 142, 'un élément du bloc menu', 1, 1),
+(491, 142, 'un id', 0, 2),
+(492, 142, 'un sélecteur CSS invalide', 0, 3),
+(493, 143, 'Aucune', 0, 0),
+(494, 143, '`<div>` est un bloc, `<span>` est en ligne', 1, 1),
+(495, 143, '`<span>` est obsolète', 0, 2),
+(496, 143, '`<div>` est sémantique', 0, 3),
+(497, 144, '`custom`', 0, 0),
+(498, 144, '`data-*`', 1, 1),
+(499, 144, '`value`', 0, 2),
+(500, 144, '`info`', 0, 3),
+(501, 145, 'Vrai', 1, 0),
+(502, 145, 'Faux', 0, 1),
+(503, 146, 'block', 0, 0),
+(504, 146, 'inline', 1, 1),
+(505, 146, 'inline-block', 0, 2),
+(506, 146, 'flex', 0, 3),
+(507, 147, '`inline`', 0, 0),
+(508, 147, '`block`', 0, 1),
+(509, 147, '`inline-block`', 1, 2),
+(510, 147, '`none`', 0, 3),
+(511, 148, 'Vrai', 0, 0),
+(512, 148, 'Faux', 1, 1),
+(513, 149, '`display: none`', 0, 0),
+(514, 149, '`visibility: hidden`', 1, 1),
+(515, 149, 'Aucune', 0, 2),
+(516, 149, '`hidden` en HTML', 0, 3),
+(517, 150, 'Oui', 1, 0),
+(518, 150, 'Non', 0, 1),
+(519, 151, 'Vrai', 1, 0),
+(520, 151, 'Faux', 0, 1),
+(521, 152, 'Toujours la page', 0, 0),
+(522, 152, 'Son parent direct, quel qu’il soit', 0, 1),
+(523, 152, 'Son ancêtre positionné le plus proche', 1, 2),
+(524, 152, 'L’élément précédent', 0, 3),
+(525, 153, 'Oui', 1, 0),
+(526, 153, 'Non', 0, 1),
+(527, 154, 'Vrai', 1, 0),
+(528, 154, 'Faux', 0, 1),
+(529, 155, 'Son parent', 0, 0),
+(530, 155, 'La fenêtre du navigateur', 1, 1),
+(531, 155, 'Le body', 0, 2),
+(532, 155, 'L’élément précédent', 0, 3),
+(533, 156, '`z-index`', 0, 0),
+(534, 156, 'Un seuil comme `top: 0`', 1, 1),
+(535, 156, '`display: block`', 0, 2),
+(536, 156, '`overflow: hidden`', 0, 3),
+(537, 157, 'Vrai', 1, 0),
+(538, 157, 'Faux', 0, 1),
+(539, 158, '`flex-direction: row;`', 0, 0),
+(540, 158, '`flex-direction: column;`', 1, 1),
+(541, 158, '`flex-wrap: wrap;`', 0, 2),
+(542, 158, '`display: block;`', 0, 3),
+(543, 159, 'Sur chaque enfant', 0, 0),
+(544, 159, 'Sur le conteneur parent', 1, 1),
+(545, 159, 'Sur le body uniquement', 0, 2),
+(546, 159, 'Sur les petits-enfants', 0, 3),
+(547, 160, 'Vertical', 0, 0),
+(548, 160, 'Horizontal', 1, 1),
+(549, 160, 'Diagonal', 0, 2),
+(550, 160, 'Aucun', 0, 3),
+(551, 161, 'Vrai', 0, 0),
+(552, 161, 'Faux', 1, 1),
+(553, 162, '`justify-content`', 0, 0),
+(554, 162, '`align-items`', 1, 1),
+(555, 162, '`flex-direction`', 0, 2),
+(556, 162, '`gap`', 0, 3),
+(557, 163, '`center`', 0, 0),
+(558, 163, '`space-around`', 0, 1),
+(559, 163, '`space-between`', 1, 2),
+(560, 163, '`stretch`', 0, 3),
+(561, 164, 'Vrai', 1, 0),
+(562, 164, 'Faux', 0, 1),
+(563, 165, 'Largeur de 1px', 0, 0),
+(564, 165, 'L’élément grandit pour occuper l’espace disponible', 1, 1),
+(565, 165, 'L’élément ne grandit jamais', 0, 2),
+(566, 165, 'Il passe en premier', 0, 3),
+(567, 166, '`flex-direction`', 0, 0),
+(568, 166, '`flex-wrap`', 1, 1),
+(569, 166, '`flex-flow-line`', 0, 2),
+(570, 166, '`wrap-items`', 0, 3),
+(571, 167, 'Vrai', 0, 0),
+(572, 167, 'Faux', 1, 1),
+(573, 168, '200px', 0, 0),
+(574, 168, '400px', 0, 1),
+(575, 168, '600px', 1, 2),
+(576, 168, '800px', 0, 3),
+(577, 169, 'Frame', 0, 0),
+(578, 169, 'Fraction de l’espace disponible', 1, 1),
+(579, 169, 'Fixed row', 0, 2),
+(580, 169, 'Font ratio', 0, 3),
+(581, 170, '`repeat(1fr, 4)`', 0, 0),
+(582, 170, '`repeat(4, 1fr)`', 1, 1),
+(583, 170, '`4fr`', 0, 2),
+(584, 170, '`grid(4)`', 0, 3),
+(585, 171, 'Vrai', 1, 0),
+(586, 171, 'Faux', 0, 1),
+(587, 172, 'Supprime la colonne', 0, 0),
+(588, 172, 'L’élément couvre toute la largeur de la grille', 1, 1),
+(589, 172, 'Place l’élément en dernier', 0, 2),
+(590, 172, 'Rien', 0, 3),
+(591, 173, 'Une erreur', 0, 0),
+(592, 173, 'Une case vide', 1, 1),
+(593, 173, 'Une zone nommée « point »', 0, 2),
+(594, 173, 'La fin de la ligne', 0, 3),
+(595, 174, 'Vrai', 0, 0),
+(596, 174, 'Faux', 1, 1),
+(597, 175, 'Une colonne de 200px exactement', 0, 0),
+(598, 175, 'Une colonne d’au moins 200px pouvant grandir jusqu’à 1fr', 1, 1),
+(599, 175, 'Une colonne de 1fr maximum 200px', 0, 2),
+(600, 175, 'Rien', 0, 3);
+
+INSERT INTO `answers` (`id`, `question_id`, `answer_text`, `is_correct`, `sort_order`) VALUES
+(601, 176, '`auto-fill`', 0, 0),
+(602, 176, '`auto-fit`', 1, 1),
+(603, 176, '`fit-content`', 0, 2),
+(604, 176, '`auto`', 0, 3),
+(605, 177, 'Vrai', 0, 0),
+(606, 177, 'Faux', 1, 1),
+(607, 178, '`:active`', 0, 0),
+(608, 178, '`:hover`', 1, 1),
+(609, 178, '`:focus`', 0, 2),
+(610, 178, '`:over`', 0, 3),
+(611, 179, 'Les li pairs', 0, 0),
+(612, 179, 'Les li impairs', 1, 1),
+(613, 179, 'Le dernier li', 0, 2),
+(614, 179, 'Aucun', 0, 3),
+(615, 180, 'Vrai', 1, 0),
+(616, 180, 'Faux', 0, 1),
+(617, 181, '`display`', 0, 0),
+(618, 181, '`content`', 1, 1),
+(619, 181, '`position`', 0, 2),
+(620, 181, '`width`', 0, 3),
+(621, 182, 'Un', 0, 0),
+(622, 182, 'Deux', 1, 1),
+(623, 182, 'Trois', 0, 2),
+(624, 182, 'Aucun', 0, 3),
+(625, 183, 'Vrai', 0, 0),
+(626, 183, 'Faux', 1, 1);
 
 INSERT INTO `projects` (`id`, `category_id`, `title`, `slug`, `level`, `summary`, `objective`, `instructions`, `steps`, `resources`, `success_criteria`, `starter_html`, `starter_css`, `solution_html`, `solution_css`, `validation_rules`, `bonus_challenge`, `is_final`, `sort_order`) VALUES
 (1, 1, 'Ma première page personnelle', 'ma-premiere-page-personnelle', 1, 'Créez une page HTML complète qui vous présente : titres, paragraphes, liste, image et liens.', 'Mettre en pratique toutes les notions du cours **HTML — Les fondations** en construisant une page de présentation personnelle complète et valide, **uniquement en HTML**.', 'Créez une page qui vous présente (ou présente un personnage imaginaire). La page doit contenir :

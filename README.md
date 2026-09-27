@@ -138,18 +138,20 @@ FLUSH PRIVILEGES;
 ### 4. Importer le schéma
 
 ```bash
-mysql -u root -p < database/database.sql
+mysql -u root -p html_css_academy < database/database.sql
 ```
 
 > ⚠️ `database.sql` supprime puis recrée les tables : ne le relancez pas sur une base de production contenant des données.
 
-(Avec phpMyAdmin : onglet *Importer* → `database/database.sql`.)
+(Avec phpMyAdmin : sélectionnez d’abord la base dans la colonne de gauche, puis onglet *Importer* → `database/database.sql`.)
 
 ### 5. Importer les données initiales
 
 ```bash
-mysql -u root -p < database/seed.sql
+mysql -u root -p html_css_academy < database/seed.sql
 ```
+
+Les fichiers SQL n’imposent **aucun nom de base** : importez-les dans la base de votre choix (indispensable chez les hébergeurs qui préfixent le nom des bases).
 
 Le seed contient le parcours complet, les badges, les projets, les paramètres et des comptes de démonstration.
 
@@ -209,6 +211,20 @@ Un administrateur peut aussi promouvoir un utilisateur existant depuis **Admin �
 ### 10. Configuration de production
 
 Voir [Mise en production](#mise-en-production).
+
+### Hébergement mutualisé (LWS, o2switch, OVH…) sans accès SSH
+
+1. **Panel** : choisir PHP 8.1 ou plus récent, créer une base MySQL (notez hôte, nom, utilisateur, mot de passe), activer le certificat SSL gratuit.
+2. **Fichiers** : télécharger le dépôt (GitHub → *Code* → *Download ZIP*), envoyer le contenu (pas le dossier parent) dans le dossier web (souvent `htdocs/` ou `www/`) par FTP ou via le gestionnaire de fichiers, puis décompresser. Vérifier que le fichier caché `.htaccess` a bien été envoyé.
+3. **Base** : phpMyAdmin → sélectionner la base → *Importer* `database/database.sql`, puis `database/seed.sql`.
+4. **Configuration** : copier `config/local.example.php` en `config/local.php` et le remplir (bloc `database` avec les valeurs du panel, `app.env` = `production`, `app.debug` = `false`, `app.url` = `https://votre-domaine.fr`).
+5. **Administrateur sans SSH** : créer votre compte via la page d’inscription du site, puis dans phpMyAdmin :
+   ```sql
+   UPDATE users SET role = 'admin' WHERE email = 'votre@email.fr';
+   DELETE FROM users WHERE email LIKE '%@academy.test';
+   ```
+6. **E-mails** : `'mail' => ['driver' => 'mail', 'from' => 'no-reply@votre-domaine.fr']` dans `config/local.php` (adresse du domaine hébergé).
+7. Supprimer `tests/` et `router.php` du serveur, puis tester l’inscription, un quiz et le lien « mot de passe oublié ».
 
 ## Comptes de démonstration
 
@@ -297,7 +313,7 @@ Sélecteurs supportés : balise, `.classe`, `#id`, `[attr]`, `[attr=val]`, `[att
 ```bash
 php -S localhost:8000 router.php &
 BASE=http://localhost:8000 DB="mysql -uroot html_css_academy" bash tests/e2e.sh
-mysql -uroot < database/database.sql && mysql -uroot < database/seed.sql
+mysql -uroot html_css_academy < database/database.sql && mysql -uroot html_css_academy < database/seed.sql
 ```
 
 Vérifications réalisées : les ≈200 pages publiques répondent sans erreur ni avertissement PHP, sous **Apache 2.4 + mod_php** (installation à la racine et en sous-dossier, `.htaccess` fourni) comme avec le serveur intégré de PHP ; les 60 tests de bout en bout passent dans les deux cas ; aucun défilement horizontal de 320 à 1440 px ; aucune erreur JavaScript (Chromium).

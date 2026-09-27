@@ -4,9 +4,9 @@
 -- Encodage : utf8mb4 (emojis et caractères accentués)
 -- =====================================================================
 
-CREATE DATABASE IF NOT EXISTS html_css_academy
-  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE html_css_academy;
+-- Importez ce fichier DANS la base de votre choix (phpMyAdmin : sélectionnez
+-- la base puis onglet « Importer »). Aucun nom de base n'est imposé.
+SET NAMES utf8mb4;
 
 SET FOREIGN_KEY_CHECKS = 0;
 

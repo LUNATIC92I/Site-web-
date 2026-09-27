@@ -318,7 +318,7 @@ $sql = "-- =====================================================================
     . count($projects) . " projets, " . count($badges) . " badges.\n"
     . "-- Comptes de DÉMONSTRATION (voir README.md) : à supprimer avant une mise en production.\n"
     . "-- =====================================================================\n\n"
-    . "USE html_css_academy;\nSET NAMES utf8mb4;\nSET FOREIGN_KEY_CHECKS = 0;\n\n";
+    . "SET NAMES utf8mb4;\nSET FOREIGN_KEY_CHECKS = 0;\n\n";
 
 foreach (['activity_log', 'certificates', 'project_submissions', 'user_badges', 'quiz_results', 'exercise_attempts', 'user_progress', 'answers', 'questions', 'exercises', 'lessons', 'modules', 'courses', 'categories', 'projects', 'badges', 'settings', 'remember_tokens', 'password_resets', 'login_attempts', 'users'] as $table) {
     $sql .= "DELETE FROM `$table`;\n";

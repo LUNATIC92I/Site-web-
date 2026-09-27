@@ -5,7 +5,6 @@
 -- Comptes de DÉMONSTRATION (voir README.md) : à supprimer avant une mise en production.
 -- =====================================================================
 
-USE html_css_academy;
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
@@ -39,11 +38,11 @@ INSERT INTO `settings` (`id`, `setting_key`, `setting_value`, `label`) VALUES
 (5, 'show_demo_accounts', '1', 'Afficher les comptes de démonstration sur la page de connexion');
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password_hash`, `role`, `is_active`, `bio`, `last_login_at`, `last_activity_at`, `created_at`) VALUES
-(1, 'Admin', 'Academy', 'admin@academy.test', '$2y$12$NR6/CrdhxQJLPibN1M92hOVPXLlVHYnh3dfAKUbip5C189YFIOH9.', 'admin', 1, 'Compte administrateur de démonstration.', '2026-09-27 09:00:00', '2026-09-27 09:00:00', '2026-08-18 10:00:00'),
-(2, 'Léa', 'Martin', 'demo@academy.test', '$2y$12$QQ7eq7OSIJGrvQh50KfB1.FB850cHom800G4ZCJ7Q7.9n9EiJZPaS', 'student', 1, 'Apprenante de démonstration.', '2026-09-26 18:00:00', '2026-09-26 18:00:00', '2026-09-06 10:00:00'),
-(3, 'Karim', 'Benali', 'karim@academy.test', '$2y$12$QQ7eq7OSIJGrvQh50KfB1.FB850cHom800G4ZCJ7Q7.9n9EiJZPaS', 'student', 1, NULL, '2026-09-25 10:00:00', '2026-09-25 10:00:00', '2026-08-30 10:00:00'),
-(4, 'Sofia', 'Rossi', 'sofia@academy.test', '$2y$12$QQ7eq7OSIJGrvQh50KfB1.FB850cHom800G4ZCJ7Q7.9n9EiJZPaS', 'student', 1, NULL, '2026-09-27 08:00:00', '2026-09-27 08:00:00', '2026-08-23 10:00:00'),
-(5, 'Tom', 'Dubois', 'tom@academy.test', '$2y$12$QQ7eq7OSIJGrvQh50KfB1.FB850cHom800G4ZCJ7Q7.9n9EiJZPaS', 'student', 1, NULL, '2026-09-22 10:00:00', '2026-09-22 10:00:00', '2026-09-18 10:00:00');
+(1, 'Admin', 'Academy', 'admin@academy.test', '$2y$12$zDBYfer6L9Z6w1rOpe9CreB52L6iK0fK5.8AeYatyCiVsiHBnYcAK', 'admin', 1, 'Compte administrateur de démonstration.', '2026-09-27 09:00:00', '2026-09-27 09:00:00', '2026-08-18 10:00:00'),
+(2, 'Léa', 'Martin', 'demo@academy.test', '$2y$12$fIhPPYn20TSAaq7Pj8vFaeOIHhdiFjm939zotrMf8yeeYrsmKs8Ye', 'student', 1, 'Apprenante de démonstration.', '2026-09-26 18:00:00', '2026-09-26 18:00:00', '2026-09-06 10:00:00'),
+(3, 'Karim', 'Benali', 'karim@academy.test', '$2y$12$fIhPPYn20TSAaq7Pj8vFaeOIHhdiFjm939zotrMf8yeeYrsmKs8Ye', 'student', 1, NULL, '2026-09-25 10:00:00', '2026-09-25 10:00:00', '2026-08-30 10:00:00'),
+(4, 'Sofia', 'Rossi', 'sofia@academy.test', '$2y$12$fIhPPYn20TSAaq7Pj8vFaeOIHhdiFjm939zotrMf8yeeYrsmKs8Ye', 'student', 1, NULL, '2026-09-27 08:00:00', '2026-09-27 08:00:00', '2026-08-23 10:00:00'),
+(5, 'Tom', 'Dubois', 'tom@academy.test', '$2y$12$fIhPPYn20TSAaq7Pj8vFaeOIHhdiFjm939zotrMf8yeeYrsmKs8Ye', 'student', 1, NULL, '2026-09-22 10:00:00', '2026-09-22 10:00:00', '2026-09-18 10:00:00');
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `description`, `color`, `sort_order`) VALUES
 (1, 'HTML', 'html', 'Le langage de structure des pages web.', '#ff8a4c', 1),

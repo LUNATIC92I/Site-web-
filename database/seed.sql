@@ -1,7 +1,7 @@
 -- =====================================================================
 -- HTML & CSS Academy — Données initiales (généré par database/build-seed.php)
 -- Ne pas modifier à la main : éditez database/content/ puis relancez le script.
--- Contenu : 2 catégories, 6 cours, 20 modules, 52 leçons, 79 exercices, 183 questions, 4 projets, 13 badges.
+-- Contenu : 2 catégories, 6 cours, 30 modules, 75 leçons, 108 exercices, 257 questions, 4 projets, 13 badges.
 -- Comptes de DÉMONSTRATION (voir README.md) : à supprimer avant une mise en production.
 -- =====================================================================
 
@@ -39,11 +39,11 @@ INSERT INTO `settings` (`id`, `setting_key`, `setting_value`, `label`) VALUES
 (5, 'show_demo_accounts', '1', 'Afficher les comptes de démonstration sur la page de connexion');
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password_hash`, `role`, `is_active`, `bio`, `last_login_at`, `last_activity_at`, `created_at`) VALUES
-(1, 'Admin', 'Academy', 'admin@academy.test', '$2y$12$.jjZSzgP/5XVWePUuXg7XeFPrdJ/5hppmfaHjuHU38vH6G8T95P6i', 'admin', 1, 'Compte administrateur de démonstration.', '2026-09-27 09:00:00', '2026-09-27 09:00:00', '2026-08-18 10:00:00'),
-(2, 'Léa', 'Martin', 'demo@academy.test', '$2y$12$jRGPSrx4IMK7hL6Ap6il6u9W0TCw4Sq4aHhm1po9UOnw6QoPrQ1u.', 'student', 1, 'Apprenante de démonstration.', '2026-09-26 18:00:00', '2026-09-26 18:00:00', '2026-09-06 10:00:00'),
-(3, 'Karim', 'Benali', 'karim@academy.test', '$2y$12$jRGPSrx4IMK7hL6Ap6il6u9W0TCw4Sq4aHhm1po9UOnw6QoPrQ1u.', 'student', 1, NULL, '2026-09-25 10:00:00', '2026-09-25 10:00:00', '2026-08-30 10:00:00'),
-(4, 'Sofia', 'Rossi', 'sofia@academy.test', '$2y$12$jRGPSrx4IMK7hL6Ap6il6u9W0TCw4Sq4aHhm1po9UOnw6QoPrQ1u.', 'student', 1, NULL, '2026-09-27 08:00:00', '2026-09-27 08:00:00', '2026-08-23 10:00:00'),
-(5, 'Tom', 'Dubois', 'tom@academy.test', '$2y$12$jRGPSrx4IMK7hL6Ap6il6u9W0TCw4Sq4aHhm1po9UOnw6QoPrQ1u.', 'student', 1, NULL, '2026-09-22 10:00:00', '2026-09-22 10:00:00', '2026-09-18 10:00:00');
+(1, 'Admin', 'Academy', 'admin@academy.test', '$2y$12$KruHke9DkkqD3sohZ/l/TurbdBLhIYDhcR0kCetTnJclZHffFXW3K', 'admin', 1, 'Compte administrateur de démonstration.', '2026-09-27 09:00:00', '2026-09-27 09:00:00', '2026-08-18 10:00:00'),
+(2, 'Léa', 'Martin', 'demo@academy.test', '$2y$12$2qT7ScAENSDGzCg9.fm23urqZVkiUX/rBH2ARMxWnPDl6RG/5w3aS', 'student', 1, 'Apprenante de démonstration.', '2026-09-26 18:00:00', '2026-09-26 18:00:00', '2026-09-06 10:00:00'),
+(3, 'Karim', 'Benali', 'karim@academy.test', '$2y$12$2qT7ScAENSDGzCg9.fm23urqZVkiUX/rBH2ARMxWnPDl6RG/5w3aS', 'student', 1, NULL, '2026-09-25 10:00:00', '2026-09-25 10:00:00', '2026-08-30 10:00:00'),
+(4, 'Sofia', 'Rossi', 'sofia@academy.test', '$2y$12$2qT7ScAENSDGzCg9.fm23urqZVkiUX/rBH2ARMxWnPDl6RG/5w3aS', 'student', 1, NULL, '2026-09-27 08:00:00', '2026-09-27 08:00:00', '2026-08-23 10:00:00'),
+(5, 'Tom', 'Dubois', 'tom@academy.test', '$2y$12$2qT7ScAENSDGzCg9.fm23urqZVkiUX/rBH2ARMxWnPDl6RG/5w3aS', 'student', 1, NULL, '2026-09-22 10:00:00', '2026-09-22 10:00:00', '2026-09-18 10:00:00');
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `description`, `color`, `sort_order`) VALUES
 (1, 'HTML', 'html', 'Le langage de structure des pages web.', '#ff8a4c', 1),
@@ -79,7 +79,17 @@ INSERT INTO `modules` (`id`, `course_id`, `title`, `slug`, `description`, `sort_
 (17, 4, 'Le positionnement', 'css-positionnement', 'position static, relative, absolute, fixed, sticky et gestion de la superposition avec z-index.', 2),
 (18, 4, 'Flexbox', 'css-flexbox', 'Le modèle de mise en page flexible : conteneur, axes, alignements, espacements, retour à la ligne et éléments flexibles.', 3),
 (19, 4, 'CSS Grid', 'css-grid', 'La mise en page en deux dimensions : colonnes, lignes, unité fr, placement, zones nommées et grilles adaptatives.', 4),
-(20, 4, 'Pseudo-classes et pseudo-éléments', 'css-pseudo-classes-elements', 'Réagir aux interactions (:hover, :focus), cibler selon la position (:nth-child) et générer du contenu (::before, ::after).', 5);
+(20, 4, 'Pseudo-classes et pseudo-éléments', 'css-pseudo-classes-elements', 'Réagir aux interactions (:hover, :focus), cibler selon la position (:nth-child) et générer du contenu (::before, ::after).', 5),
+(21, 5, 'Le HTML sémantique', 'html-semantique', 'Structurer une page avec les balises de sens : header, nav, main, section, article, aside, footer.', 1),
+(22, 5, 'Audio, vidéo et contenus intégrés', 'html-medias', 'Intégrer du son et de la vidéo accessibles, et des contenus externes avec iframe.', 2),
+(23, 5, 'Métadonnées et SEO', 'html-metadonnees-seo', 'Les balises meta, Open Graph, favicon, et les fondamentaux du référencement naturel en HTML.', 3),
+(24, 5, 'Accessibilité', 'html-accessibilite', 'Concevoir des pages utilisables par tous : principes WCAG, navigation clavier, ARIA et tests.', 4),
+(25, 5, 'Bonnes pratiques et validation', 'html-bonnes-pratiques', 'Écrire un HTML professionnel : conventions, organisation des fichiers, validation W3C et débogage.', 5),
+(26, 6, 'Responsive design', 'css-responsive', 'Adapter les pages à tous les écrans : viewport, approche mobile first, media queries, images et typographie fluides.', 1),
+(27, 6, 'Transitions, transformations et animations', 'css-transitions-animations', 'Donner vie aux interfaces avec transition, transform et @keyframes, dans le respect des utilisateurs.', 2),
+(28, 6, 'Effets visuels', 'css-effets-visuels', 'Ombres portées, ombres de texte, dégradés linéaires, radiaux et coniques, filtres.', 3),
+(29, 6, 'Variables CSS et organisation', 'css-variables-organisation', 'Les propriétés personnalisées (variables), les thèmes, et l’organisation d’une feuille de style maintenable.', 4),
+(30, 6, 'Interfaces modernes et bonnes pratiques', 'css-interfaces-modernes', 'Assembler toutes les notions pour construire des composants d’interface soignés, performants et accessibles.', 5);
 
 INSERT INTO `lessons` (`id`, `module_id`, `title`, `slug`, `duration_minutes`, `introduction`, `objectives`, `prerequisites`, `theory`, `syntax_code`, `simple_html`, `simple_css`, `example_html`, `example_css`, `line_by_line`, `reference_items`, `common_mistakes`, `best_practices`, `practical`, `summary_points`, `challenge`, `is_published`, `sort_order`) VALUES
 (1, 1, 'Qu’est-ce que le HTML ?', 'qu-est-ce-que-html', 12, 'Chaque page que vous visitez — un article de presse, une boutique en ligne, un réseau social — est d’abord un **document HTML**. Avant les couleurs, les animations et les boutons interactifs, il y a une structure : un titre, des paragraphes, des images, des liens. Cette structure, c’est le HTML qui la décrit.
@@ -3655,7 +3665,1772 @@ Le contenu généré par CSS n’est pas sélectionnable et il est **inconstamme
 
 ::selection {
   background: #fde68a;
-}', '[[".titre::after { content: \\"\\"; display: block; … }","Une barre décorative sous le titre, sans HTML supplémentaire."],[".intro::first-letter { float: left; font-size: 3em; }","Lettrine façon magazine."],[".citation::before { content: \\"“\\"; position: absolute; }","Guillemet décoratif positionné par rapport à la citation."],[".externe::after { content: \\" ↗\\"; }","Flèche ajoutée après le texte du lien."],["::selection { background: #fde68a; }","Couleur du texte sélectionné."]]', '[["::before / ::after","Contenu généré au début / à la fin."],["content","Obligatoire : texte, `\\"\\"`, `attr()`."],["::first-letter / ::first-line","Première lettre / ligne."],["::placeholder","Texte d’exemple des champs."],["::selection","Sélection de l’utilisateur."],["::marker","Puces et numéros de liste."]]', '["Oublier `content` : rien ne s’affiche.","Utiliser `::before` sur un `<img>` ou un `<input>` (éléments sans contenu : ça ne fonctionne pas).","Placer une information essentielle dans `content`.","Confondre `:` (pseudo-classe) et `::` (pseudo-élément)."]', '["Pseudo-éléments pour la décoration uniquement.","`content: \\"\\"` + `display: block` pour les formes.","Parent en `position: relative` pour positionner un pseudo-élément."]', 'Les petites flèches des menus déroulants, les icônes « lien externe », les lignes décoratives sous les titres de section et les bulles de dialogue (triangle en `::after`) sont presque toujours des pseudo-éléments.', '["`::before` / `::after` + `content` créent des éléments virtuels.","`content: \\"\\"` pour une forme décorative.","Typographie : `::first-letter`, `::selection`, `::placeholder`.","Décoration uniquement : l’information va dans le HTML."]', 'Créez une bulle de dialogue avec un petit triangle en bas à gauche réalisé avec `::after` et des bordures.', 1, 2);
+}', '[[".titre::after { content: \\"\\"; display: block; … }","Une barre décorative sous le titre, sans HTML supplémentaire."],[".intro::first-letter { float: left; font-size: 3em; }","Lettrine façon magazine."],[".citation::before { content: \\"“\\"; position: absolute; }","Guillemet décoratif positionné par rapport à la citation."],[".externe::after { content: \\" ↗\\"; }","Flèche ajoutée après le texte du lien."],["::selection { background: #fde68a; }","Couleur du texte sélectionné."]]', '[["::before / ::after","Contenu généré au début / à la fin."],["content","Obligatoire : texte, `\\"\\"`, `attr()`."],["::first-letter / ::first-line","Première lettre / ligne."],["::placeholder","Texte d’exemple des champs."],["::selection","Sélection de l’utilisateur."],["::marker","Puces et numéros de liste."]]', '["Oublier `content` : rien ne s’affiche.","Utiliser `::before` sur un `<img>` ou un `<input>` (éléments sans contenu : ça ne fonctionne pas).","Placer une information essentielle dans `content`.","Confondre `:` (pseudo-classe) et `::` (pseudo-élément)."]', '["Pseudo-éléments pour la décoration uniquement.","`content: \\"\\"` + `display: block` pour les formes.","Parent en `position: relative` pour positionner un pseudo-élément."]', 'Les petites flèches des menus déroulants, les icônes « lien externe », les lignes décoratives sous les titres de section et les bulles de dialogue (triangle en `::after`) sont presque toujours des pseudo-éléments.', '["`::before` / `::after` + `content` créent des éléments virtuels.","`content: \\"\\"` pour une forme décorative.","Typographie : `::first-letter`, `::selection`, `::placeholder`.","Décoration uniquement : l’information va dans le HTML."]', 'Créez une bulle de dialogue avec un petit triangle en bas à gauche réalisé avec `::after` et des bordures.', 1, 2),
+(53, 21, 'Pourquoi le HTML sémantique ?', 'pourquoi-la-semantique', 12, 'Deux pages peuvent avoir exactement le même rendu à l’écran, l’une construite avec des dizaines de `<div>`, l’autre avec des balises sémantiques. Pour un humain qui regarde, aucune différence. Pour un moteur de recherche, un lecteur d’écran ou un développeur qui reprend le code, c’est le jour et la nuit.', '["Comprendre ce qu’est la sémantique","Mesurer ses bénéfices : accessibilité, SEO, maintenance","Repérer une « soupe de div »"]', '["Attributs globaux, div et span"]', '## Qu’est-ce que la sémantique ?
+
+La **sémantique**, c’est le **sens**. Une balise sémantique décrit la **nature** de son contenu : `<nav>` dit « ceci est une navigation », `<article>` dit « ceci est un contenu autonome ». Un `<div>`, lui, ne dit rien.
+
+## Comparaison
+
+```html
+<!-- Non sémantique -->
+<div class="header">
+  <div class="menu">…</div>
+</div>
+<div class="content">…</div>
+<div class="footer">…</div>
+```
+
+```html
+<!-- Sémantique -->
+<header>
+  <nav>…</nav>
+</header>
+<main>…</main>
+<footer>…</footer>
+```
+
+## Les bénéfices
+
+### 1. Accessibilité
+
+Les lecteurs d’écran créent des **repères** (*landmarks*) à partir de ces balises. L’utilisateur peut sauter directement au contenu principal ou à la navigation, au lieu d’écouter toute la page.
+
+### 2. Référencement (SEO)
+
+Les moteurs de recherche comprennent mieux quelle partie est le contenu principal, quelle partie est une navigation répétée sur chaque page, quel bloc est un article.
+
+### 3. Maintenance
+
+Le code se lit comme un plan. Un collègue comprend la structure en quelques secondes.
+
+### 4. Fonctionnalités gratuites
+
+Le mode lecture des navigateurs, les extensions, les assistants vocaux exploitent cette structure.
+
+## Les balises de structure
+
+| Balise | Rôle |
+|---|---|
+| `<header>` | En-tête (de la page ou d’une section) |
+| `<nav>` | Bloc de navigation principal |
+| `<main>` | Contenu principal (un seul par page) |
+| `<section>` | Section thématique avec un titre |
+| `<article>` | Contenu autonome (article, carte produit, commentaire) |
+| `<aside>` | Contenu complémentaire (encadré, barre latérale) |
+| `<footer>` | Pied (de la page ou d’une section) |
+
+> [!TIP] Désactivez le CSS d’une page (dans Firefox : Affichage > Style de page > Aucun style). Une page sémantique reste parfaitement compréhensible.', '<header>…</header>
+<nav>…</nav>
+<main>…</main>
+<footer>…</footer>', NULL, NULL, '<header>
+  <p><strong>Le Petit Journal</strong></p>
+  <nav>
+    <a href="#">Accueil</a> · <a href="#">Sports</a> · <a href="#">Culture</a>
+  </nav>
+</header>
+<main>
+  <article>
+    <h1>Un nouveau musée ouvre ses portes</h1>
+    <p>Le musée d’art moderne accueille ses premiers visiteurs ce week-end.</p>
+  </article>
+  <aside>
+    <h2>À lire aussi</h2>
+    <p>Les expositions à ne pas manquer cet été.</p>
+  </aside>
+</main>
+<footer>
+  <p>© Le Petit Journal</p>
+</footer>', NULL, '[["<header>","En-tête du site : logo, navigation."],["<nav>","Navigation principale : un repère pour les lecteurs d’écran."],["<main>","Le contenu principal, unique dans la page."],["<article>","Un contenu autonome : l’article de presse."],["<aside>","Contenu lié mais secondaire."],["<footer>","Pied de page : mentions, copyright."]]', '[["<header>","En-tête."],["<nav>","Navigation."],["<main>","Contenu principal."],["<footer>","Pied."]]', '["Construire toute la page avec des `<div class=\\"header\\">`, `<div class=\\"nav\\">`…","Choisir une balise sémantique pour son apparence (elle n’en a aucune par défaut).","Penser que la sémantique est « optionnelle » parce que l’écran ne change pas."]', '["Commencer par la structure sémantique, styler ensuite.","Réserver `<div>` au regroupement purement visuel.","Vérifier la structure avec l’arbre d’accessibilité des outils de développement."]', 'Les audits d’accessibilité (obligatoires pour de nombreux sites publics et, depuis 2025, pour beaucoup d’entreprises en Europe) vérifient la présence des repères `header`, `nav`, `main` et `footer`.', '["Sémantique = sens du contenu.","Bénéfices : accessibilité, SEO, maintenance.","Remplacez les div de structure par header, nav, main, footer…"]', 'Prenez une page de votre choix, affichez son code source et comptez les balises sémantiques. Pourriez-vous en ajouter ?', 1, 1),
+(54, 21, 'header, nav, main et footer', 'header-nav-main-footer', 13, 'Ces quatre balises forment le **squelette** de presque toutes les pages web. Chacune a des règles d’usage précises : combien peut-il y en avoir ? où les placer ? que peuvent-elles contenir ?', '["Utiliser correctement header, nav, main et footer","Connaître leurs règles (nombre, emplacement)","Ajouter un lien d’évitement vers le contenu"]', '["Pourquoi le HTML sémantique ?"]', '## `<header>`
+
+Contenu d’introduction : logo, titre du site, navigation, recherche. Il peut y en avoir **plusieurs** : un pour la page, un en haut d’un `<article>` (titre, auteur, date).
+
+## `<nav>`
+
+Réservé aux **blocs de navigation majeurs** : menu principal, fil d’Ariane, sommaire, pagination. Les liens isolés dans un paragraphe n’ont pas besoin de `<nav>`.
+
+Si une page contient plusieurs `<nav>`, distinguez-les avec `aria-label` :
+
+```html
+<nav aria-label="Navigation principale">…</nav>
+<nav aria-label="Fil d’Ariane">…</nav>
+```
+
+## `<main>`
+
+Le **contenu principal et unique** de la page — ce qui la différencie des autres pages du site.
+
+- **un seul** `<main>` visible par page ;
+- il ne doit pas être placé dans `<header>`, `<nav>`, `<article>`, `<aside>` ou `<footer>`.
+
+## `<footer>`
+
+Informations de fin : copyright, liens légaux, contact, réseaux sociaux. Comme `<header>`, il peut aussi terminer un `<article>` ou une `<section>`.
+
+## Le lien d’évitement
+
+Les utilisateurs du clavier doivent traverser tout le menu avant d’atteindre le contenu. Un lien d’évitement, visible au focus, leur permet de sauter directement au `<main>` :
+
+```html
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+…
+<main id="contenu">…</main>
+```
+
+Cette plateforme en possède un : appuyez sur `Tab` en arrivant sur une page.', '<header><nav aria-label="…">…</nav></header>
+<main id="contenu">…</main>
+<footer>…</footer>', NULL, NULL, '<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site">
+  <strong>Atelier Bois</strong>
+  <nav aria-label="Navigation principale">
+    <ul>
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">Créations</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="contenu">
+  <h1>Meubles artisanaux en chêne massif</h1>
+  <p>Chaque pièce est fabriquée à la main dans notre atelier.</p>
+</main>
+<footer class="site">
+  <p>© Atelier Bois — <a href="#">Mentions légales</a></p>
+</footer>', 'body { margin: 0; font-family: system-ui, sans-serif; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 8px; top: 8px; background: #fde68a; padding: 8px; }
+header.site { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; background: #78350f; color: white; }
+header.site ul { display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; }
+header.site a { color: white; }
+main { padding: 20px; }
+footer.site { padding: 12px 20px; background: #fef3c7; }', '[["<a class=\\"skip\\" href=\\"#contenu\\">","Lien d’évitement, masqué jusqu’à ce qu’il reçoive le focus."],["<nav aria-label=\\"Navigation principale\\">","Navigation nommée pour les lecteurs d’écran."],["<ul>","Les liens de navigation forment une liste."],["<main id=\\"contenu\\">","Contenu principal, cible du lien d’évitement."],["<footer class=\\"site\\">","Pied de page du site."]]', '[["<header>","Introduction (plusieurs possibles)."],["<nav aria-label>","Navigation majeure, nommée si plusieurs."],["<main>","Contenu principal, un seul."],["<footer>","Pied (plusieurs possibles)."]]', '["Plusieurs `<main>` dans la page.","Mettre `<main>` à l’intérieur de `<header>` ou `<article>`.","Entourer chaque petit groupe de liens d’un `<nav>`.","Plusieurs `<nav>` sans `aria-label`."]', '["Un lien d’évitement vers `<main>`.","Nommer les `<nav>` multiples.","Menu principal en liste `<ul>`."]', 'Les frameworks de sites (WordPress, gabarits Laravel…) génèrent presque toujours ce squelette : un `header` et un `footer` communs à toutes les pages, et un `main` dont le contenu change.', '["`header`/`footer` : plusieurs possibles.","`nav` : navigations majeures, nommées si multiples.","`main` : unique, contenu principal.","Lien d’évitement vers `main`."]', 'Ajoutez à une page un fil d’Ariane dans un second `<nav aria-label="Fil d’Ariane">` contenant une liste ordonnée.', 1, 2),
+(55, 21, 'section, article et aside', 'section-article-aside', 14, '`<section>` ou `<article>` ? C’est une des questions les plus débattues du HTML. La règle est pourtant simple : un article a du sens **tout seul**, une section est une **partie** d’un tout. Et `<aside>` accueille ce qui est lié, mais secondaire.', '["Choisir entre `<section>` et `<article>`","Utiliser `<aside>` à bon escient","Savoir quand un `<div>` reste le bon choix"]', '["header, nav, main et footer"]', '## `<article>` : un contenu autonome
+
+Question à se poser : **ce contenu aurait-il du sens s’il était publié seul**, ailleurs (flux RSS, partage) ?
+
+Exemples : article de blog, fiche produit dans une liste, commentaire, carte d’un événement, message d’un forum.
+
+## `<section>` : une partie thématique
+
+Un regroupement **thématique** d’une page, qui a en général **un titre** (`<h2>`, `<h3>`) :
+
+```html
+<main>
+  <section>
+    <h2>Nos services</h2>…
+  </section>
+  <section>
+    <h2>Témoignages</h2>…
+  </section>
+</main>
+```
+
+Si vous ne pouvez pas donner de titre à votre section, c’est probablement un `<div>`.
+
+## Imbrication
+
+Les deux s’imbriquent librement : une `<section>` « Derniers articles » contient plusieurs `<article>` ; un long `<article>` peut être découpé en `<section>`.
+
+## `<aside>` : le contenu complémentaire
+
+Contenu **lié** au contenu principal mais **pas indispensable** à sa compréhension : encadré « Le saviez-vous ? », biographie de l’auteur, liens connexes, publicité, barre latérale.
+
+## L’arbre de décision
+
+1. Le contenu est-il autonome ? → `<article>`
+2. Est-il secondaire / annexe ? → `<aside>`
+3. Est-ce une partie thématique avec un titre ? → `<section>`
+4. Sinon (regroupement visuel) → `<div>`', '<section><h2>…</h2> <article>…</article> </section>
+<aside>…</aside>', NULL, NULL, '<main>
+  <section>
+    <h2>Derniers articles</h2>
+    <article>
+      <h3>Débuter en photographie</h3>
+      <p>Les réglages essentiels pour vos premières photos.</p>
+    </article>
+    <article>
+      <h3>La règle des tiers</h3>
+      <p>Composer une image équilibrée en un coup d’œil.</p>
+    </article>
+  </section>
+  <aside>
+    <h2>Le saviez-vous ?</h2>
+    <p>La première photographie date de 1826.</p>
+  </aside>
+</main>', NULL, '[["<section>","Partie thématique de la page, avec son titre."],["<h2>Derniers articles</h2>","Le titre qui justifie la section."],["<article>","Chaque résumé est autonome : il pourrait être partagé seul."],["<aside>","Anecdote liée au thème mais non indispensable."]]', '[["<article>","Contenu autonome."],["<section>","Partie thématique, avec un titre."],["<aside>","Contenu complémentaire."]]', '["Remplacer tous les `<div>` par des `<section>`.","Une `<section>` sans titre.","Placer le contenu principal dans `<aside>`."]', '["Une section = un titre.","Un article = compréhensible seul.","Garder `<div>` pour la mise en page pure."]', 'Sur une page d’accueil de site vitrine, chaque bloc (« Services », « Réalisations », « Contact ») est une `<section>` avec son `<h2>` ; les cartes de réalisations à l’intérieur sont des `<article>`.', '["`<article>` : autonome.","`<section>` : partie thématique avec titre.","`<aside>` : complémentaire.","Aucun des trois ? `<div>`."]', 'Structurez la page d’un restaurant : sections « La carte » (plats en articles), « Horaires », « Avis clients » (avis en articles), et un aside « Offre du jour ».', 1, 3),
+(56, 22, 'Les éléments audio et video', 'audio-et-video', 15, 'Avant HTML5, lire une vidéo sur le Web nécessitait un plugin (Flash). Aujourd’hui, `<audio>` et `<video>` sont natifs : lecteur intégré, contrôles clavier, sous-titres. Il reste à les utiliser **avec respect** pour les visiteurs : pas de son qui démarre tout seul, des sous-titres, un poids maîtrisé.', '["Intégrer un son avec `<audio>`","Intégrer une vidéo avec `<video>`","Proposer plusieurs formats avec `<source>`","Ajouter des sous-titres avec `<track>`"]', '["Les images"]', '## `<audio>`
+
+```html
+<audio controls src="podcast.mp3">
+  Votre navigateur ne lit pas l’audio. <a href="podcast.mp3">Télécharger le fichier</a>.
+</audio>
+```
+
+L’attribut `controls` affiche le lecteur (lecture, volume, progression). Sans lui, rien n’est visible !
+
+## `<video>`
+
+```html
+<video controls width="640" poster="miniature.jpg">
+  <source src="film.webm" type="video/webm">
+  <source src="film.mp4" type="video/mp4">
+  <track src="sous-titres-fr.vtt" kind="captions" srclang="fr" label="Français" default>
+  Votre navigateur ne lit pas la vidéo.
+</video>
+```
+
+| Attribut | Rôle |
+|---|---|
+| `controls` | Affiche les contrôles |
+| `poster` | Image affichée avant la lecture |
+| `autoplay` | Lecture automatique (bloquée par les navigateurs si le son est actif) |
+| `muted` | Son coupé |
+| `loop` | Lecture en boucle |
+| `playsinline` | Lecture dans la page sur iPhone |
+| `preload` | `none`, `metadata`, `auto` : ce qui est préchargé |
+
+## Plusieurs formats : `<source>`
+
+Le navigateur lit le **premier** format qu’il supporte. MP4 (H.264) est universel ; WebM est plus léger.
+
+## Sous-titres : `<track>`
+
+Fichier au format **WebVTT** (`.vtt`) :
+
+```text
+WEBVTT
+
+00:00:01.000 --> 00:00:04.000
+Bienvenue dans ce tutoriel.
+```
+
+`kind="captions"` : sous-titres pour personnes sourdes (incluant les sons) ; `kind="subtitles"` : traduction.
+
+## Bonnes pratiques d’usage
+
+- **Jamais de son en lecture automatique** : c’est intrusif et déroutant pour les utilisateurs de lecteurs d’écran.
+- Une vidéo décorative d’arrière-plan : `autoplay muted loop playsinline`, et un moyen de la mettre en pause.
+- Fournissez une **transcription** textuelle pour les contenus audio (podcasts).
+
+> [!INFO] Pour les vidéos longues ou nombreuses, un hébergement spécialisé (YouTube, Vimeo, PeerTube) gère la compression et la bande passante : on l’intègre alors avec `<iframe>` (leçon suivante).', '<video controls poster="…">
+  <source src="…" type="video/mp4">
+  <track kind="captions" src="…" srclang="fr">
+</video>', NULL, NULL, '<h2>Tutoriel vidéo</h2>
+<video controls width="480" preload="metadata" poster="https://placehold.co/480x270/png?text=Vid%C3%A9o">
+  <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+  <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+  Votre navigateur ne lit pas la vidéo.
+</video>
+
+<h2>Podcast</h2>
+<audio controls preload="none" src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3">
+  <a href="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3">Télécharger l’audio</a>
+</audio>
+<p><a href="#">Lire la transcription de l’épisode</a></p>', NULL, '[["<video controls width=\\"480\\" preload=\\"metadata\\" poster=\\"…\\">","Lecteur avec contrôles, seules les métadonnées sont préchargées, image d’attente."],["<source … type=\\"video/webm\\">","Premier format proposé (plus léger)."],["<source … type=\\"video/mp4\\">","Format de repli universel."],["Votre navigateur ne lit pas la vidéo.","Contenu de secours pour les navigateurs très anciens."],["<audio controls preload=\\"none\\" …>","Rien n’est téléchargé tant que l’utilisateur ne lance pas la lecture."],["<a href=\\"#\\">Lire la transcription…</a>","Alternative textuelle au contenu audio."]]', '[["<audio> / <video>","Lecteurs natifs."],["controls","Affiche les contrôles."],["<source src type>","Fichier et format alternatifs."],["<track kind srclang label>","Sous-titres / légendes."],["poster","Image d’aperçu de la vidéo."],["muted / autoplay / loop","Son coupé / lecture auto / boucle."]]', '["Oublier `controls` : le lecteur est invisible.","Lancer un son automatiquement.","Des vidéos sans sous-titres.","Héberger des vidéos lourdes non compressées sur son propre serveur."]', '["Toujours `controls` (sauf vidéo décorative muette).","Sous-titres et transcriptions.","`preload=\\"metadata\\"` ou `\\"none\\"` pour économiser la bande passante."]', 'Les sites de formation en ligne proposent systématiquement sous-titres et transcriptions : c’est une exigence d’accessibilité, et un gain pour tous (visionnage sans son dans les transports, référencement du texte).', '["`<audio controls>` et `<video controls>`.","`<source>` pour plusieurs formats.","`<track>` pour les sous-titres.","Pas de son en lecture automatique."]', 'Créez une vidéo d’arrière-plan muette en boucle derrière un titre, avec un bouton (HTML uniquement) prévu pour la mettre en pause.', 1, 1),
+(57, 22, 'iframe : intégrer des contenus externes', 'iframe-contenus-integres', 12, 'Une carte interactive, une vidéo YouTube, un calendrier partagé, un formulaire de paiement : tous ces contenus viennent d’un **autre site** et s’affichent dans le vôtre grâce à `<iframe>`. Un outil puissant… qui exige quelques précautions de sécurité et de performance.', '["Intégrer une page externe avec `<iframe>`","Rendre une iframe accessible avec `title`","Sécuriser une iframe avec `sandbox`","Améliorer les performances avec `loading=\\"lazy\\"`"]', '["Les éléments audio et video"]', '## La syntaxe
+
+```html
+<iframe
+  src="https://www.openstreetmap.org/export/embed.html?bbox=4.82,45.75,4.85,45.77"
+  title="Carte du quartier de la boutique"
+  width="600" height="400"
+  loading="lazy">
+</iframe>
+```
+
+- `src` : l’adresse du contenu à afficher ;
+- `title` : **obligatoire pour l’accessibilité** — il décrit le contenu de la fenêtre intégrée ;
+- `loading="lazy"` : ne charge l’iframe que lorsqu’elle approche de l’écran (une iframe peut peser plusieurs Mo !).
+
+## Les codes d’intégration
+
+YouTube, Google Maps, Vimeo… proposent un bouton « Partager > Intégrer » qui fournit le code `<iframe>` prêt à l’emploi. Pensez à y ajouter un `title` pertinent.
+
+## La sécurité : `sandbox`
+
+Une iframe exécute le code d’un autre site. L’attribut `sandbox` la place dans un **bac à sable** où presque tout est interdit (scripts, formulaires, popups…). On réautorise ensuite uniquement le nécessaire :
+
+```html
+<iframe src="…" sandbox="allow-scripts allow-same-origin"></iframe>
+```
+
+> [!INFO] L’aperçu de l’éditeur de cette plateforme est une iframe `sandbox` sans aucune autorisation : votre HTML et votre CSS s’affichent, mais aucun script ne peut s’exécuter.
+
+## Être intégré… ou pas
+
+Un site peut **refuser** d’être affiché dans une iframe (en-têtes `X-Frame-Options` ou `Content-Security-Policy: frame-ancestors`). C’est une protection contre le *clickjacking* : c’est pourquoi certains sites affichent une page blanche dans une iframe.
+
+## Vie privée
+
+Une vidéo YouTube intégrée dépose des cookies dès le chargement. Préférez le domaine `youtube-nocookie.com`, ou une image cliquable qui ne charge la vidéo qu’après consentement.', '<iframe src="https://…" title="Description" loading="lazy"></iframe>', NULL, NULL, '<h2>Nous trouver</h2>
+<iframe
+  src="https://www.openstreetmap.org/export/embed.html?bbox=2.29%2C48.85%2C2.30%2C48.86&amp;layer=mapnik"
+  title="Carte OpenStreetMap autour de la tour Eiffel"
+  width="480"
+  height="300"
+  loading="lazy">
+</iframe>
+<p><a href="https://www.openstreetmap.org/#map=17/48.8584/2.2945">Afficher la carte en plein écran</a></p>', 'iframe {
+  display: block;
+  max-width: 100%;
+  border: 0;
+  border-radius: 12px;
+}', '[["<iframe","Fenêtre intégrée affichant une page externe."],["  src=\\"https://www.openstreetmap.org/…\\"","Adresse du contenu intégré (`&amp;` = `&` dans une URL)."],["  title=\\"Carte OpenStreetMap…\\"","Nom accessible de l’iframe."],["  loading=\\"lazy\\">","Chargement différé."],["<a href=\\"…\\">Afficher la carte en plein écran</a>","Alternative : lien direct vers le contenu."]]', '[["<iframe src title>","Contenu externe intégré."],["loading=\\"lazy\\"","Chargement différé."],["sandbox","Restreint les capacités du contenu intégré."],["allow","Autorise des fonctionnalités (plein écran, autoplay…)."],["referrerpolicy","Contrôle l’information de provenance envoyée."]]', '["Oublier `title`.","Intégrer des iframes lourdes en haut de page sans `lazy`.","Intégrer un contenu non fiable sans `sandbox`.","Largeur fixe qui déborde sur mobile (utilisez `max-width: 100%` ou `aspect-ratio`)."]', '["Un `title` descriptif sur chaque iframe.","`loading=\\"lazy\\"` sauf si l’iframe est en haut de page.","`sandbox` pour les contenus tiers non maîtrisés.","Proposer un lien alternatif."]', 'La page « Contact » de la plupart des commerces intègre une carte en iframe ; les passerelles de paiement intègrent parfois leur formulaire de carte bancaire en iframe, pour que les numéros ne transitent jamais par le site du marchand.', '["`<iframe src title>` intègre une page externe.","`title` pour l’accessibilité, `loading=\\"lazy\\"` pour la performance.","`sandbox` pour la sécurité."]', 'Intégrez une vidéo YouTube via `youtube-nocookie.com`, rendez-la responsive avec `aspect-ratio: 16 / 9` et donnez-lui un titre accessible.', 1, 2),
+(58, 23, 'Les balises meta et le head complet', 'les-balises-meta', 15, 'Quand vous partagez un lien sur une messagerie, une carte apparaît avec un titre, un résumé et une image. D’où viennent ces informations ? Du `<head>` de la page. Les **métadonnées** sont la carte de visite de votre page auprès des navigateurs, moteurs de recherche et réseaux sociaux.', '["Écrire une meta description efficace","Ajouter les balises Open Graph pour le partage","Déclarer une favicon et la couleur du thème","Contrôler l’indexation avec robots et canonical"]', '["Les sections head et body"]', '## La meta description
+
+```html
+<meta name="description" content="Pains au levain et viennoiseries pur beurre, faits maison à Lyon depuis 1987.">
+```
+
+Elle est souvent affichée sous le titre dans les résultats de recherche. Elle n’améliore pas directement le classement, mais une bonne description **donne envie de cliquer**. Visez **120 à 160 caractères**, unique pour chaque page.
+
+## Open Graph : le partage sur les réseaux
+
+```html
+<meta property="og:title" content="Boulangerie Dupain">
+<meta property="og:description" content="Pains au levain faits maison à Lyon.">
+<meta property="og:image" content="https://www.dupain.fr/images/partage.jpg">
+<meta property="og:url" content="https://www.dupain.fr/">
+<meta property="og:type" content="website">
+```
+
+Ces balises (protocole créé par Facebook, repris partout) définissent la carte affichée lors d’un partage. L’image doit utiliser une **URL absolue** (idéalement 1200×630px). Twitter/X utilise en plus `<meta name="twitter:card" content="summary_large_image">`.
+
+## La favicon
+
+```html
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+```
+
+## Autres métadonnées utiles
+
+| Balise | Rôle |
+|---|---|
+| `<meta name="theme-color" content="#0b0f17">` | Couleur de l’interface du navigateur mobile |
+| `<link rel="canonical" href="…">` | Adresse de référence d’une page accessible par plusieurs URL |
+| `<meta name="robots" content="noindex">` | Demande aux moteurs de ne pas indexer la page |
+
+> [!INFO] Les pages privées (tableau de bord, profil) de cette plateforme utilisent `noindex` : elles n’ont aucun intérêt dans les résultats de recherche.
+
+## L’ordre recommandé du `<head>`
+
+1. `<meta charset>` (en premier) ;
+2. `<meta name="viewport">` ;
+3. `<title>` ;
+4. `<meta name="description">`, canonical, Open Graph ;
+5. favicon, feuilles de style.', '<meta name="description" content="…">
+<meta property="og:title" content="…">
+<link rel="icon" href="…">', NULL, NULL, '<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atelier céramique — Cours de poterie à Nantes</title>
+  <meta name="description" content="Cours de poterie pour débutants et confirmés à Nantes : tournage, modelage et émaillage en petits groupes.">
+  <link rel="canonical" href="https://www.atelier-ceramique.fr/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Atelier céramique — Cours de poterie à Nantes">
+  <meta property="og:description" content="Tournage, modelage et émaillage en petits groupes.">
+  <meta property="og:image" content="https://www.atelier-ceramique.fr/img/partage.jpg">
+  <meta name="theme-color" content="#9a3412">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <h1>Atelier céramique</h1>
+  <p>Cours de poterie à Nantes.</p>
+</body>
+</html>', NULL, '[["<title>Atelier céramique — Cours de poterie à Nantes</title>","Titre descriptif : activité + lieu."],["<meta name=\\"description\\" content=\\"…\\">","Résumé de ~150 caractères pour les résultats de recherche."],["<link rel=\\"canonical\\" href=\\"…\\">","Adresse de référence de la page."],["<meta property=\\"og:title\\" …>","Titre de la carte de partage."],["<meta property=\\"og:image\\" content=\\"https://…\\">","Image de partage, en URL absolue."],["<meta name=\\"theme-color\\" …>","Couleur de la barre du navigateur mobile."]]', '[["meta description","Résumé pour les moteurs de recherche."],["og:title / og:description / og:image / og:url","Carte de partage (Open Graph)."],["link rel=\\"canonical\\"","URL de référence."],["meta robots","Instructions d’indexation (`noindex`, `nofollow`)."],["link rel=\\"icon\\"","Favicon."],["meta theme-color","Couleur de l’interface mobile."]]', '["La même description sur toutes les pages.","Une image Open Graph en chemin relatif.","Oublier de retirer `noindex` à la mise en ligne (le site disparaît de Google).","Utiliser la balise obsolète `meta keywords` en pensant améliorer le classement."]', '["Titre et description uniques et descriptifs pour chaque page.","Tester le partage avec les outils de débogage des réseaux sociaux.","`noindex` sur les pages privées ou sans intérêt de recherche."]', 'Les CMS proposent des extensions SEO qui remplissent ces balises pour chaque page. Comprendre ce qu’elles génèrent vous permet de vérifier leur travail et de corriger une carte de partage qui affiche la mauvaise image.', '["`meta description` : incite au clic.","Open Graph : carte de partage (image en URL absolue).","Canonical, robots, favicon, theme-color complètent le head."]', 'Rédigez le `<head>` complet de la page « Contact » d’un site fictif, avec toutes les balises de cette leçon.', 1, 1),
+(59, 23, 'Le référencement naturel (SEO) de base', 'seo-de-base', 16, 'Le référencement naturel (*SEO, Search Engine Optimization*) regroupe tout ce qui aide une page à apparaître dans les résultats des moteurs de recherche. Pas de formule magique : un bon SEO commence par un **HTML propre**, un **contenu utile** et une **page rapide**. Bonne nouvelle : vous savez déjà faire l’essentiel.', '["Connaître les facteurs SEO liés au HTML","Structurer titres et contenus pour le référencement","Comprendre sitemap.xml, robots.txt et données structurées","Comprendre le lien entre performance, accessibilité et SEO"]', '["Les balises meta et le head complet","Le HTML sémantique"]', '## Comment fonctionne un moteur de recherche
+
+1. **Exploration** : des robots suivent les liens de page en page.
+2. **Indexation** : ils analysent le contenu et le rangent.
+3. **Classement** : pour chaque recherche, ils sélectionnent les pages les plus pertinentes et fiables.
+
+## Les leviers HTML
+
+| Élément | Bonne pratique |
+|---|---|
+| `<title>` | Unique, 50–60 caractères, mot-clé principal au début |
+| `<h1>` | Un seul, clair, proche du title |
+| Hiérarchie `h2`/`h3` | Structure logique du contenu |
+| URL | Courte et lisible : `/cours/flexbox` plutôt que `/page.php?id=87` |
+| Liens | Textes de liens descriptifs, liens internes entre pages proches |
+| Images | `alt` descriptifs, noms de fichiers parlants, poids optimisé |
+| Sémantique | `main`, `article`, `nav` aident à identifier le contenu principal |
+| `lang` | Bonne langue déclarée |
+
+## Le contenu d’abord
+
+Les moteurs cherchent à satisfaire l’utilisateur. Un contenu **original, complet et qui répond à une vraie question** reste le premier facteur. Répéter un mot-clé 50 fois (*keyword stuffing*) est contre-productif et pénalisé.
+
+## Les fichiers d’aide aux robots
+
+- `robots.txt` (à la racine) : indique les zones à ne pas explorer (`Disallow: /admin/`) et l’adresse du sitemap ;
+- `sitemap.xml` : la liste des pages à indexer, avec leur date de mise à jour.
+
+Cette plateforme génère son `sitemap.xml` automatiquement à partir des leçons publiées.
+
+## Les données structurées
+
+Un bloc JSON-LD décrit précisément le contenu (cours, recette, produit, FAQ…) et peut produire des **résultats enrichis** (étoiles, prix, questions dépliables) :
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Apprendre Flexbox",
+  "description": "Maîtriser la mise en page flexible en CSS."
+}
+</script>
+```
+
+## Performance et accessibilité
+
+Les moteurs mesurent la **vitesse** et la **stabilité** d’affichage (Core Web Vitals) et l’ergonomie mobile. Un site accessible et rapide est mieux classé : les bonnes pratiques vues dans ce parcours sont aussi des bonnes pratiques SEO.', '<title>Mot-clé principal — Marque</title>
+<h1>Titre clair</h1>
+<a href="/cours/flexbox">Cours sur Flexbox</a>', NULL, NULL, '<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Recette de la tarte Tatin — Cuisine facile</title>
+  <meta name="description" content="La vraie recette de la tarte Tatin en 5 étapes, avec les astuces pour un caramel réussi.">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "Recipe", "name": "Tarte Tatin", "totalTime": "PT1H15M"}
+  </script>
+</head>
+<body>
+  <main>
+    <article>
+      <h1>Recette de la tarte Tatin</h1>
+      <p>Une tarte aux pommes renversée, caramélisée et fondante.</p>
+      <h2>Ingrédients</h2>
+      <ul><li>6 pommes</li><li>150 g de sucre</li><li>1 pâte feuilletée</li></ul>
+      <h2>Préparation</h2>
+      <ol><li>Préparer le caramel.</li><li>Disposer les pommes.</li><li>Couvrir de pâte et cuire 40 min.</li></ol>
+      <img src="https://placehold.co/400x250/png?text=Tatin" alt="Tarte Tatin dorée démoulée sur une assiette" width="400" height="250">
+      <p>Voir aussi : <a href="#">notre recette de pâte feuilletée maison</a>.</p>
+    </article>
+  </main>
+</body>
+</html>', NULL, '[["<title>Recette de la tarte Tatin — Cuisine facile</title>","Mot-clé principal en tête du titre."],["<meta name=\\"description\\" …>","Résumé qui donne envie de cliquer."],["<script type=\\"application/ld+json\\">","Données structurées de type Recipe."],["<h1>Recette de la tarte Tatin</h1>","Un seul h1, cohérent avec le title."],["<h2>Ingrédients</h2> / <h2>Préparation</h2>","Structure logique du contenu."],["<img … alt=\\"Tarte Tatin dorée…\\">","Texte alternatif descriptif."],["<a href=\\"#\\">notre recette de pâte feuilletée maison</a>","Lien interne avec un texte descriptif."]]', '[["<title> / <h1>","Signaux principaux du sujet de la page."],["robots.txt","Règles d’exploration pour les robots."],["sitemap.xml","Liste des pages à indexer."],["JSON-LD","Données structurées (schema.org)."],["Core Web Vitals","Indicateurs de performance mesurés par Google."]]', '["Bourrer la page de mots-clés.","Des titres et descriptions dupliqués.","Du texte important dans des images.","Des URL illisibles.","Des pages lentes (images non optimisées)."]', '["Écrire pour les humains d’abord.","Un HTML sémantique et valide.","Des liens internes entre contenus liés.","Mesurer avec Google Search Console et Lighthouse."]', 'Cette plateforme applique ces règles : titres uniques par leçon, descriptions générées depuis l’introduction, URL propres (`/lecon/flexbox-le-conteneur`), sitemap automatique, données structurées `Course` et `LearningResource`.', '["Title, h1, structure, alt et liens sont les leviers HTML du SEO.","Contenu utile avant tout.","robots.txt, sitemap.xml et JSON-LD aident les moteurs.","Performance et accessibilité comptent aussi."]', 'Lancez un audit Lighthouse (onglet dans les outils de développement de Chrome) sur une page de votre choix et corrigez deux problèmes SEO signalés.', 1, 2),
+(60, 24, 'Les principes de l’accessibilité', 'principes-accessibilite', 15, 'Plus d’une personne sur cinq vit avec un handicap, permanent ou temporaire : déficience visuelle, auditive, motrice, cognitive… sans compter le bras cassé, le soleil sur l’écran ou la connexion lente. L’**accessibilité numérique**, c’est concevoir des sites utilisables par **tous**. C’est une obligation légale pour de nombreux sites, et avant tout une question de respect.', '["Connaître les quatre principes WCAG","Identifier les technologies d’assistance","Appliquer les bonnes pratiques HTML déjà vues sous l’angle de l’accessibilité"]', '["Le HTML sémantique","Les formulaires"]', '## Qui est concerné ?
+
+- **Déficience visuelle** : cécité (lecteur d’écran comme NVDA, VoiceOver), malvoyance (zoom, contrastes), daltonisme ;
+- **Déficience auditive** : besoin de sous-titres et transcriptions ;
+- **Déficience motrice** : navigation au clavier seul, commande vocale, contacteur ;
+- **Troubles cognitifs** : besoin de clarté, de simplicité, de cohérence.
+
+## Les règles WCAG
+
+Les *Web Content Accessibility Guidelines* du W3C sont la référence internationale (le RGAA en France s’en inspire). Elles reposent sur quatre principes — **POUR** :
+
+| Principe | Signification | Exemples |
+|---|---|---|
+| **Perceptible** | L’information peut être perçue | `alt` sur les images, sous-titres, contrastes suffisants |
+| **Opérable** | L’interface est utilisable | Tout fonctionne au clavier, pas de piège, temps suffisant |
+| **Compréhensible** | Le contenu est clair | Langue déclarée, labels, messages d’erreur explicites |
+| **Robuste** | Compatible avec les technologies d’assistance | HTML valide et sémantique |
+
+Trois niveaux de conformité : A, **AA** (le niveau généralement exigé), AAA.
+
+## Ce que vous savez déjà faire
+
+Une bonne partie de l’accessibilité repose sur le HTML vu dans ce parcours :
+
+- `lang` sur `<html>` ;
+- un `alt` pertinent sur chaque image ;
+- une hiérarchie de titres logique ;
+- des `<label>` associés à chaque champ ;
+- des balises sémantiques (`nav`, `main`, `button`…) ;
+- des textes de liens explicites ;
+- des contrastes suffisants (4,5:1) ;
+- ne jamais transmettre une information **par la couleur seule**.
+
+> [!TIP] La meilleure règle d’accessibilité : **utiliser le bon élément HTML**. Un `<button>` est nativement focusable, activable avec Entrée et Espace, et annoncé comme bouton. Un `<div>` cliquable ne fait rien de tout ça.
+
+## Tester
+
+- naviguer sur sa page **uniquement au clavier** (Tab, Maj+Tab, Entrée, Espace, flèches) ;
+- zoomer à 200 % ;
+- utiliser un lecteur d’écran (NVDA gratuit sous Windows, VoiceOver intégré sur Mac et iPhone) ;
+- lancer un audit automatique (Lighthouse, WAVE, axe) — ils ne détectent qu’environ 30 % des problèmes.', '<button type="button">Action</button>   <!-- et non <div onclick> -->
+<img src="…" alt="…">
+<label for="…">…</label>', NULL, NULL, '<main>
+  <h1>Inscription à l’atelier</h1>
+  <p>Les champs marqués d’un astérisque (*) sont obligatoires.</p>
+  <form>
+    <label for="nom">Nom *</label>
+    <input id="nom" name="nom" required autocomplete="name">
+
+    <label for="mail">E-mail *</label>
+    <input id="mail" name="mail" type="email" required aria-describedby="mail-aide">
+    <p id="mail-aide">Nous vous enverrons la confirmation à cette adresse.</p>
+
+    <button type="submit">Je m’inscris</button>
+  </form>
+  <p class="erreur" role="alert">⚠ Erreur : l’adresse e-mail est invalide.</p>
+</main>', 'body { font-family: system-ui, sans-serif; line-height: 1.5; }
+form { display: grid; gap: 6px; max-width: 320px; }
+input { padding: 8px; border: 2px solid #475569; border-radius: 6px; }
+input:focus-visible, button:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
+button { padding: 10px; border: 0; border-radius: 6px; background: #1d4ed8; color: white; }
+.erreur { color: #b91c1c; font-weight: bold; }', '[["<p>Les champs marqués d’un astérisque (*) sont obligatoires.</p>","L’astérisque est expliqué en texte."],["<label for=\\"nom\\">Nom *</label>","Label visible et associé."],["aria-describedby=\\"mail-aide\\"","Le texte d’aide est lu avec le champ."],["<button type=\\"submit\\">","Un vrai bouton : clavier et lecteurs d’écran le gèrent nativement."],["<p class=\\"erreur\\" role=\\"alert\\">⚠ Erreur : …","Message annoncé immédiatement ; l’erreur est signalée par une icône ET du texte, pas seulement la couleur."],["outline: 3px solid #2563eb;","(CSS) Focus clavier très visible."]]', '[["WCAG","Règles internationales d’accessibilité (niveaux A, AA, AAA)."],["RGAA","Référentiel français, basé sur les WCAG."],["Lecteur d’écran","Logiciel qui lit la page à voix haute ou en braille."],["role=\\"alert\\"","Annonce immédiatement un message important."]]', '["Des `<div>` ou `<span>` cliquables à la place de boutons ou liens.","Supprimer le contour de focus.","Une information transmise uniquement par la couleur.","Des contrastes insuffisants.","Des champs sans label."]', '["Le bon élément HTML natif avant tout.","Tester au clavier à chaque nouvelle fonctionnalité.","Combiner tests automatiques et tests manuels."]', 'En Europe, l’Acte européen sur l’accessibilité (applicable depuis juin 2025) impose l’accessibilité à de nombreux services en ligne : e-commerce, banques, transports. Les compétences de cette leçon sont désormais recherchées par les recruteurs.', '["Accessibilité = utilisable par tous.","WCAG : Perceptible, Opérable, Compréhensible, Robuste.","Le HTML sémantique fait l’essentiel du travail.","Tester au clavier et avec un lecteur d’écran."]', 'Parcourez un site que vous utilisez souvent uniquement au clavier. Notez trois obstacles rencontrés.', 1, 1);
+
+INSERT INTO `lessons` (`id`, `module_id`, `title`, `slug`, `duration_minutes`, `introduction`, `objectives`, `prerequisites`, `theory`, `syntax_code`, `simple_html`, `simple_css`, `example_html`, `example_css`, `line_by_line`, `reference_items`, `common_mistakes`, `best_practices`, `practical`, `summary_points`, `challenge`, `is_published`, `sort_order`) VALUES
+(61, 24, 'ARIA et navigation au clavier', 'aria-et-navigation-clavier', 16, 'Quand le HTML natif ne suffit pas — un bouton qui n’affiche qu’une icône, un menu qui s’ouvre, une zone qui se met à jour — les attributs **ARIA** complètent l’information transmise aux technologies d’assistance. Utilisés avec parcimonie et justesse, ils rendent accessibles des interfaces riches.', '["Comprendre la règle n°1 d’ARIA","Nommer un élément avec `aria-label` et `aria-labelledby`","Décrire un état avec `aria-expanded`, `aria-current`, `aria-hidden`","Garantir un ordre de tabulation logique"]', '["Les principes de l’accessibilité"]', '## La règle n°1 d’ARIA
+
+> « Si vous pouvez utiliser un élément HTML natif ayant déjà la sémantique et le comportement souhaités, faites-le. »
+
+ARIA (*Accessible Rich Internet Applications*) ne change **ni l’apparence ni le comportement** : il modifie seulement ce qui est **annoncé**. Un mauvais ARIA est pire que pas d’ARIA.
+
+## Nommer un élément
+
+- `aria-label` : nom accessible **invisible** :
+
+```html
+<button type="button" aria-label="Fermer la fenêtre">✕</button>
+```
+
+- `aria-labelledby` : le nom provient d’un autre élément visible (par son `id`) ;
+- `aria-describedby` : une description complémentaire (aide, format attendu).
+
+## Décrire un état
+
+| Attribut | Usage |
+|---|---|
+| `aria-expanded="true/false"` | Un bouton qui ouvre/ferme un menu ou un panneau |
+| `aria-current="page"` | Le lien de la page actuelle dans un menu |
+| `aria-hidden="true"` | Cache un élément décoratif aux lecteurs d’écran (icône) |
+| `aria-live="polite"` | Annonce les mises à jour d’une zone (résultat, notification) |
+| `aria-invalid="true"` | Champ en erreur |
+
+## Les rôles
+
+`role` précise la nature d’un élément quand aucune balise native n’existe : `role="alert"`, `role="dialog"`, `role="tablist"`… Ne réécrivez jamais un rôle natif (`<button role="button">` est inutile ; `<h2 role="button">` est une mauvaise idée).
+
+## La navigation au clavier
+
+- **Tab** / **Maj + Tab** : passer d’un élément interactif à l’autre ;
+- **Entrée** : activer un lien ou un bouton ; **Espace** : activer un bouton, cocher une case ;
+- **Flèches** : naviguer dans les boutons radio, les listes déroulantes ;
+- **Échap** : fermer un menu ou une fenêtre.
+
+Règles :
+
+1. tout ce qui est cliquable doit être atteignable et activable au clavier ;
+2. l’ordre de tabulation suit l’ordre **logique** du HTML (évitez `tabindex` positif) ;
+3. le focus doit toujours être **visible** ;
+4. aucun **piège** : on doit pouvoir sortir de chaque composant (dans l’éditeur de cette plateforme, Échap quitte la zone de code où Tab sert à indenter).', '<button aria-label="Fermer" aria-expanded="false">…</button>
+<a href="…" aria-current="page">…</a>
+<svg aria-hidden="true">…</svg>
+<div aria-live="polite">…</div>', NULL, NULL, '<header class="barre">
+  <button type="button" class="burger" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+    <span aria-hidden="true">☰</span>
+  </button>
+  <nav id="menu" aria-label="Navigation principale">
+    <a href="#" aria-current="page">Accueil</a>
+    <a href="#">Boutique</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+<p>Panier : <span aria-live="polite">2 articles</span></p>
+<button type="button" aria-label="Supprimer l’article Chaussettes">🗑</button>', 'body { font-family: system-ui, sans-serif; }
+.barre { display: flex; gap: 12px; align-items: center; }
+.burger { font-size: 20px; padding: 6px 10px; }
+nav a { margin-right: 10px; }
+[aria-current="page"] { font-weight: bold; text-decoration: underline; }', '[["aria-expanded=\\"false\\"","Indique que le menu contrôlé est fermé (JavaScript passera la valeur à true)."],["aria-controls=\\"menu\\"","Précise quel élément le bouton contrôle."],["aria-label=\\"Ouvrir le menu\\"","Nom accessible d’un bouton qui n’affiche qu’une icône."],["<span aria-hidden=\\"true\\">☰</span>","L’icône n’est pas lue (« trois barres horizontales » n’aurait aucun sens)."],["aria-current=\\"page\\"","Lien de la page actuelle ; utilisé aussi pour le style."],["<span aria-live=\\"polite\\">","Les changements du panier seront annoncés."]]', '[["aria-label / aria-labelledby","Nom accessible."],["aria-describedby","Description complémentaire."],["aria-expanded","État ouvert/fermé."],["aria-current","Élément courant dans un ensemble."],["aria-hidden","Masque aux technologies d’assistance."],["aria-live","Zone dont les mises à jour sont annoncées."]]', '["Ajouter de l’ARIA partout « au cas où ».","Mettre `aria-hidden=\\"true\\"` sur un élément focusable.","Un bouton icône sans nom accessible.","Des `tabindex` positifs qui désorganisent la navigation.","Un composant où le focus reste bloqué."]', '["HTML natif d’abord, ARIA en complément.","Nommer tous les boutons icônes.","Mettre à jour les états ARIA en même temps que l’interface.","Tester chaque composant au clavier."]', 'Le menu utilisateur de cette plateforme utilise `aria-expanded` et `aria-haspopup`, les icônes ont `aria-hidden="true"`, et le lien de la page active porte `aria-current="page"`. Inspectez-les avec les outils de développement !', '["Règle n°1 : HTML natif d’abord.","ARIA nomme (`aria-label`), décrit des états (`aria-expanded`, `aria-current`) et masque (`aria-hidden`).","Tout doit fonctionner au clavier, avec un focus visible et sans piège."]', 'Créez un bouton « Afficher la réponse » d’une FAQ avec `aria-expanded` et `aria-controls` pointant vers la réponse.', 1, 2),
+(62, 25, 'Écrire un HTML propre et professionnel', 'ecrire-un-html-propre', 13, 'Vous connaissez maintenant l’essentiel des balises HTML. Ce qui distingue un code professionnel d’un code qui « marche », ce sont les **conventions** : un code cohérent, lisible, bien organisé, que n’importe quel développeur peut reprendre. Cette leçon rassemble les règles d’or.', '["Appliquer les conventions d’écriture","Organiser les fichiers d’un projet","Relire son code avec une check-list"]', '["Accessibilité"]', '## Les conventions d’écriture
+
+1. **Minuscules** pour les balises et attributs.
+2. **Guillemets doubles** autour des valeurs d’attributs.
+3. **Indentation** cohérente (2 espaces).
+4. **Fermer** toutes les balises non vides.
+5. Une **seule** façon de faire dans tout le projet (même ordre d’attributs : `class`, `id`, `href`/`src`, puis le reste).
+6. Pas de **style en ligne**, pas d’attributs de présentation obsolètes (`align`, `bgcolor`, `<font>`, `<center>`).
+
+## L’organisation des fichiers
+
+```text
+mon-projet/
+├── index.html
+├── a-propos.html
+├── contact.html
+├── css/
+│   └── style.css
+├── js/
+│   └── main.js
+└── images/
+    ├── logo.svg
+    └── equipe/
+        └── lea.webp
+```
+
+- noms en **minuscules**, sans espace ni accent, mots séparés par des tirets ;
+- `index.html` : la page d’accueil (le serveur l’affiche par défaut dans un dossier).
+
+## La check-list avant publication
+
+- [ ] DOCTYPE, `lang`, `charset`, `viewport`, `title`, `description`
+- [ ] Un seul `<h1>`, titres hiérarchisés
+- [ ] Structure sémantique (`header`, `nav`, `main`, `footer`)
+- [ ] `alt` sur toutes les images
+- [ ] Labels sur tous les champs
+- [ ] Liens explicites, `rel="noopener"` avec `target="_blank"`
+- [ ] Code validé sans erreur
+- [ ] Navigation au clavier testée
+- [ ] Commentaires de débogage et code mort supprimés
+
+> [!TIP] Un code propre n’est pas un luxe : c’est ce qui permet de modifier un site dans six mois sans tout casser.', '<a class="btn" href="/contact" title="…">Contact</a>', NULL, NULL, '<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Atelier Bois</title>
+  <meta name="description" content="Contactez l’Atelier Bois pour un devis de meuble sur mesure.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Nous contacter</h1>
+    <form action="/contact" method="post">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required>
+      <button type="submit">Demander un devis</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© Atelier Bois</p>
+  </footer>
+</body>
+</html>', NULL, '[["<!DOCTYPE html>","Squelette complet : doctype, langue, charset, viewport, title, description."],["<link rel=\\"stylesheet\\" href=\\"css/style.css\\">","Style dans un fichier externe, rangé dans css/."],["<nav aria-label=\\"Navigation principale\\">","Structure sémantique et accessible."],["aria-current=\\"page\\"","Page courante signalée."],["<label for=\\"email\\">E-mail</label>","Formulaire accessible."],["  <main>","Indentation cohérente de 2 espaces, lignes vides entre les grandes zones."]]', '[["Conventions","Minuscules, guillemets doubles, indentation, balises fermées."],["index.html","Page par défaut d’un dossier."],["Balises obsolètes","`<font>`, `<center>`, `<marquee>`, attributs `align`, `bgcolor`…"]]', '["Des noms de fichiers avec espaces ou majuscules (`Mon Image.JPG`).","Des balises obsolètes copiées d’anciens tutoriels.","Un code mort commenté laissé en production.","Une indentation incohérente."]', '["Utiliser un formateur automatique (Prettier).","Suivre une check-list avant chaque mise en ligne.","Garder une arborescence claire."]', 'Dans les équipes, ces règles sont écrites dans un **guide de style** et vérifiées automatiquement à chaque modification (outils de lint dans l’intégration continue). Une pull request qui ne les respecte pas est refusée.', '["Minuscules, guillemets, indentation, balises fermées.","Fichiers bien nommés et rangés.","Une check-list avant chaque publication."]', 'Reprenez votre projet « Ma première page personnelle » et appliquez-lui la check-list complète.', 1, 1),
+(63, 25, 'Valider et déboguer son HTML', 'valider-et-deboguer', 13, 'Le navigateur corrige silencieusement vos erreurs HTML… chacun à sa manière. Une page peut donc sembler correcte dans votre navigateur et se casser ailleurs, ou perturber les lecteurs d’écran. Le **validateur** et les **outils de développement** vous montrent la réalité.', '["Utiliser le validateur du W3C","Lire et corriger les messages d’erreur","Inspecter le DOM réel avec les outils de développement"]', '["Écrire un HTML propre et professionnel"]', '## Le validateur du W3C
+
+Le service gratuit [validator.w3.org](https://validator.w3.org/) vérifie votre code par URL, par fichier ou par copier-coller. Il renvoie :
+
+- des **erreurs** (code invalide) ;
+- des **avertissements** (code valide mais douteux).
+
+## Lire un message d’erreur
+
+```text
+Error: Element h2 not allowed as child of element p in this context.
+From line 12, column 4
+```
+
+Le message indique **quoi** (un `h2` dans un `p`) et **où** (ligne 12). Corrigez les erreurs **de haut en bas** : une seule balise mal fermée peut provoquer des dizaines d’erreurs en cascade.
+
+## Les erreurs les plus fréquentes
+
+| Erreur | Cause |
+|---|---|
+| `End tag … seen, but there were open elements` | Balise mal fermée ou mal imbriquée |
+| `Duplicate ID` | Un même `id` utilisé deux fois |
+| `An img element must have an alt attribute` | `alt` manquant |
+| `Element … not allowed as child of …` | Élément interdit à cet endroit (bloc dans un `p`, `div` dans un `ul`…) |
+| `Bad value … for attribute href` | Espace ou caractère invalide dans une URL |
+
+## Le DOM réel : les outils de développement
+
+L’onglet **Éléments** (`F12`) montre le DOM **après** correction par le navigateur. Comparez-le avec votre code : si un élément se retrouve à un endroit inattendu (un `<h2>` sorti de votre `<p>`, un `<p>` vide en trop), c’est le signe d’une erreur de structure.
+
+L’onglet **Accessibilité** affiche l’arbre tel que le perçoit un lecteur d’écran : noms, rôles, états.
+
+## La démarche de débogage
+
+1. Isoler le problème (commenter une partie du code) ;
+2. Valider le HTML ;
+3. Inspecter le DOM et les styles appliqués ;
+4. Corriger une erreur à la fois, puis revérifier.', 'https://validator.w3.org/#validate_by_input', NULL, NULL, '<!-- Version corrigée d’un code qui contenait 4 erreurs -->
+<main>
+  <h1>Nos produits</h1>
+  <h2>Nouveautés</h2>
+  <p>Découvrez la <strong>collection</strong> d’automne.</p>
+  <ul>
+    <li>Pull en laine</li>
+    <li>Écharpe</li>
+  </ul>
+  <img src="https://placehold.co/200x120/png" alt="Pull en laine beige plié" width="200" height="120">
+  <p id="promo">Livraison offerte.</p>
+</main>', NULL, '[["<h2>Nouveautés</h2>","Erreur corrigée : le h2 était placé dans un paragraphe."],["<strong>collection</strong>","Erreur corrigée : `</p>` était fermé avant `</strong>`."],["  <li>Écharpe</li>","Erreur corrigée : un `<div>` était placé directement dans le `<ul>`."],["… alt=\\"Pull en laine beige plié\\"","Erreur corrigée : `alt` manquant."],["<p id=\\"promo\\">","L’`id` est unique dans la page."]]', '[["validator.w3.org","Validateur officiel HTML."],["F12 > Éléments","DOM réel et styles appliqués."],["F12 > Accessibilité","Arbre d’accessibilité."],["Lighthouse","Audit performance, accessibilité, SEO, bonnes pratiques."]]', '["Corriger les erreurs dans le désordre (cascade d’erreurs).","Ignorer les erreurs parce que « ça s’affiche bien ».","Confondre le code source et le DOM corrigé par le navigateur."]', '["Valider chaque page avant publication.","Corriger de haut en bas, une erreur à la fois.","Intégrer la validation dans l’éditeur (extensions VS Code)."]', 'Une balise non fermée dans le gabarit commun d’un site peut casser la mise en page de toutes les pages. Les équipes valident automatiquement le HTML généré à chaque déploiement pour éviter ce genre d’incident.', '["Le validateur W3C révèle les erreurs invisibles.","Corriger de haut en bas.","Les outils de développement montrent le DOM réel et l’arbre d’accessibilité."]', 'Validez la page d’accueil de trois sites connus sur validator.w3.org. Qu’en concluez-vous ?', 1, 2),
+(64, 26, 'Les principes du responsive design', 'principes-responsive', 13, 'Plus de la moitié du trafic web mondial vient des smartphones. Un site doit donc s’afficher correctement sur un écran de 320 pixels comme sur un moniteur de 2560 pixels. Le **responsive design** n’est pas une technique unique, mais une façon de penser la mise en page.', '["Comprendre les principes du responsive design","Adopter l’approche mobile first","Utiliser des mises en page fluides","Tester sur différentes tailles d’écran"]', '["Flexbox","CSS Grid","Les unités CSS"]', '## Trois ingrédients
+
+Le responsive design (Ethan Marcotte, 2010) repose sur :
+
+1. une **grille fluide** : des largeurs relatives (`%`, `fr`, `max-width`) plutôt que fixes ;
+2. des **médias flexibles** : des images qui ne dépassent jamais leur conteneur ;
+3. des **media queries** : des règles CSS appliquées selon la taille de l’écran.
+
+## Le prérequis : la balise viewport
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+Sans elle, le mobile simule un écran de 980px et réduit la page : aucune de vos règles responsive ne fonctionnera comme prévu.
+
+## Mobile first
+
+On écrit d’abord le CSS pour **les petits écrans** (souvent une seule colonne, plus simple), puis on **enrichit** la mise en page pour les écrans plus larges avec des media queries `min-width`.
+
+Avantages :
+
+- le CSS de base est léger, idéal pour les mobiles (souvent sur des connexions plus lentes) ;
+- on se concentre sur l’essentiel du contenu ;
+- les ajouts pour grand écran sont progressifs.
+
+## Les règles de base
+
+```css
+img, video { max-width: 100%; height: auto; }
+.conteneur { width: min(100% - 32px, 1200px); margin-inline: auto; }
+```
+
+- **jamais** de largeur fixe supérieure à l’écran ;
+- pas de **défilement horizontal** ;
+- des zones cliquables d’au moins **44×44px** sur mobile ;
+- un texte lisible **sans zoom** (16px minimum).
+
+## Tester
+
+Les outils de développement proposent un **mode appareil** (`Ctrl + Maj + M`) : testez au minimum 320, 375, 414, 768, 1024 et 1440 pixels. Rien ne remplace toutefois un test sur un vrai téléphone.
+
+> [!TIP] Commencez par redimensionner lentement la fenêtre de votre navigateur de très large à très étroit : les points où la mise en page « casse » vous indiquent où placer vos media queries.', 'img { max-width: 100%; height: auto; }
+.conteneur { max-width: 1200px; margin: 0 auto; }', NULL, NULL, '<div class="conteneur">
+  <h1>Page fluide</h1>
+  <img src="https://placehold.co/1200x400/png?text=Image+large" alt="Bannière de démonstration" width="1200" height="400">
+  <p>Réduisez la largeur de l’aperçu : l’image et le texte s’adaptent sans jamais provoquer de défilement horizontal.</p>
+  <a class="btn" href="#">Bouton tactile confortable</a>
+</div>', '*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.conteneur {
+  width: min(100% - 32px, 900px);
+  margin-inline: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.btn {
+  display: inline-block;
+  min-height: 44px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: #0f766e;
+  color: white;
+  text-decoration: none;
+}', '[["  width: min(100% - 32px, 900px);","Largeur fluide : la plus petite entre « écran moins 32px » et 900px."],["  margin-inline: auto;","Centré horizontalement."],["  max-width: 100%;","L’image ne dépasse jamais son conteneur…"],["  height: auto;","…et garde ses proportions."],["  min-height: 44px;","Zone tactile confortable."]]', '[["meta viewport","Indispensable au responsive."],["Mobile first","CSS de base pour mobile, enrichi avec `min-width`."],["max-width: 100%","Médias flexibles."],["min(), max(), clamp()","Fonctions de dimensionnement fluide."]]', '["Oublier la balise viewport.","Des largeurs fixes (`width: 1000px`) qui provoquent un défilement horizontal.","Des boutons minuscules sur mobile.","Tester uniquement sur son propre écran."]', '["Penser mobile first.","Largeurs relatives et `max-width`.","Tester aux tailles clés et sur un vrai appareil."]', 'Google indexe en priorité la version mobile des sites (*mobile-first indexing*). Un site mal adapté au mobile est donc pénalisé dans les résultats de recherche, même pour les recherches faites sur ordinateur.', '["Grille fluide + médias flexibles + media queries.","Viewport obligatoire.","Mobile first : le petit écran d’abord.","Pas de défilement horizontal, zones tactiles de 44px."]', 'Ouvrez le mode appareil de votre navigateur sur trois sites connus et observez comment leur navigation change entre mobile et ordinateur.', 1, 1),
+(65, 26, 'Les media queries', 'media-queries', 16, 'Une colonne sur mobile, deux sur tablette, trois sur ordinateur ; un menu burger sur petit écran, une barre de navigation complète sur grand écran : les **media queries** permettent d’appliquer des règles CSS seulement lorsque certaines conditions sont réunies.', '["Écrire une media query `min-width`","Choisir ses points de rupture","Utiliser les requêtes de préférences (`prefers-color-scheme`, `prefers-reduced-motion`)"]', '["Les principes du responsive design"]', '## La syntaxe
+
+```css
+/* Styles de base : mobile */
+.grille { display: grid; gap: 16px; }
+
+/* À partir de 768px de large */
+@media (min-width: 768px) {
+  .grille { grid-template-columns: 1fr 1fr; }
+}
+
+/* À partir de 1024px */
+@media (min-width: 1024px) {
+  .grille { grid-template-columns: repeat(3, 1fr); }
+}
+```
+
+Les règles à l’intérieur de `@media` ne s’appliquent que si la condition est vraie. Elles s’ajoutent aux règles de base (la cascade s’applique normalement : placez les media queries **après** les styles de base).
+
+## `min-width` ou `max-width` ?
+
+- `min-width` : « à partir de » → approche **mobile first** (recommandée) ;
+- `max-width` : « jusqu’à » → approche desktop first.
+
+## Choisir les points de rupture
+
+Ne ciblez pas des appareils précis (ils changent chaque année). Placez un point de rupture **là où votre contenu en a besoin**. Des valeurs courantes servent de repères : **480px, 768px, 1024px, 1280px**.
+
+## Combiner des conditions
+
+```css
+@media (min-width: 768px) and (max-width: 1023px) { … } /* tablettes uniquement */
+@media (orientation: landscape) { … }
+@media print { … }                                     /* impression */
+```
+
+## Les préférences de l’utilisateur
+
+```css
+@media (prefers-color-scheme: dark) {
+  body { background: #0f172a; color: #e2e8f0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+```
+
+Ces requêtes respectent les réglages du système : thème sombre, réduction des animations (important pour les personnes sujettes aux vertiges ou aux crises d’épilepsie).
+
+> [!INFO] Cette plateforme respecte `prefers-reduced-motion` et propose en plus un interrupteur « Réduire les animations » dans le pied de page.', '@media (min-width: 768px) {
+  .selecteur { … }
+}', NULL, NULL, '<header class="entete">
+  <strong>Mon site</strong>
+  <nav class="nav"><a href="#">Accueil</a><a href="#">Blog</a><a href="#">Contact</a></nav>
+</header>
+<main class="grille">
+  <article class="carte">Article 1</article>
+  <article class="carte">Article 2</article>
+  <article class="carte">Article 3</article>
+</main>', 'body { margin: 0; font-family: system-ui, sans-serif; }
+
+/* Mobile : tout est empilé */
+.entete { display: flex; flex-direction: column; gap: 8px; padding: 12px; background: #1e293b; color: white; }
+.nav { display: flex; gap: 12px; }
+.nav a { color: #cbd5e1; }
+.grille { display: grid; gap: 12px; padding: 12px; }
+.carte { padding: 24px; border-radius: 10px; background: #e0e7ff; }
+
+/* Tablette */
+@media (min-width: 600px) {
+  .entete { flex-direction: row; justify-content: space-between; align-items: center; }
+  .grille { grid-template-columns: 1fr 1fr; }
+}
+
+/* Ordinateur */
+@media (min-width: 900px) {
+  .grille { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (prefers-color-scheme: dark) {
+  .carte { background: #312e81; color: white; }
+}', '[["/* Mobile : tout est empilé */","Les styles de base concernent les petits écrans."],["@media (min-width: 600px) {","À partir de 600px…"],["  .entete { flex-direction: row; … }","…l’en-tête passe sur une ligne."],["  .grille { grid-template-columns: 1fr 1fr; }","…et la grille passe à 2 colonnes."],["@media (min-width: 900px) {","À partir de 900px : 3 colonnes."],["@media (prefers-color-scheme: dark) {","Cartes adaptées au thème sombre du système."]]', '[["@media (min-width: …)","À partir d’une largeur."],["@media (max-width: …)","Jusqu’à une largeur."],["and","Combine des conditions."],["print","Styles d’impression."],["prefers-color-scheme","Thème clair/sombre du système."],["prefers-reduced-motion","Préférence de réduction des animations."]]', '["Placer les media queries avant les styles de base (elles sont écrasées).","Multiplier les points de rupture pour chaque modèle de téléphone.","Oublier les parenthèses : `@media min-width: 768px`.","Mélanger `min-width` et `max-width` sans logique."]', '["Mobile first avec `min-width`.","Des points de rupture dictés par le contenu.","Respecter `prefers-reduced-motion`."]', 'Le menu de cette plateforme devient un menu plein écran activé par un bouton burger sous 900px : c’est une media query qui change son `position`, sa `transform` et l’affichage du bouton.', '["`@media (min-width: X) { … }` applique des règles à partir de X.","Mobile first + points de rupture selon le contenu.","Respectez les préférences système (thème, animations)."]', 'Créez une galerie qui affiche 1, 2, 3 puis 4 colonnes selon la largeur, et une feuille d’impression qui masque la navigation.', 1, 2),
+(66, 26, 'Typographie fluide et images responsives', 'typographie-et-images-fluides', 14, 'Un titre de 48px est magnifique sur ordinateur… et écrase tout sur un téléphone. Plutôt que d’ajouter une media query pour chaque taille, la fonction `clamp()` crée une typographie qui **s’adapte en continu**. Et `object-fit` règle le cadrage des images dans des zones de taille variable.', '["Utiliser `clamp()` pour une typographie fluide","Cadrer une image avec `object-fit` et `aspect-ratio`","Combiner ces techniques"]', '["Les media queries"]', '## `clamp(minimum, idéal, maximum)`
+
+```css
+h1 { font-size: clamp(1.75rem, 1rem + 3vw, 3.5rem); }
+```
+
+- la taille ne descend jamais sous **1.75rem** ;
+- elle vaut idéalement **1rem + 3vw** (elle grandit avec la largeur de l’écran) ;
+- elle ne dépasse jamais **3.5rem**.
+
+Le mélange `rem + vw` conserve un lien avec la taille de police de l’utilisateur (accessibilité) tout en suivant l’écran. `clamp()` fonctionne aussi pour les espacements :
+
+```css
+.section { padding-block: clamp(2rem, 5vw, 6rem); }
+```
+
+## `aspect-ratio`
+
+Fixe les proportions d’une boîte, quelle que soit sa largeur :
+
+```css
+.video { aspect-ratio: 16 / 9; width: 100%; }
+.avatar { aspect-ratio: 1; }
+```
+
+## `object-fit`
+
+Quand une image doit remplir une zone aux proportions différentes des siennes :
+
+| Valeur | Effet |
+|---|---|
+| `fill` | Déformée pour remplir (défaut) |
+| `cover` | Remplit la zone, rognée si besoin |
+| `contain` | Entièrement visible, bandes vides possibles |
+
+```css
+.vignette img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+```
+
+`object-position: top;` choisit la partie conservée lors du rognage (utile pour les portraits).
+
+> [!TIP] Des vignettes aux dimensions **identiques** rendent une grille de cartes bien plus harmonieuse, même si les photos d’origine ont des formats variés.', 'font-size: clamp(1.5rem, 1rem + 2vw, 3rem);
+aspect-ratio: 16 / 9;
+object-fit: cover;', NULL, NULL, '<section class="hero">
+  <h1>Typographie fluide</h1>
+  <p>Redimensionnez l’aperçu : le titre grandit et rétrécit en douceur.</p>
+</section>
+<div class="galerie">
+  <img src="https://placehold.co/600x900/png?text=Portrait" alt="Photo portrait recadrée">
+  <img src="https://placehold.co/900x500/png?text=Paysage" alt="Photo paysage recadrée">
+  <img src="https://placehold.co/500x500/png?text=Carr%C3%A9" alt="Photo carrée">
+</div>', 'body { margin: 0; font-family: system-ui, sans-serif; }
+
+.hero {
+  padding: clamp(1.5rem, 5vw, 4rem);
+  background: #ecfccb;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 1rem + 4vw, 4rem);
+  line-height: 1.1;
+}
+
+.galerie {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+  padding: 8px;
+}
+
+.galerie img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+}', '[["  padding: clamp(1.5rem, 5vw, 4rem);","Espacement fluide, borné."],["  font-size: clamp(1.75rem, 1rem + 4vw, 4rem);","Titre fluide entre 1.75rem et 4rem."],["  aspect-ratio: 4 / 3;","Toutes les vignettes ont les mêmes proportions…"],["  object-fit: cover;","…et les images les remplissent sans déformation."]]', '[["clamp(min, idéal, max)","Valeur fluide bornée."],["aspect-ratio","Proportions d’une boîte."],["object-fit","Ajustement d’une image dans sa boîte."],["object-position","Partie de l’image conservée."]]', '["Utiliser uniquement `vw` pour la taille du texte (ignore le zoom de l’utilisateur).","Oublier les bornes : un texte trop grand sur écran géant.","Déformer des images avec `width` et `height` fixes sans `object-fit`."]', '["`clamp()` avec `rem + vw` pour les titres.","`aspect-ratio` + `object-fit: cover` pour les vignettes.","Tester le zoom navigateur à 200 %."]', 'Les titres de la page d’accueil de cette plateforme utilisent `clamp()` : ils passent en douceur de 2.2rem sur mobile à 4rem sur grand écran, sans aucune media query.', '["`clamp()` : typographie et espacements fluides.","`aspect-ratio` fixe les proportions.","`object-fit: cover` remplit sans déformer."]', 'Créez une grille de profils d’équipe avec des photos de formats variés, toutes affichées en carré parfait avec le visage conservé (`object-position: top`).', 1, 3),
+(67, 27, 'Les transitions', 'les-transitions', 13, 'Quand un bouton change de couleur au survol, le changement est instantané… et un peu brutal. Une **transition** de 200 millisecondes suffit à rendre l’interface fluide et agréable. C’est la première technique d’animation à maîtriser, et souvent la seule nécessaire.', '["Créer une transition entre deux états","Régler durée, propriété, courbe et délai","Choisir des propriétés performantes à animer"]', '["Les pseudo-classes"]', '## Le principe
+
+Une transition anime le passage d’une valeur à une autre quand une propriété **change** (au survol, au focus, à l’ajout d’une classe) :
+
+```css
+.btn {
+  background: #2563eb;
+  transition: background-color 0.2s ease;
+}
+.btn:hover {
+  background: #1d4ed8;
+}
+```
+
+On déclare la transition sur l’**état de repos** : elle s’applique ainsi dans les deux sens (entrée et sortie du survol).
+
+## Les quatre paramètres
+
+| Propriété | Rôle | Exemple |
+|---|---|---|
+| `transition-property` | Ce qui est animé | `background-color`, `transform`, `all` |
+| `transition-duration` | Durée | `0.2s`, `300ms` |
+| `transition-timing-function` | Courbe de vitesse | `ease`, `linear`, `ease-in-out`, `cubic-bezier(…)` |
+| `transition-delay` | Délai avant le départ | `0.1s` |
+
+Raccourci : `transition: transform 0.3s ease-out 0s;` — plusieurs transitions séparées par des virgules.
+
+## Quelle durée ?
+
+- micro-interactions (survol, focus) : **150 à 250ms** ;
+- ouverture de panneaux : **250 à 400ms** ;
+- au-delà de 500ms, l’interface semble lente.
+
+## Quelles propriétés animer ?
+
+Les navigateurs animent très efficacement **`transform`** et **`opacity`** (calculés par la carte graphique). Animer `width`, `height`, `top` ou `margin` oblige le navigateur à recalculer la mise en page à chaque image : risque de saccades.
+
+> [!WARN] Évitez `transition: all` : vous animeriez aussi des propriétés inattendues et coûteuses. Listez précisément ce qui doit être animé.', 'transition: propriété durée courbe délai;', NULL, NULL, '<a class="btn" href="#">Survolez-moi</a>
+<div class="carte">Carte qui se soulève au survol</div>
+<a class="lien" href="#">Lien avec soulignement animé</a>', 'body { font-family: system-ui, sans-serif; display: grid; gap: 24px; justify-items: start; padding: 16px; }
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.btn:hover { background: #1d4ed8; transform: translateY(-2px); }
+
+.carte {
+  padding: 24px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 10%);
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+.carte:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgb(0 0 0 / 15%); }
+
+.lien {
+  color: #7c3aed;
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) left bottom / 0 2px no-repeat;
+  transition: background-size 0.3s ease;
+}
+.lien:hover { background-size: 100% 2px; }', '[["  transition: background-color 0.2s ease, transform 0.2s ease;","Deux propriétés animées, déclarées sur l’état de repos."],[".btn:hover { … transform: translateY(-2px); }","Le bouton monte de 2px en douceur."],["  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;","La carte se soulève et son ombre grandit."],["  background: linear-gradient(…) left bottom / 0 2px no-repeat;","Un soulignement dessiné par un dégradé de largeur 0…"],[".lien:hover { background-size: 100% 2px; }","…qui s’étend à 100 % au survol."]]', '[["transition","Raccourci : propriété durée courbe délai."],["ease / ease-in / ease-out / linear","Courbes de vitesse."],["cubic-bezier()","Courbe personnalisée."]]', '["Déclarer la transition uniquement sur `:hover` (pas d’animation au retour).","Des durées trop longues.","`transition: all` systématique.","Animer `width` ou `top` au lieu de `transform`."]', '["Transitions courtes (150–300ms).","Animer `transform` et `opacity` en priorité.","Lister les propriétés animées."]', 'Presque tous les éléments interactifs de cette plateforme (boutons, cartes, liens, barres de progression) utilisent des transitions de 150 à 300ms sur `transform`, `opacity` ou les couleurs.', '["`transition` anime un changement d’état.","Déclarée sur l’état de repos.","150–300ms pour les micro-interactions.","Préférer `transform` et `opacity`."]', 'Créez un menu dont les liens changent de couleur et affichent un soulignement qui s’étend depuis le centre au survol.', 1, 1),
+(68, 27, 'Les transformations : transform', 'transform', 13, 'Déplacer, agrandir, faire pivoter, incliner : la propriété `transform` modifie l’apparence d’un élément **sans perturber la mise en page** autour de lui. Associée aux transitions, elle est à la base de la plupart des effets modernes.', '["Utiliser `translate`, `scale`, `rotate`, `skew`","Combiner plusieurs transformations","Changer le point d’origine avec `transform-origin`"]', '["Les transitions"]', '## Les fonctions de transformation
+
+| Fonction | Effet | Exemple |
+|---|---|---|
+| `translate(x, y)` | Déplacement | `translate(10px, -5px)`, `translateY(-4px)` |
+| `scale(n)` | Mise à l’échelle | `scale(1.05)`, `scale(0.9)` |
+| `rotate(angle)` | Rotation | `rotate(45deg)`, `rotate(-0.5turn)` |
+| `skew(angle)` | Inclinaison | `skewX(-10deg)` |
+
+## Ce qui ne bouge pas
+
+Un élément transformé garde sa **place d’origine** dans la mise en page : les voisins ne bougent pas. C’est ce qui rend `transform` idéal pour les animations.
+
+## Combiner
+
+Les fonctions s’enchaînent, séparées par des espaces, et s’appliquent **de droite à gauche** (l’ordre compte) :
+
+```css
+.icone:hover { transform: translateY(-2px) rotate(8deg) scale(1.1); }
+```
+
+Les propriétés individuelles `translate`, `rotate` et `scale` existent aussi et peuvent être animées séparément :
+
+```css
+.el { rotate: 15deg; scale: 1.1; }
+```
+
+## `transform-origin`
+
+Par défaut, les transformations se font autour du **centre**. On peut changer ce point :
+
+```css
+.aiguille { transform-origin: bottom center; transform: rotate(30deg); }
+```
+
+## Le centrage absolu classique
+
+```css
+.centre {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+```
+
+Les pourcentages de `translate` sont relatifs à **l’élément lui-même** : on le recule de la moitié de sa propre taille.', 'transform: translate(10px, 0) rotate(15deg) scale(1.1);
+transform-origin: center;', NULL, NULL, '<div class="demo">
+  <div class="boite deplace">translate</div>
+  <div class="boite agrandit">scale</div>
+  <div class="boite tourne">rotate</div>
+  <div class="boite incline">skew</div>
+</div>
+<p>Survolez chaque boîte.</p>', '.demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+}
+
+.boite {
+  width: 90px;
+  height: 90px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #a78bfa;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.deplace:hover  { transform: translate(8px, -8px); }
+.agrandit:hover { transform: scale(1.2); }
+.tourne:hover   { transform: rotate(20deg); }
+.incline:hover  { transform: skewX(-12deg); }', '[["  transition: transform 0.3s ease;","Toutes les transformations sont animées."],[".deplace:hover  { transform: translate(8px, -8px); }","Déplacement de 8px à droite et 8px vers le haut."],[".agrandit:hover { transform: scale(1.2); }","Agrandissement de 20 % autour du centre."],[".tourne:hover   { transform: rotate(20deg); }","Rotation de 20 degrés."],[".incline:hover  { transform: skewX(-12deg); }","Inclinaison horizontale."]]', '[["translate()","Déplacement."],["scale()","Mise à l’échelle."],["rotate()","Rotation (deg, turn)."],["skew()","Inclinaison."],["transform-origin","Point d’origine."]]', '["Écrire deux déclarations `transform` : la seconde remplace la première.","Oublier que l’ordre des fonctions change le résultat.","Agrandir fortement du texte (flou, débordements)."]', '["De petites valeurs pour des effets subtils (`scale(1.03)`, `translateY(-2px)`).","Combiner les fonctions dans une seule déclaration.","Toujours associer une transition."]', 'Les cartes qui « se soulèvent » au survol (`translateY(-4px)`), les boutons qui se « compriment » au clic (`scale(0.97)`) et les flèches qui pivotent quand un accordéon s’ouvre (`rotate(180deg)`) sont des transformations.', '["`transform` : translate, scale, rotate, skew.","La mise en page n’est pas affectée.","Combiner dans une seule déclaration ; l’ordre compte.","`transform-origin` change le pivot."]', 'Créez une icône de flèche dans un bouton d’accordéon qui pivote de 180° quand le bouton est survolé.', 1, 2),
+(69, 27, 'Les animations @keyframes', 'animations-keyframes', 16, 'Les transitions animent le passage entre **deux** états déclenché par une interaction. Les **animations** vont plus loin : plusieurs étapes, démarrage automatique, répétition. Un indicateur de chargement, une apparition en fondu, un badge qui « pop » : place à `@keyframes`.', '["Définir des étapes avec `@keyframes`","Appliquer une animation avec `animation`","Contrôler répétition, direction et état final","Respecter `prefers-reduced-motion`"]', '["Les transformations : transform"]', '## Définir l’animation
+
+```css
+@keyframes apparition {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+```
+
+`from` = 0 %, `to` = 100 %. On peut ajouter des étapes intermédiaires :
+
+```css
+@keyframes rebond {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+```
+
+## L’appliquer
+
+```css
+.titre {
+  animation: apparition 0.6s ease-out both;
+}
+```
+
+| Propriété | Rôle | Exemples |
+|---|---|---|
+| `animation-name` | Nom des keyframes | `apparition` |
+| `animation-duration` | Durée | `0.6s` |
+| `animation-timing-function` | Courbe | `ease-out` |
+| `animation-delay` | Délai | `0.2s` |
+| `animation-iteration-count` | Répétitions | `3`, `infinite` |
+| `animation-direction` | Sens | `normal`, `alternate` |
+| `animation-fill-mode` | État avant/après | `forwards`, `both` |
+| `animation-play-state` | Pause | `paused` |
+
+`fill-mode: both` : l’élément prend l’état de la première image pendant le délai, et garde l’état final après l’animation.
+
+## Respecter les utilisateurs
+
+Les animations peuvent provoquer nausées et vertiges chez certaines personnes (troubles vestibulaires). La règle :
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+```
+
+Autres principes : pas de clignotement rapide (plus de 3 fois par seconde), des animations **au service du sens** (attirer l’attention sur un changement, guider), jamais gratuites ni interminables.
+
+> [!TIP] Les badges de cette plateforme « pop » avec une animation `@keyframes` quand vous les débloquez — sauf si vous avez activé la réduction des animations.', '@keyframes nom { from { … } to { … } }
+.el { animation: nom 1s ease-in-out infinite; }', NULL, NULL, '<h2 class="titre">Bienvenue !</h2>
+<div class="loader" role="status" aria-label="Chargement en cours"></div>
+<span class="badge">Nouveau</span>', 'body { font-family: system-ui, sans-serif; display: grid; gap: 24px; justify-items: start; padding: 24px; }
+
+@keyframes apparition {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes rotation {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulsation {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.12); }
+}
+
+.titre { animation: apparition 0.7s ease-out both; }
+
+.loader {
+  width: 36px;
+  height: 36px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: rotation 0.8s linear infinite;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #f43f5e;
+  color: white;
+  animation: pulsation 1.5s ease-in-out 3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}', '[["@keyframes apparition {","Définition d’une animation nommée."],["  from { opacity: 0; transform: translateY(20px); }","Départ : invisible et décalé vers le bas."],[".titre { animation: apparition 0.7s ease-out both; }","Le titre apparaît en fondu au chargement."],["  animation: rotation 0.8s linear infinite;","Rotation continue à vitesse constante : indicateur de chargement."],["  animation: pulsation 1.5s ease-in-out 3;","Trois pulsations, puis arrêt (pas d’animation infinie inutile)."],["@media (prefers-reduced-motion: reduce) {","Neutralise les animations pour les utilisateurs qui le demandent."]]', '[["@keyframes","Définit les étapes."],["animation","Raccourci : nom durée courbe délai répétitions direction remplissage."],["infinite","Répétition sans fin."],["alternate","Aller-retour."],["forwards / both","Conserve l’état final."]]', '["Oublier `animation-duration` (valeur par défaut 0s : rien ne se passe).","Des animations infinies qui distraient de la lecture.","Ignorer `prefers-reduced-motion`.","Animer des propriétés coûteuses (`width`, `left`)."]', '["Des animations courtes et utiles.","`transform` et `opacity` en priorité.","Toujours prévoir `prefers-reduced-motion`."]', 'Les indicateurs de chargement, les « squelettes » de contenu qui scintillent pendant le chargement, les notifications qui glissent depuis le bord de l’écran utilisent `@keyframes`.', '["`@keyframes` définit les étapes, `animation` les applique.","Contrôle : durée, répétitions, direction, état final.","Animations utiles, courtes, et désactivables."]', 'Créez trois points de chargement qui rebondissent l’un après l’autre grâce à des `animation-delay` différents.', 1, 3),
+(70, 28, 'Les ombres : box-shadow et text-shadow', 'les-ombres', 13, 'Les ombres donnent de la **profondeur** : une carte qui semble posée sur la page, un bouton qui se soulève, une fenêtre qui flotte au-dessus du contenu. Bien dosées, elles guident le regard ; trop marquées, elles alourdissent l’interface.', '["Maîtriser la syntaxe de `box-shadow`","Superposer plusieurs ombres","Créer une ombre intérieure","Utiliser `text-shadow` avec modération"]', '["Les couleurs en CSS"]', '## `box-shadow`
+
+```css
+box-shadow: décalage-x décalage-y flou étendue couleur;
+box-shadow: 0 4px 12px 0 rgb(0 0 0 / 15%);
+```
+
+| Valeur | Rôle |
+|---|---|
+| décalage x | Horizontal (positif = vers la droite) |
+| décalage y | Vertical (positif = vers le bas) |
+| flou | Plus il est grand, plus l’ombre est douce |
+| étendue (*spread*) | Agrandit (ou réduit si négatif) l’ombre |
+| couleur | Presque toujours un noir **semi-transparent** |
+
+## Des ombres réalistes
+
+La lumière vient du haut : les ombres descendent (`y` positif). Une ombre douce est large, peu opaque, décalée vers le bas. Les designers superposent souvent **deux ombres** : une petite et nette (contact), une grande et diffuse (ambiance).
+
+```css
+.carte {
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 8%),
+    0 8px 24px rgb(0 0 0 / 10%);
+}
+```
+
+## Ombre intérieure et contour
+
+- `inset` place l’ombre **à l’intérieur** : `box-shadow: inset 0 2px 4px rgb(0 0 0 / 10%);` (champ enfoncé) ;
+- une ombre sans flou avec étendue crée un **contour** qui n’occupe pas de place : `box-shadow: 0 0 0 3px #93c5fd;` (anneau de focus).
+
+## `text-shadow`
+
+```css
+h1 { text-shadow: 0 2px 4px rgb(0 0 0 / 40%); }
+```
+
+Même syntaxe, sans étendue ni `inset`. Utile pour améliorer la lisibilité d’un texte blanc sur une photo ; à éviter sur le texte courant.
+
+> [!TIP] Sur un fond sombre (comme cette plateforme), les ombres se voient peu : on crée plutôt la profondeur avec des surfaces légèrement plus claires et des bordures subtiles.', 'box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+text-shadow: 0 1px 2px rgb(0 0 0 / 50%);', NULL, NULL, '<div class="scene">
+  <div class="carte">Ombre douce</div>
+  <div class="carte elevee">Ombre en couches</div>
+  <input class="champ" placeholder="Ombre intérieure" aria-label="Exemple">
+  <button class="btn" type="button">Anneau de focus</button>
+</div>', '.scene {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 24px;
+  background: #f1f5f9;
+  font-family: system-ui, sans-serif;
+}
+
+.carte {
+  padding: 24px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+}
+
+.elevee {
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 8%),
+    0 16px 32px rgb(0 0 0 / 14%);
+}
+
+.champ {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgb(0 0 0 / 8%);
+}
+
+.btn {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 0 0 4px #bfdbfe;
+}', '[["  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);","Ombre douce décalée vers le bas."],["    0 1px 2px rgb(0 0 0 / 8%),","Première couche : ombre de contact nette."],["    0 16px 32px rgb(0 0 0 / 14%);","Seconde couche : ombre d’ambiance diffuse."],["  box-shadow: inset 0 2px 4px …;","Ombre intérieure : le champ semble creusé."],["  box-shadow: 0 0 0 4px #bfdbfe;","Sans flou, avec étendue : un anneau qui n’occupe pas de place."]]', '[["box-shadow","x y flou étendue couleur (et `inset`)."],["text-shadow","x y flou couleur."],["inset","Ombre intérieure."]]', '["Des ombres noires opaques (`#000`) très dures.","Des ombres vers le haut ou à gauche incohérentes.","Du `text-shadow` sur des paragraphes (lisibilité dégradée)."]', '["Couleurs d’ombre semi-transparentes.","Une échelle de 3 ou 4 niveaux d’élévation dans le projet.","Animer l’ombre au survol pour suggérer le soulèvement."]', 'Les systèmes de design (Material Design, par exemple) définissent des niveaux d’« élévation » : chaque niveau correspond à une ombre précise, utilisée de façon cohérente pour les cartes, menus et fenêtres modales.', '["`box-shadow: x y flou étendue couleur`.","Ombres douces, semi-transparentes, superposables.","`inset` pour l’intérieur ; étendue sans flou pour un anneau."]', 'Créez trois cartes avec trois niveaux d’élévation, et une animation de l’ombre au survol.', 1, 1);
+
+INSERT INTO `lessons` (`id`, `module_id`, `title`, `slug`, `duration_minutes`, `introduction`, `objectives`, `prerequisites`, `theory`, `syntax_code`, `simple_html`, `simple_css`, `example_html`, `example_css`, `line_by_line`, `reference_items`, `common_mistakes`, `best_practices`, `practical`, `summary_points`, `challenge`, `is_published`, `sort_order`) VALUES
+(71, 28, 'Les dégradés', 'les-degrades', 14, 'Des fonds vibrants, des boutons lumineux, un texte multicolore, des motifs sans aucun fichier image : les **dégradés CSS** sont des images générées par le navigateur. Ils sont légers, nets à toutes les tailles et faciles à modifier.', '["Créer des dégradés linéaires, radiaux et coniques","Contrôler direction et arrêts de couleur","Créer un texte en dégradé","Superposer dégradés et images"]', '["Les arrière-plans","Les ombres"]', '## Un dégradé est une image
+
+Il s’utilise partout où une image est acceptée : `background-image` (ou `background`), `border-image`, `mask`…
+
+## `linear-gradient()`
+
+```css
+background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+```
+
+- **direction** : un angle (`90deg` = vers la droite) ou des mots-clés (`to right`, `to bottom right`) ;
+- **arrêts de couleur** : autant de couleurs que souhaité, avec une position facultative :
+
+```css
+background: linear-gradient(to right, #f97316 0%, #facc15 50%, #22c55e 100%);
+```
+
+Deux couleurs à la **même position** créent une transition **nette** (rayures) :
+
+```css
+background: linear-gradient(to right, #1e3a8a 50%, #dc2626 50%);
+```
+
+## `radial-gradient()`
+
+Part du centre (ou d’un point choisi) vers l’extérieur :
+
+```css
+background: radial-gradient(circle at top left, #fde68a, transparent 60%);
+```
+
+## `conic-gradient()`
+
+Tourne autour d’un point : idéal pour les diagrammes circulaires et les anneaux de progression.
+
+```css
+background: conic-gradient(#22c55e 0 70%, #e5e7eb 70% 100%);
+```
+
+## Texte en dégradé
+
+```css
+.titre {
+  background: linear-gradient(90deg, #f97316, #db2777);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+```
+
+Le titre principal de la page d’accueil de cette plateforme utilise cette technique.
+
+## Superposer
+
+```css
+background:
+  linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),
+  url("photo.jpg") center / cover;
+```
+
+> [!WARN] Vérifiez le contraste du texte sur **toutes** les zones du dégradé, pas seulement sur la plus favorable.', 'background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+background: radial-gradient(circle, #fff, #000);
+background: conic-gradient(red, blue);', NULL, NULL, '<div class="demo">
+  <div class="tuile lineaire">linéaire</div>
+  <div class="tuile radial">radial</div>
+  <div class="tuile conique" role="img" aria-label="Progression : 70 %">70 %</div>
+  <div class="tuile rayures">rayures</div>
+</div>
+<h1 class="titre">Texte en dégradé</h1>', 'body { font-family: system-ui, sans-serif; padding: 16px; }
+.demo { display: flex; flex-wrap: wrap; gap: 16px; }
+
+.tuile {
+  width: 120px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  color: white;
+  font-weight: bold;
+}
+
+.lineaire { background: linear-gradient(135deg, #4f46e5, #0ea5e9); }
+.radial   { background: radial-gradient(circle at 30% 30%, #f472b6, #7c3aed); }
+.conique  { border-radius: 50%; background: conic-gradient(#22c55e 0 70%, #cbd5e1 70% 100%); color: #14532d; }
+.rayures  { background: repeating-linear-gradient(45deg, #0f172a 0 10px, #334155 10px 20px); }
+
+.titre {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #f97316, #db2777, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}', '[[".lineaire { background: linear-gradient(135deg, …); }","Dégradé en diagonale."],[".radial { … radial-gradient(circle at 30% 30%, …) }","Cercle lumineux décentré."],[".conique { … conic-gradient(#22c55e 0 70%, #cbd5e1 70% 100%) }","Anneau de progression à 70 % (arrêts nets)."],["repeating-linear-gradient(45deg, …)","Motif de rayures répété."],["  background-clip: text; color: transparent;","Le dégradé n’est visible qu’à travers les lettres."]]', '[["linear-gradient()","Dégradé linéaire (angle ou `to …`)."],["radial-gradient()","Dégradé circulaire ou elliptique."],["conic-gradient()","Dégradé autour d’un point."],["repeating-*-gradient()","Motifs répétés."],["background-clip: text","Dégradé dans le texte."]]', '["Utiliser `background-color` pour un dégradé (il faut `background` ou `background-image`).","Des dégradés trop contrastés qui nuisent à la lisibilité du texte.","Oublier la version préfixée `-webkit-background-clip` pour le texte."]', '["Des dégradés entre couleurs proches pour un rendu élégant.","Une couleur de fond de secours.","Vérifier le contraste sur tout le dégradé."]', 'Les boutons d’appel à l’action des sites de produits numériques, les fonds de sections « héro » et les graphiques en anneau des tableaux de bord utilisent des dégradés CSS : aucun fichier image à charger.', '["Linéaire, radial, conique : des images générées.","Direction + arrêts de couleur.","Arrêts identiques = transition nette.","`background-clip: text` pour un texte en dégradé."]', 'Créez un bouton dont le dégradé change d’angle au survol, et un fond de page avec deux halos radiaux colorés.', 1, 2),
+(72, 29, 'Les variables CSS', 'variables-css', 15, 'Votre couleur principale apparaît 40 fois dans la feuille de style. Le client veut la changer. Avec les **variables CSS** (propriétés personnalisées), il suffit de modifier **une ligne**. Elles permettent aussi de créer un thème sombre, des variantes de composants et des designs systems cohérents.', '["Déclarer et utiliser une variable","Comprendre leur portée et leur héritage","Prévoir une valeur de repli","Créer un thème clair/sombre"]', '["Cascade, spécificité et héritage","Les media queries"]', '## Déclarer et utiliser
+
+```css
+:root {
+  --couleur-primaire: #4f46e5;
+  --rayon: 12px;
+  --espace: 1.5rem;
+}
+
+.btn {
+  background: var(--couleur-primaire);
+  border-radius: var(--rayon);
+  padding: calc(var(--espace) / 2) var(--espace);
+}
+```
+
+- le nom commence par **deux tirets** `--` ;
+- `:root` désigne l’élément racine (`<html>`) : les variables y sont disponibles **partout** ;
+- `var(--nom)` lit la valeur.
+
+## Valeur de repli
+
+```css
+color: var(--couleur-texte, #111);
+```
+
+Si `--couleur-texte` n’est pas définie, `#111` est utilisée.
+
+## Portée et héritage
+
+Les variables suivent la **cascade** : on peut les redéfinir sur un élément, et ses descendants hériteront de la nouvelle valeur.
+
+```css
+.btn { background: var(--btn-fond, #4f46e5); }
+.btn--danger { --btn-fond: #dc2626; }
+```
+
+C’est la technique idéale pour les **variantes** de composants : on ne réécrit que la variable.
+
+## Un thème sombre en quelques lignes
+
+```css
+:root {
+  --fond: #ffffff;
+  --texte: #0f172a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fond: #0f172a;
+    --texte: #e2e8f0;
+  }
+}
+
+body { background: var(--fond); color: var(--texte); }
+```
+
+## Calculer avec `calc()`
+
+```css
+.carte { padding: calc(var(--espace) * 2); }
+```
+
+> [!INFO] Variables CSS et variables Sass (`$couleur`) sont différentes : les variables Sass disparaissent à la compilation, les variables CSS existent **dans le navigateur** et peuvent changer selon le contexte (media query, classe, JavaScript).
+
+Toute la charte graphique de cette plateforme est définie en variables sur `:root` : `--bg`, `--surface`, `--primary`, `--html`, `--css`…', ':root { --nom: valeur; }
+.el { propriété: var(--nom, repli); }', NULL, NULL, '<div class="carte">
+  <h2>Offre Découverte</h2>
+  <p>Tous les cours pendant 30 jours.</p>
+  <a class="btn" href="#">Essayer</a>
+  <a class="btn btn--secondaire" href="#">En savoir plus</a>
+</div>
+<div class="carte theme-sombre">
+  <h2>Même composant, thème sombre</h2>
+  <p>Seules les variables changent.</p>
+  <a class="btn" href="#">Essayer</a>
+</div>', ':root {
+  --primaire: #4f46e5;
+  --fond: #ffffff;
+  --texte: #1e293b;
+  --rayon: 12px;
+  --espace: 1rem;
+}
+
+.theme-sombre {
+  --fond: #0f172a;
+  --texte: #e2e8f0;
+  --primaire: #818cf8;
+}
+
+body { font-family: system-ui, sans-serif; display: grid; gap: var(--espace); padding: var(--espace); }
+
+.carte {
+  padding: calc(var(--espace) * 1.5);
+  border-radius: var(--rayon);
+  background: var(--fond);
+  color: var(--texte);
+  border: 1px solid #cbd5e1;
+}
+
+.btn {
+  display: inline-block;
+  padding: calc(var(--espace) / 2) var(--espace);
+  border-radius: calc(var(--rayon) / 2);
+  background: var(--btn-fond, var(--primaire));
+  color: white;
+  text-decoration: none;
+}
+
+.btn--secondaire { --btn-fond: #64748b; }', '[[":root {","Variables globales, disponibles partout."],["  --primaire: #4f46e5;","Déclaration : deux tirets + nom."],[".theme-sombre { --fond: #0f172a; … }","Redéfinition locale : les descendants héritent des nouvelles valeurs."],["  padding: calc(var(--espace) * 1.5);","Calcul à partir d’une variable."],["  background: var(--btn-fond, var(--primaire));","Variable avec valeur de repli (elle-même une variable)."],[".btn--secondaire { --btn-fond: #64748b; }","Variante : on change seulement la variable."]]', '[["--nom: valeur","Déclaration d’une variable."],["var(--nom, repli)","Utilisation avec valeur de repli."],[":root","Élément racine : portée globale."],["calc()","Calculs avec unités et variables."]]', '["Oublier les deux tirets : `-couleur` ou `couleur`.","Oublier `var()` : `color: --primaire;`.","Déclarer une variable dans un sélecteur trop spécifique et ne pas y avoir accès ailleurs.","Des noms trop liés à la valeur (`--bleu`) plutôt qu’au rôle (`--primaire`)."]', '["Définir couleurs, espacements, rayons et typographies en variables sur `:root`.","Nommer selon le rôle.","Utiliser des variables locales pour les variantes de composants."]', 'Changer le thème d’une application (clair/sombre, couleurs d’une marque cliente) se résume souvent à redéfinir une dizaine de variables : c’est la base des systèmes de thèmes modernes.', '["`--nom: valeur` pour déclarer, `var(--nom)` pour utiliser.","Portée et héritage suivent la cascade.","Idéal pour thèmes et variantes."]', 'Créez un thème sombre complet pour une page existante uniquement en redéfinissant des variables dans `@media (prefers-color-scheme: dark)`.', 1, 1),
+(73, 29, 'Organiser une feuille de style', 'organiser-une-feuille-css', 14, 'Une feuille CSS de 50 lignes se lit facilement. À 3 000 lignes, sans organisation, elle devient un cauchemar : styles en double, règles qui s’écrasent, peur de supprimer quoi que ce soit. Quelques principes d’**architecture CSS** gardent un projet maintenable.', '["Structurer une feuille en sections logiques","Appliquer une convention de nommage (BEM)","Maintenir une spécificité faible","Découvrir le découpage en fichiers"]', '["Les variables CSS"]', '## Du général au particulier
+
+Organisez la feuille par couches, du plus global au plus spécifique :
+
+1. **Variables** (`:root`) : couleurs, espacements, typographies ;
+2. **Reset / base** : `box-sizing`, marges, styles des balises (`body`, `h1`, `a`, `img`) ;
+3. **Mise en page** : conteneurs, grilles, en-tête, pied de page ;
+4. **Composants** : boutons, cartes, formulaires, badges ;
+5. **Utilitaires** : petites classes à usage unique (`.sr-only`, `.text-center`) ;
+6. **Media queries** : à la fin de chaque composant, ou regroupées.
+
+C’est exactement la structure de la feuille `main.css` de cette plateforme, avec une table des matières en commentaire.
+
+## Nommer : BEM
+
+```css
+.carte { }                   /* bloc */
+.carte__titre { }            /* élément */
+.carte--promo { }            /* modificateur */
+```
+
+Avantages : les classes sont uniques, explicites, et chaque sélecteur a la même spécificité faible (une classe).
+
+## Garder une spécificité faible
+
+- stylez avec des **classes**, pas des id ;
+- évitez les sélecteurs imbriqués profonds (`.page .contenu .article .texte p`) ;
+- n’utilisez pas `!important` (sauf utilitaires).
+
+## Découper en fichiers
+
+Sur un gros projet, on sépare : `variables.css`, `base.css`, `layout.css`, `components/button.css`… Ils sont ensuite regroupés en un seul fichier pour la production (par un outil de build ou avec `@import` / `@layer`).
+
+## Éviter la duplication
+
+Avant d’écrire une nouvelle règle, cherchez si un composant ou une variable existe déjà. Préférez composer des classes (`class="btn btn--large"`) plutôt que de dupliquer un bloc de 15 déclarations.
+
+## L’ordre des propriétés
+
+Une convention courante regroupe les propriétés par famille : positionnement, modèle de boîte, typographie, apparence, animation. L’important : que toute l’équipe suive la même.', '/* 1. Variables */ :root { … }
+/* 2. Base */ body { … }
+/* 3. Layout */ .container { … }
+/* 4. Composants */ .btn { … }
+/* 5. Utilitaires */ .sr-only { … }', NULL, NULL, '<main class="container">
+  <article class="carte carte--promo">
+    <h2 class="carte__titre">Offre spéciale</h2>
+    <p class="carte__texte">-30 % sur l’abonnement annuel.</p>
+    <a class="btn btn--large" href="#">J’en profite</a>
+  </article>
+</main>', '/* ========== 1. Variables ========== */
+:root {
+  --c-primaire: #7c3aed;
+  --c-promo: #f59e0b;
+  --rayon: 12px;
+  --espace: 1rem;
+}
+
+/* ========== 2. Base ========== */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; line-height: 1.6; }
+
+/* ========== 3. Layout ========== */
+.container { width: min(100% - 2rem, 720px); margin: 2rem auto; }
+
+/* ========== 4. Composants ========== */
+/* Carte */
+.carte { padding: calc(var(--espace) * 1.5); border-radius: var(--rayon); border: 1px solid #e2e8f0; }
+.carte--promo { border-color: var(--c-promo); background: #fffbeb; }
+.carte__titre { margin-top: 0; }
+
+/* Bouton */
+.btn { display: inline-block; padding: 0.5em 1em; border-radius: calc(var(--rayon) / 2); background: var(--c-primaire); color: white; text-decoration: none; }
+.btn--large { font-size: 1.125rem; padding: 0.75em 1.5em; }
+
+/* ========== 5. Utilitaires ========== */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }', '[["/* ========== 1. Variables ========== */","Sections clairement délimitées par des commentaires."],["*, *::before, *::after { box-sizing: border-box; }","Base : réglages globaux."],[".container { … }","Mise en page."],[".carte--promo { … }","Modificateur BEM : variante de la carte."],[".carte__titre { … }","Élément BEM du bloc carte."],[".btn--large { … }","Composition : `class=\\"btn btn--large\\"`."]]', '[["Couches","Variables > base > layout > composants > utilitaires."],["BEM","`bloc__element--modificateur`."],["@layer","Ordonne explicitement des couches de cascade (CSS moderne)."],["@import","Importe une autre feuille de style."]]', '["Ajouter systématiquement les nouvelles règles à la fin du fichier.","Dupliquer des blocs de styles.","Des sélecteurs longs et imbriqués.","Des noms de classes incohérents (`.btnRouge`, `.bouton-bleu`, `.Button`)."]', '["Une table des matières en tête de fichier.","Une convention de nommage unique.","Des composants réutilisables et composables."]', 'Les grandes équipes documentent leurs composants dans une bibliothèque vivante (comme Storybook) : chaque composant a sa feuille de style isolée, ses variantes et ses exemples d’utilisation.', '["Du général au particulier : variables, base, layout, composants, utilitaires.","BEM pour des noms clairs et une spécificité faible.","Réutiliser avant d’écrire."]', 'Réorganisez la feuille CSS de votre projet « landing page » selon les cinq couches, avec une table des matières.', 1, 2),
+(74, 30, 'Créer un composant carte complet', 'creer-un-composant-carte', 18, 'La **carte** est le composant roi des interfaces modernes : produit, article, profil, offre tarifaire… Construire une carte de A à Z mobilise presque tout ce que vous avez appris : HTML sémantique, box model, Flexbox, variables, ombres, transitions, responsive et accessibilité. C’est le moment de tout assembler.', '["Concevoir la structure HTML d’un composant","Styler un composant réutilisable avec variables et BEM","Rendre toute la carte cliquable de façon accessible","Ajouter des états interactifs soignés"]', '["Toutes les leçons CSS précédentes"]', '## 1. La structure HTML
+
+```html
+<article class="carte">
+  <img class="carte__image" src="…" alt="…">
+  <div class="carte__corps">
+    <p class="carte__categorie">Tutoriel</p>
+    <h3 class="carte__titre"><a href="…">Maîtriser Flexbox</a></h3>
+    <p class="carte__resume">…</p>
+    <p class="carte__meta">12 min de lecture</p>
+  </div>
+</article>
+```
+
+- `<article>` : la carte est un contenu autonome ;
+- le lien est placé **sur le titre** (un texte explicite) plutôt qu’autour de toute la carte.
+
+## 2. Toute la carte cliquable… proprement
+
+On étend la zone cliquable du lien à toute la carte avec un pseudo-élément :
+
+```css
+.carte { position: relative; }
+.carte__titre a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+```
+
+Le lecteur d’écran annonce un seul lien au texte clair, et la souris peut cliquer n’importe où.
+
+## 3. Mise en page interne
+
+Flexbox en colonne, et `margin-top: auto` sur la méta pour la coller en bas, même si les résumés ont des longueurs différentes :
+
+```css
+.carte { display: flex; flex-direction: column; }
+.carte__corps { display: flex; flex-direction: column; flex: 1; }
+.carte__meta { margin-top: auto; }
+```
+
+## 4. Les états
+
+- survol : légère élévation (`transform` + `box-shadow`) ;
+- focus clavier : `.carte:focus-within` affiche un contour quand le lien a le focus.
+
+## 5. Les images
+
+`aspect-ratio` + `object-fit: cover` : toutes les cartes ont la même hauteur d’image.
+
+## 6. La grille
+
+```css
+.grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1.5rem; }
+```
+
+> [!TIP] Un composant bien conçu fonctionne **quel que soit son contenu** : titre très long, pas d’image, résumé vide. Testez ces cas limites.', '.carte { position: relative; display: flex; flex-direction: column; }
+.carte__titre a::after { content: ""; position: absolute; inset: 0; }
+.carte:focus-within { outline: 3px solid …; }', NULL, NULL, '<section class="grille">
+  <article class="carte">
+    <img class="carte__image" src="https://placehold.co/600x400/png?text=Flexbox" alt="">
+    <div class="carte__corps">
+      <p class="carte__categorie">Tutoriel</p>
+      <h3 class="carte__titre"><a href="#">Maîtriser Flexbox en 10 exemples</a></h3>
+      <p class="carte__resume">Alignements, espacements et grilles souples expliqués pas à pas.</p>
+      <p class="carte__meta">12 min de lecture</p>
+    </div>
+  </article>
+  <article class="carte">
+    <img class="carte__image" src="https://placehold.co/600x400/png?text=Grid" alt="">
+    <div class="carte__corps">
+      <p class="carte__categorie">Guide</p>
+      <h3 class="carte__titre"><a href="#">CSS Grid : le guide complet</a></h3>
+      <p class="carte__resume">Des zones nommées aux grilles adaptatives.</p>
+      <p class="carte__meta">20 min de lecture</p>
+    </div>
+  </article>
+</section>', ':root {
+  --c-accent: #7c3aed;
+  --rayon: 16px;
+}
+
+body { font-family: system-ui, sans-serif; background: #f8fafc; padding: 16px; }
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 1.5rem;
+}
+
+.carte {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--rayon);
+  background: white;
+  box-shadow: 0 2px 8px rgb(15 23 42 / 8%);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.carte:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgb(15 23 42 / 14%);
+}
+
+.carte:focus-within {
+  outline: 3px solid var(--c-accent);
+  outline-offset: 2px;
+}
+
+.carte__image {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.carte__corps {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.4rem;
+  padding: 1.25rem;
+}
+
+.carte__corps p { margin: 0; }
+.carte__categorie { color: var(--c-accent); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+.carte__titre { margin: 0; font-size: 1.15rem; }
+.carte__titre a { color: #0f172a; text-decoration: none; }
+.carte__titre a:focus { outline: none; }
+.carte__titre a::after { content: ""; position: absolute; inset: 0; }
+.carte__resume { color: #475569; }
+.carte__meta { margin-top: auto !important; padding-top: 0.5rem; color: #94a3b8; font-size: 0.85rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .carte { transition: none; }
+}', '[["  position: relative;","Repère pour le pseudo-élément qui étend le lien."],["  display: flex; flex-direction: column;","Contenu empilé verticalement."],[".carte:focus-within {","Contour visible quand le lien interne a le focus clavier."],["  aspect-ratio: 3 / 2; object-fit: cover;","Images homogènes quelles que soient leurs proportions."],[".carte__titre a::after { content: \\"\\"; position: absolute; inset: 0; }","La zone cliquable du lien couvre toute la carte."],[".carte__meta { margin-top: auto … }","La méta est poussée en bas de la carte."],["@media (prefers-reduced-motion: reduce)","Pas d’animation pour ceux qui ne le souhaitent pas."]]', '[[":focus-within","L’élément ou un de ses descendants a le focus."],["inset: 0","Couvre tout le parent positionné."],["margin-top: auto","Pousse un élément flex vers le bas."]]', '["Envelopper toute la carte dans un `<a>` contenant titres et paragraphes : le lecteur d’écran lit tout le contenu comme nom du lien.","Plusieurs liens vers la même destination dans une carte (image, titre, bouton « Lire »).","Des cartes de hauteurs différentes à cause des images.","Oublier l’état de focus."]', '["Un seul lien par carte, étendu avec `::after`.","Variables pour les couleurs et arrondis.","Tester les cas limites de contenu."]', 'Les cartes de cours de cette plateforme suivent ce modèle : un lien principal, un contenu empilé en Flexbox, une élévation au survol et un contour au focus.', '["HTML sémantique d’abord (`article`, titre, lien explicite).","Lien étendu à toute la carte avec `::after`.","Flexbox + `margin-top: auto`, images homogènes, états hover et focus."]', 'Créez une carte tarifaire « Pro » mise en avant (badge, bordure colorée, bouton) et deux cartes standard, alignées dans une grille responsive.', 1, 1),
+(75, 30, 'Bonnes pratiques CSS et performance', 'bonnes-pratiques-css-performance', 14, 'Vous voici à la dernière leçon du parcours ! Pour conclure, voici les réflexes des intégrateurs professionnels : un CSS **performant**, **accessible**, **compatible** et **maintenable**. C’est cette check-list qui fait la différence dans un vrai projet.', '["Optimiser le chargement du CSS","Vérifier la compatibilité des propriétés","Appliquer une check-list qualité complète"]', '["Créer un composant carte complet"]', '## Performance
+
+- **Une ou deux feuilles** pour tout le site, **minifiées** (espaces et commentaires retirés) et **compressées** (gzip/brotli) par le serveur ;
+- un **cache** long grâce à un numéro de version dans l’URL (`style.css?v=123`) : cette plateforme ajoute automatiquement la date de modification du fichier ;
+- des **polices** limitées, au format WOFF2, avec `font-display: swap` pour que le texte reste visible pendant leur chargement ;
+- animer `transform` et `opacity` plutôt que les dimensions ;
+- supprimer le CSS inutilisé (les outils de développement ont un onglet *Coverage*).
+
+## Compatibilité
+
+Le site [caniuse.com](https://caniuse.com) indique quels navigateurs supportent chaque propriété. Pour une propriété récente, prévoyez une **solution de repli** :
+
+```css
+.carte {
+  background: #4f46e5;                                  /* repli */
+  background: color-mix(in srgb, #4f46e5 80%, white);   /* moderne */
+}
+```
+
+`@supports` teste le support d’une fonctionnalité :
+
+```css
+@supports (display: grid) { … }
+```
+
+## Accessibilité
+
+- contrastes de 4,5:1 minimum ;
+- focus visible sur tous les éléments interactifs ;
+- `prefers-reduced-motion` respecté ;
+- pas de texte en `px` fixe trop petit, zoom à 200 % fonctionnel ;
+- pas d’information transmise uniquement par la couleur.
+
+## Maintenabilité
+
+- variables pour la charte graphique ;
+- convention de nommage (BEM) ;
+- spécificité faible, pas de `!important` ;
+- feuille organisée et commentée.
+
+## La check-list finale
+
+- [ ] Aucun défilement horizontal de 320px à 1440px
+- [ ] Focus visible partout, navigation clavier testée
+- [ ] Contrastes vérifiés
+- [ ] Animations désactivables
+- [ ] Images fluides
+- [ ] CSS validé ([validateur CSS du W3C](https://jigsaw.w3.org/css-validator/))
+- [ ] Audit Lighthouse > 90 en performance et accessibilité
+
+> [!TIP] Félicitations : en validant cette leçon, vous avez parcouru l’ensemble du programme. Terminez les projets pratiques, puis obtenez votre certificat depuis votre tableau de bord !', '@supports (propriété: valeur) { … }
+@font-face { font-display: swap; }', NULL, NULL, '<main class="page">
+  <h1>Check-list qualité</h1>
+  <ul class="checklist">
+    <li class="ok">Responsive de 320 à 1440px</li>
+    <li class="ok">Focus visible</li>
+    <li class="ok">Contrastes vérifiés</li>
+    <li>Audit Lighthouse</li>
+  </ul>
+</main>', ':root { --ok: #15803d; --a-faire: #b45309; }
+
+.page { width: min(100% - 2rem, 640px); margin: 2rem auto; font-family: system-ui, sans-serif; }
+
+.checklist { list-style: none; padding: 0; display: grid; gap: 0.5rem; }
+
+.checklist li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: #fffbeb;
+  color: var(--a-faire);
+}
+
+/* L’état est porté par le texte ET une icône, pas seulement la couleur */
+.checklist li::before { content: "○"; font-weight: bold; }
+.checklist li.ok { background: #f0fdf4; color: var(--ok); }
+.checklist li.ok::before { content: "✓"; }
+
+@supports (background: color-mix(in srgb, red 50%, white)) {
+  .checklist li.ok { background: color-mix(in srgb, var(--ok) 8%, white); }
+}', '[[":root { --ok: …; --a-faire: …; }","Couleurs d’état centralisées."],[".checklist li::before { content: \\"○\\"; }","L’état est aussi indiqué par un symbole, pas seulement la couleur."],[".checklist li.ok::before { content: \\"✓\\"; }","Symbole différent pour les éléments validés."],["@supports (background: color-mix(…)) {","Amélioration appliquée seulement si le navigateur la supporte."]]', '[["@supports","Teste le support d’une fonctionnalité."],["font-display: swap","Texte visible pendant le chargement de la police."],["caniuse.com","Compatibilité des fonctionnalités."],["Minification","Suppression des caractères inutiles pour la production."]]', '["Charger plusieurs feuilles CSS volumineuses inutilisées.","Utiliser une propriété récente sans repli pour un public large.","Négliger l’accessibilité « parce que ça s’affiche bien »."]', '["Mesurer avec Lighthouse avant et après les modifications.","Amélioration progressive : une base qui fonctionne partout, des enrichissements modernes.","Suivre une check-list avant chaque mise en ligne."]', 'Les agences livrent un site avec un rapport Lighthouse et un audit d’accessibilité. Maîtriser cette check-list vous permet de livrer un travail professionnel dès vos premiers projets.', '["Performance : peu de fichiers, minifiés, mis en cache ; animations légères.","Compatibilité : caniuse, replis, `@supports`.","Accessibilité et maintenabilité jusqu’au bout."]', 'Passez l’audit Lighthouse sur votre projet final et atteignez un score d’au moins 90 en Performance et 100 en Accessibilité.', 1, 2);
 
 INSERT INTO `exercises` (`id`, `lesson_id`, `title`, `slug`, `type`, `difficulty`, `instructions`, `starter_html`, `starter_css`, `solution_html`, `solution_css`, `validation_rules`, `hint`, `explanation`, `points`, `sort_order`) VALUES
 (1, 1, 'Votre premier titre', 'qu-est-ce-que-html-ex1', 'code', 1, 'Créez un titre de niveau 1 (`<h1>`) contenant exactement le texte **Bienvenue**.', '<!-- Écrivez votre code ci-dessous -->', NULL, '<h1>Bienvenue</h1>', NULL, '[{"t":"el","sel":"h1","msg":"La page contient un titre <h1>"},{"t":"el","sel":"h1","text":"Bienvenue","msg":"Le titre <h1> contient le texte « Bienvenue »"},{"t":"contains","s":"</h1>","msg":"La balise <h1> est correctement fermée avec </h1>"}]', 'Une balise s’ouvre avec `<h1>` et se ferme avec `</h1>`. Le texte se place entre les deux.', 'La balise `<h1>` indique le titre principal de la page. Le contenu se place entre la balise ouvrante `<h1>` et la balise fermante `</h1>`.', 15, 1),
@@ -4278,7 +6053,306 @@ INSERT INTO `exercises` (`id`, `lesson_id`, `title`, `slug`, `type`, `difficulty
   width: 50px;
   height: 3px;
   background: #ec4899;
-}', '[{"t":"css","sel":".titre::after|h2.titre::after|h2::after","prop":"content","in":["\\"\\"","''''"],"msg":"content: \\"\\" est défini"},{"t":"css","sel":".titre::after|h2.titre::after|h2::after","prop":"display","value":"block","msg":"display: block"},{"t":"css","sel":".titre::after|h2.titre::after|h2::after","prop":"width","value":"50px","msg":"width: 50px"},{"t":"css","sel":".titre::after|h2.titre::after|h2::after","prop":"height","value":"3px","msg":"height: 3px"},{"t":"css","sel":".titre::after|h2.titre::after|h2::after","prop":"background|background-color","value":"#ec4899","msg":"Fond rose #ec4899"}]', 'Sans `content`, le pseudo-élément n’existe pas.', 'Un `::after` vide transformé en bloc devient une forme décorative sous le titre.', 15, 1);
+}', '[{"t":"css","sel":".titre::after|h2.titre::after|h2::after","prop":"content","in":["\\"\\"","''''"],"msg":"content: \\"\\" est défini"},{"t":"css","sel":".titre::after|h2.titre::after|h2::after","prop":"display","value":"block","msg":"display: block"},{"t":"css","sel":".titre::after|h2.titre::after|h2::after","prop":"width","value":"50px","msg":"width: 50px"},{"t":"css","sel":".titre::after|h2.titre::after|h2::after","prop":"height","value":"3px","msg":"height: 3px"},{"t":"css","sel":".titre::after|h2.titre::after|h2::after","prop":"background|background-color","value":"#ec4899","msg":"Fond rose #ec4899"}]', 'Sans `content`, le pseudo-élément n’existe pas.', 'Un `::after` vide transformé en bloc devient une forme décorative sous le titre.', 15, 1),
+(80, 53, 'Remplacer la soupe de div', 'pourquoi-la-semantique-ex1', 'fix', 2, 'Remplacez les `<div>` par les balises sémantiques adaptées : `.header` → `<header>`, `.nav` → `<nav>`, `.content` → `<main>`, `.footer` → `<footer>`.', '<div class="header">
+  <div class="nav"><a href="#">Accueil</a> <a href="#">Blog</a></div>
+</div>
+<div class="content">
+  <h1>Bienvenue</h1>
+</div>
+<div class="footer">© 2026</div>', NULL, '<header>
+  <nav><a href="#">Accueil</a> <a href="#">Blog</a></nav>
+</header>
+<main>
+  <h1>Bienvenue</h1>
+</main>
+<footer>© 2026</footer>', NULL, '[{"t":"el","sel":"header nav","msg":"Un <nav> dans un <header>"},{"t":"el","sel":"main h1","msg":"Le titre est dans <main>"},{"t":"el","sel":"footer","msg":"Un <footer> est présent"},{"t":"noel","sel":"div","msg":"Plus aucune <div>"}]', 'Remplacez aussi les balises fermantes `</div>`.', 'Chaque zone a désormais une balise qui décrit son rôle.', 10, 1),
+(81, 54, 'Le squelette sémantique', 'header-nav-main-footer-ex1', 'code', 2, 'Construisez le squelette : un `<header>` contenant un `<nav>` avec `aria-label="Principale"` et au moins 2 liens, un unique `<main>` contenant un `<h1>`, puis un `<footer>`.', NULL, NULL, '<header>
+  <nav aria-label="Principale">
+    <a href="#">Accueil</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+<main>
+  <h1>Mon site</h1>
+</main>
+<footer>
+  <p>© 2026</p>
+</footer>', NULL, '[{"t":"el","sel":"header nav a","min":2,"msg":"Un nav avec 2 liens dans le header"},{"t":"attr","sel":"nav","attr":"aria-label","value":"Principale","msg":"Le nav a aria-label=\\"Principale\\""},{"t":"el","sel":"main","count":1,"msg":"Un seul <main>"},{"t":"el","sel":"main h1","msg":"Un h1 dans le main"},{"t":"el","sel":"footer","msg":"Un <footer>"}]', 'L’ordre : header (avec nav), main, footer.', 'Ce squelette crée les repères essentiels de la page.', 15, 1),
+(82, 55, 'Une section d’articles', 'section-article-aside-ex1', 'code', 2, 'Créez une `<section>` avec un `<h2>` **Actualités**, contenant **deux** `<article>` ayant chacun un `<h3>`. Ajoutez ensuite un `<aside>` contenant un paragraphe.', NULL, NULL, '<section>
+  <h2>Actualités</h2>
+  <article>
+    <h3>Nouvelle recette</h3>
+    <p>La tarte aux pommes revisitée.</p>
+  </article>
+  <article>
+    <h3>Atelier du samedi</h3>
+    <p>Apprenez à faire votre pain.</p>
+  </article>
+</section>
+<aside>
+  <p>Inscrivez-vous à la newsletter !</p>
+</aside>', NULL, '[{"t":"el","sel":"section > h2","text":"Actualités","msg":"La section a un h2 « Actualités »"},{"t":"el","sel":"section article","min":2,"msg":"Deux articles dans la section"},{"t":"el","sel":"article h3","min":2,"msg":"Chaque article a un h3"},{"t":"el","sel":"aside p","msg":"Un aside avec un paragraphe"}]', 'section > h2 + article + article, puis aside.', 'La section thématique regroupe des articles autonomes ; l’aside apporte un complément.', 15, 1),
+(83, 55, 'Article ou section ?', 'section-article-aside-ex2', 'qcm', 1, 'Choisissez la bonne réponse.', NULL, NULL, NULL, NULL, NULL, NULL, 'Un commentaire est un contenu autonome : `<article>`.', 10, 2),
+(84, 56, 'Une vidéo accessible', 'audio-et-video-ex1', 'code', 2, 'Créez un élément `<video>` avec l’attribut `controls`, contenant une `<source>` de type `video/mp4` (src : `film.mp4`) et une piste `<track>` de `kind="captions"` avec `srclang="fr"` (src : `film-fr.vtt`).', NULL, NULL, '<video controls width="480">
+  <source src="film.mp4" type="video/mp4">
+  <track src="film-fr.vtt" kind="captions" srclang="fr" label="Français">
+</video>', NULL, '[{"t":"el","sel":"video[controls]","msg":"La vidéo a l’attribut controls"},{"t":"attr","sel":"video source","attr":"type","value":"video/mp4","msg":"Une source de type video/mp4"},{"t":"attr","sel":"video source","attr":"src","value":"film.mp4","msg":"La source est film.mp4"},{"t":"attr","sel":"video track","attr":"kind","value":"captions","msg":"Une piste de sous-titres kind=\\"captions\\""},{"t":"attr","sel":"video track","attr":"srclang","value":"fr","msg":"srclang=\\"fr\\""}]', '`<source>` et `<track>` se placent à l’intérieur de `<video>`.', '`controls` affiche le lecteur, `<source>` fournit le fichier et `<track>` les sous-titres.', 15, 1),
+(85, 57, 'Une carte intégrée accessible', 'iframe-contenus-integres-ex1', 'code', 1, 'Ajoutez les attributs manquants à l’iframe : un `title` non vide et `loading="lazy"`.', '<iframe src="https://www.openstreetmap.org/export/embed.html" width="400" height="250"></iframe>', NULL, '<iframe src="https://www.openstreetmap.org/export/embed.html" width="400" height="250" title="Carte du quartier" loading="lazy"></iframe>', NULL, '[{"t":"attr","sel":"iframe","attr":"title","nonempty":true,"msg":"L’iframe a un title"},{"t":"attr","sel":"iframe","attr":"loading","value":"lazy","msg":"loading=\\"lazy\\""}]', 'Deux attributs à ajouter dans la balise ouvrante.', 'Le `title` nomme l’iframe pour les lecteurs d’écran ; `lazy` diffère son chargement.', 15, 1),
+(86, 58, 'Compléter le head', 'les-balises-meta-ex1', 'code', 2, 'Ajoutez dans le `<head>` une `meta description` non vide et une balise `og:title` (attribut `property`) avec un `content` non vide.', '<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Studio Yoga Zen — Cours à Bordeaux</title>
+</head>
+<body>
+  <h1>Studio Yoga Zen</h1>
+</body>
+</html>', NULL, '<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Studio Yoga Zen — Cours à Bordeaux</title>
+  <meta name="description" content="Cours de yoga pour tous niveaux au cœur de Bordeaux, en petits groupes.">
+  <meta property="og:title" content="Studio Yoga Zen — Cours à Bordeaux">
+</head>
+<body>
+  <h1>Studio Yoga Zen</h1>
+</body>
+</html>', NULL, '[{"t":"attr","sel":"meta[name=description]","attr":"content","nonempty":true,"msg":"Une meta description non vide"},{"t":"attr","sel":"meta[property=\\"og:title\\"]","attr":"content","nonempty":true,"msg":"Une balise og:title non vide"}]', '`<meta name="description" content="…">` et `<meta property="og:title" content="…">`.', 'La description sert aux moteurs de recherche, `og:title` au partage sur les réseaux.', 15, 1),
+(87, 59, 'Optimiser une page', 'seo-de-base-ex1', 'fix', 2, 'Cette page a trois problèmes SEO : le `<title>` est « Page 1 », il y a deux `<h1>`, et l’image n’a pas de `alt`. Corrigez-les : un title contenant **Randonnée**, un seul `<h1>` (transformez le second en `<h2>`), et un `alt` descriptif.', '<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Page 1</title>
+</head>
+<body>
+  <h1>Randonnée au lac Blanc</h1>
+  <h1>Itinéraire</h1>
+  <img src="https://placehold.co/300x200/png" width="300" height="200">
+</body>
+</html>', NULL, '<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Randonnée au lac Blanc — Itinéraire et conseils</title>
+</head>
+<body>
+  <h1>Randonnée au lac Blanc</h1>
+  <h2>Itinéraire</h2>
+  <img src="https://placehold.co/300x200/png" width="300" height="200" alt="Lac Blanc entouré de montagnes enneigées">
+</body>
+</html>', NULL, '[{"t":"el","sel":"title","contains":"Randonnée","msg":"Le title contient « Randonnée »"},{"t":"el","sel":"h1","count":1,"msg":"Un seul h1"},{"t":"el","sel":"h2","text":"Itinéraire","msg":"« Itinéraire » est un h2"},{"t":"attr","sel":"img","attr":"alt","nonempty":true,"msg":"L’image a un alt descriptif"}]', 'Trois modifications indépendantes.', 'Un title descriptif, une hiérarchie de titres propre et des alt pertinents sont les bases du SEO on-page.', 10, 1),
+(88, 60, 'Remplacer une div cliquable', 'principes-accessibilite-ex1', 'fix', 2, 'Ce « faux » bouton est une `<div>` : inaccessible au clavier. Remplacez-la par un vrai `<button type="button">` en conservant la classe `btn` et le texte.', '<div class="btn">Ajouter au panier</div>', '.btn { display: inline-block; padding: 10px 16px; background: #0f766e; color: white; border: 0; border-radius: 6px; }', '<button type="button" class="btn">Ajouter au panier</button>', '.btn { display: inline-block; padding: 10px 16px; background: #0f766e; color: white; border: 0; border-radius: 6px; }', '[{"t":"el","sel":"button.btn","text":"Ajouter au panier","msg":"Un <button class=\\"btn\\"> « Ajouter au panier »"},{"t":"attr","sel":"button","attr":"type","value":"button","msg":"type=\\"button\\" est précisé"},{"t":"noel","sel":"div","msg":"Plus de <div>"}]', 'Remplacez `div` par `button` dans les deux balises.', 'Un `<button>` est focusable, activable au clavier et annoncé comme bouton, sans aucun code supplémentaire.', 10, 1),
+(89, 60, 'Information et couleur', 'principes-accessibilite-ex2', 'truefalse', 1, 'Vrai ou faux ?', NULL, NULL, NULL, NULL, NULL, NULL, 'Faux : les personnes daltoniennes ou aveugles ne perçoivent pas la couleur. Il faut aussi un texte (et idéalement une icône).', 10, 2),
+(90, 61, 'Un bouton icône accessible', 'aria-et-navigation-clavier-ex1', 'code', 2, 'Ce bouton n’affiche qu’une icône. Ajoutez-lui `aria-label="Rechercher"` et masquez l’icône aux lecteurs d’écran avec `aria-hidden="true"` sur le `<span>`.', '<button type="button">
+  <span>🔍</span>
+</button>', NULL, '<button type="button" aria-label="Rechercher">
+  <span aria-hidden="true">🔍</span>
+</button>', NULL, '[{"t":"attr","sel":"button","attr":"aria-label","value":"Rechercher","msg":"Le bouton a aria-label=\\"Rechercher\\""},{"t":"attr","sel":"button span","attr":"aria-hidden","value":"true","msg":"L’icône a aria-hidden=\\"true\\""}]', 'Le nom va sur le bouton, `aria-hidden` sur l’icône.', 'Le lecteur d’écran annoncera « Rechercher, bouton » au lieu du nom de l’emoji.', 15, 1),
+(91, 62, 'Moderniser du code obsolète', 'ecrire-un-html-propre-ex1', 'fix', 2, 'Ce code utilise des balises obsolètes. Remplacez `<center>` par un simple paragraphe `<p>` (le centrage se fera en CSS), et `<font color="red">` par `<strong>`.', '<center>Bienvenue sur mon site, <font color="red">très</font> heureux de vous voir !</center>', NULL, '<p>Bienvenue sur mon site, <strong>très</strong> heureux de vous voir !</p>', NULL, '[{"t":"noel","sel":"center","msg":"Plus de balise <center>"},{"t":"noel","sel":"font","msg":"Plus de balise <font>"},{"t":"el","sel":"p strong","text":"très","msg":"« très » est dans un <strong> à l’intérieur d’un paragraphe"}]', 'La présentation (centrage, couleur) relève du CSS.', '`<center>` et `<font>` sont obsolètes : le HTML décrit le sens, le CSS l’apparence.', 10, 1),
+(92, 63, 'Corriger quatre erreurs', 'valider-et-deboguer-ex1', 'fix', 3, 'Ce code contient 4 erreurs de validation : un `<h2>` dans un `<p>`, une imbrication incorrecte de `<strong>`, un `id` en double (`info`) et une image sans `alt`. Corrigez-les toutes.', '<p><h2>Horaires</h2></p>
+<p>Ouvert <strong>tous les jours</p></strong>
+<p id="info">Parking gratuit.</p>
+<p id="info">Accès handicapés.</p>
+<img src="https://placehold.co/100x100/png" width="100" height="100">', NULL, '<h2>Horaires</h2>
+<p>Ouvert <strong>tous les jours</strong></p>
+<p id="info-parking">Parking gratuit.</p>
+<p id="info-acces">Accès handicapés.</p>
+<img src="https://placehold.co/100x100/png" width="100" height="100" alt="Façade du magasin">', NULL, '[{"t":"absent","s":"<p><h2>","msg":"Le h2 n’est plus dans un paragraphe"},{"t":"contains","s":"</strong></p>","msg":"</strong> est fermé avant </p>"},{"t":"el","sel":"#info","max":1,"min":0,"msg":"L’id « info » n’est plus dupliqué"},{"t":"match","re":"^(?![\\\\s\\\\S]*id=\\"([^\\"]+)\\"[\\\\s\\\\S]*id=\\"\\\\1\\")","msg":"Tous les id sont uniques"},{"t":"attr","sel":"img","attr":"alt","nonempty":true,"msg":"L’image a un alt"}]', 'Donnez deux identifiants différents aux paragraphes.', 'Chaque erreur corrigée rend la page plus robuste et plus accessible.', 10, 1),
+(93, 64, 'Une image fluide', 'principes-responsive-ex1', 'code', 1, 'L’image déborde de son conteneur. Ajoutez une règle `img` avec `max-width: 100%` et `height: auto`.', '<div class="boite">
+  <img src="https://placehold.co/900x300/png" alt="Paysage" width="900" height="300">
+</div>', '.boite {
+  width: 300px;
+  border: 2px solid #94a3b8;
+}', NULL, '.boite {
+  width: 300px;
+  border: 2px solid #94a3b8;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}', '[{"t":"css","sel":"img|.boite img","prop":"max-width","value":"100%","msg":"img a max-width: 100%"},{"t":"css","sel":"img|.boite img","prop":"height","value":"auto","msg":"img a height: auto"}]', 'Une nouvelle règle ciblant `img`.', '`max-width: 100%` empêche le débordement et `height: auto` conserve les proportions.', 15, 1),
+(94, 65, 'Deux colonnes sur grand écran', 'media-queries-ex1', 'code', 2, 'La grille `.colonnes` affiche une colonne. Ajoutez une media query `(min-width: 700px)` qui lui donne `grid-template-columns: 1fr 1fr`.', '<div class="colonnes">
+  <div class="bloc">Gauche</div>
+  <div class="bloc">Droite</div>
+</div>', '.colonnes {
+  display: grid;
+  gap: 12px;
+}
+
+.bloc {
+  padding: 24px;
+  background: #fce7f3;
+}', NULL, '.colonnes {
+  display: grid;
+  gap: 12px;
+}
+
+.bloc {
+  padding: 24px;
+  background: #fce7f3;
+}
+
+@media (min-width: 700px) {
+  .colonnes {
+    grid-template-columns: 1fr 1fr;
+  }
+}', '[{"t":"match","re":"@media\\\\s*\\\\(\\\\s*min-width\\\\s*:\\\\s*700px\\\\s*\\\\)","in":"css","msg":"Une media query (min-width: 700px)"},{"t":"match","re":"@media[^{]*\\\\{\\\\s*\\\\.colonnes\\\\s*\\\\{[^}]*grid-template-columns\\\\s*:\\\\s*(1fr 1fr|repeat\\\\(2,\\\\s*1fr\\\\))","in":"css","msg":".colonnes passe à 2 colonnes dans la media query"}]', '`@media (min-width: 700px) { .colonnes { … } }`', 'La règle n’est appliquée qu’à partir de 700px : sur mobile, la grille reste en une colonne.', 15, 1),
+(95, 65, 'Respecter les préférences', 'media-queries-ex2', 'qcm', 1, 'Choisissez la bonne réponse.', NULL, NULL, NULL, NULL, NULL, NULL, '`prefers-reduced-motion: reduce`.', 10, 2),
+(96, 66, 'Un titre fluide', 'typographie-et-images-fluides-ex1', 'code', 2, 'Donnez au `h1` une taille fluide : `font-size: clamp(2rem, 5vw, 4rem)`.', '<h1>Titre adaptable</h1>', NULL, NULL, 'h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+}', '[{"t":"css","sel":"h1","prop":"font-size","value":"clamp(2rem, 5vw, 4rem)","msg":"font-size: clamp(2rem, 5vw, 4rem)"}]', 'Recopiez la fonction avec ses trois valeurs séparées par des virgules.', 'Le titre suit la largeur de l’écran (5vw) sans descendre sous 2rem ni dépasser 4rem.', 15, 1),
+(97, 66, 'Des vignettes sans déformation', 'typographie-et-images-fluides-ex2', 'code', 2, 'Les images sont déformées. Ajoutez `object-fit: cover` à `.vignette`.', '<img class="vignette" src="https://placehold.co/800x400/png" alt="Vignette">', '.vignette {
+  width: 200px;
+  height: 200px;
+}', NULL, '.vignette {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}', '[{"t":"css","sel":".vignette|img.vignette","prop":"object-fit","value":"cover","msg":"object-fit: cover"}]', 'Une seule propriété.', '`cover` remplit le carré en rognant l’image au lieu de la déformer.', 15, 2),
+(98, 67, 'Un survol en douceur', 'les-transitions-ex1', 'code', 1, 'Ajoutez à `.btn` une transition sur `background-color` de `0.3s` avec la courbe `ease`.', '<button class="btn" type="button">Survolez-moi</button>', '.btn {
+  padding: 10px 20px;
+  border: 0;
+  background: #f97316;
+  color: white;
+}
+
+.btn:hover {
+  background: #c2410c;
+}', NULL, '.btn {
+  padding: 10px 20px;
+  border: 0;
+  background: #f97316;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background: #c2410c;
+}', '[{"t":"css","sel":".btn|button.btn","prop":"transition","in":["background-color 0.3s ease","background 0.3s ease","background-color .3s ease","background-color 300ms ease"],"msg":"transition: background-color 0.3s ease sur .btn"}]', 'La transition se déclare sur `.btn`, pas sur `.btn:hover`.', 'Déclarée sur l’état de repos, la transition fonctionne à l’entrée comme à la sortie du survol.', 15, 1),
+(99, 68, 'Une carte qui se soulève', 'transform-ex1', 'code', 2, 'Au survol de `.carte`, appliquez `transform: translateY(-6px)`. Ajoutez sur `.carte` une `transition` sur `transform` de `0.25s`.', '<div class="carte">Survolez-moi</div>', '.carte {
+  width: 200px;
+  padding: 30px;
+  background: #fef3c7;
+  border-radius: 12px;
+}', NULL, '.carte {
+  width: 200px;
+  padding: 30px;
+  background: #fef3c7;
+  border-radius: 12px;
+  transition: transform 0.25s;
+}
+
+.carte:hover {
+  transform: translateY(-6px);
+}', '[{"t":"css","sel":".carte:hover|div.carte:hover","prop":"transform","value":"translateY(-6px)","msg":"Au survol : transform: translateY(-6px)"},{"t":"css","sel":".carte|div.carte","prop":"transition","contains":"transform","msg":"Une transition sur transform est déclarée sur .carte"}]', 'Deux règles : `.carte` (transition) et `.carte:hover` (transform).', '`translateY` négatif déplace vers le haut ; la transition rend le mouvement fluide.', 15, 1),
+(100, 69, 'Un fondu d’apparition', 'animations-keyframes-ex1', 'code', 2, 'Créez une animation `@keyframes fondu` qui passe de `opacity: 0` à `opacity: 1`, puis appliquez-la à `.message` avec une durée de `1s`.', '<p class="message">Je vais apparaître en douceur.</p>', NULL, NULL, '@keyframes fondu {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.message {
+  animation: fondu 1s ease-out;
+}', '[{"t":"match","re":"@keyframes\\\\s+fondu\\\\s*\\\\{","in":"css","msg":"Des keyframes nommées « fondu »"},{"t":"match","re":"(from|0%)\\\\s*\\\\{\\\\s*opacity\\\\s*:\\\\s*0\\\\s*;?\\\\s*\\\\}","in":"css","msg":"Départ à opacity: 0"},{"t":"match","re":"(to|100%)\\\\s*\\\\{\\\\s*opacity\\\\s*:\\\\s*1\\\\s*;?\\\\s*\\\\}","in":"css","msg":"Arrivée à opacity: 1"},{"t":"css","sel":".message|p.message","prop":"animation|animation-name","contains":"fondu","msg":"L’animation fondu est appliquée à .message"},{"t":"css","sel":".message|p.message","prop":"animation|animation-duration","contains":"1s","msg":"Durée de 1s"}]', '`@keyframes fondu { from { … } to { … } }` puis `animation: fondu 1s;`', 'Les keyframes décrivent les états, la propriété `animation` les joue sur l’élément.', 15, 1);
+
+INSERT INTO `exercises` (`id`, `lesson_id`, `title`, `slug`, `type`, `difficulty`, `instructions`, `starter_html`, `starter_css`, `solution_html`, `solution_css`, `validation_rules`, `hint`, `explanation`, `points`, `sort_order`) VALUES
+(101, 70, 'Une carte en relief', 'les-ombres-ex1', 'code', 1, 'Ajoutez à `.carte` l’ombre `box-shadow: 0 8px 20px rgb(0 0 0 / 15%)`.', '<div class="carte">Je flotte au-dessus de la page</div>', '.carte {
+  width: 240px;
+  padding: 24px;
+  border-radius: 12px;
+  background: white;
+}', NULL, '.carte {
+  width: 240px;
+  padding: 24px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 15%);
+}', '[{"t":"css","sel":".carte|div.carte","prop":"box-shadow","in":["0 8px 20px rgb(0 0 0 / 15%)","0 8px 20px rgba(0, 0, 0, 0.15)","0 8px 20px rgba(0, 0, 0, .15)","0px 8px 20px rgb(0 0 0 / 15%)"],"msg":"box-shadow: 0 8px 20px rgb(0 0 0 / 15%)"}]', 'Décalage x, décalage y, flou, couleur.', 'Une ombre décalée vers le bas, floue et semi-transparente donne un effet de relief naturel.', 15, 1),
+(102, 71, 'Un bandeau en dégradé', 'les-degrades-ex1', 'code', 1, 'Donnez à `.bandeau` un fond `linear-gradient(90deg, #06b6d4, #3b82f6)`.', '<header class="bandeau">Soldes d’hiver</header>', '.bandeau {
+  padding: 32px;
+  color: white;
+  font-size: 1.5rem;
+}', NULL, '.bandeau {
+  padding: 32px;
+  color: white;
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+}', '[{"t":"css","sel":".bandeau|header.bandeau","prop":"background|background-image","value":"linear-gradient(90deg, #06b6d4, #3b82f6)","msg":"Fond en linear-gradient(90deg, #06b6d4, #3b82f6)"}]', 'Utilisez `background` (pas `background-color`).', 'Un dégradé est une image : il se place dans `background` ou `background-image`.', 15, 1),
+(103, 72, 'Centraliser une couleur', 'variables-css-ex1', 'code', 2, 'Déclarez dans `:root` la variable `--marque` valant `#e11d48`, puis utilisez-la avec `var(--marque)` pour le `color` du `h1` ET le `background` du `.btn`.', '<h1>Ma marque</h1>
+<a class="btn" href="#">Acheter</a>', '.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  color: white;
+  text-decoration: none;
+}', NULL, ':root {
+  --marque: #e11d48;
+}
+
+h1 {
+  color: var(--marque);
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  color: white;
+  text-decoration: none;
+  background: var(--marque);
+}', '[{"t":"css","sel":":root|html","prop":"--marque","value":"#e11d48","msg":"--marque: #e11d48 est déclarée dans :root"},{"t":"css","sel":"h1","prop":"color","value":"var(--marque)","msg":"Le h1 utilise var(--marque)"},{"t":"css","sel":".btn|a.btn","prop":"background|background-color","value":"var(--marque)","msg":"Le .btn utilise var(--marque)"},{"t":"match","re":"^(?![\\\\s\\\\S]*#e11d48[\\\\s\\\\S]*#e11d48)","in":"css","msg":"La couleur #e11d48 n’est écrite qu’une seule fois"}]', '`:root { --marque: #e11d48; }` puis `var(--marque)`.', 'La couleur est définie une seule fois : pour la changer, une seule ligne suffit.', 15, 1),
+(104, 72, 'Valeur de repli', 'variables-css-ex2', 'qcm', 1, 'Choisissez la bonne réponse.', NULL, NULL, NULL, NULL, NULL, NULL, 'La seconde valeur de `var()` sert de repli.', 10, 2),
+(105, 73, 'Classes BEM', 'organiser-une-feuille-css-ex1', 'qcm', 1, 'Choisissez la bonne réponse.', NULL, NULL, NULL, NULL, NULL, NULL, 'Deux tirets `--` pour un modificateur (variante) ; deux underscores `__` pour un élément.', 10, 1),
+(106, 73, 'Réduire la spécificité', 'organiser-une-feuille-css-ex2', 'fix', 2, 'Remplacez le sélecteur trop long `body main .zone div p.note` par une simple classe `.note` (le résultat visuel doit rester le même).', '<main><div class="zone"><div><p class="note">Pensez à sauvegarder.</p></div></div></main>', 'body main .zone div p.note {
+  color: #92400e;
+  background: #fef3c7;
+  padding: 8px;
+}', NULL, '.note {
+  color: #92400e;
+  background: #fef3c7;
+  padding: 8px;
+}', '[{"t":"css","sel":".note","prop":"color","value":"#92400e","msg":"La règle utilise le sélecteur .note"},{"t":"absent","s":"body main","in":"css","msg":"Le sélecteur long a disparu"}]', 'Gardez les déclarations, changez seulement le sélecteur.', 'Une classe unique suffit : le style est plus simple à surcharger et ne dépend plus de la structure HTML.', 10, 2),
+(107, 74, 'Étendre la zone cliquable', 'creer-un-composant-carte-ex1', 'code', 3, 'Rendez toute la carte cliquable : `.carte` doit être en `position: relative`, et `.carte a::after` doit avoir `content: ""`, `position: absolute` et `inset: 0`.', '<article class="carte">
+  <h3><a href="#">Découvrir Grid</a></h3>
+  <p>Cliquez n’importe où sur la carte.</p>
+</article>', '.carte {
+  padding: 20px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  max-width: 280px;
+}', NULL, '.carte {
+  position: relative;
+  padding: 20px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  max-width: 280px;
+}
+
+.carte a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}', '[{"t":"css","sel":".carte|article.carte","prop":"position","value":"relative","msg":".carte est en position: relative"},{"t":"css","sel":".carte a::after|.carte h3 a::after|a::after","prop":"content","in":["\\"\\"","''''"],"msg":"Le ::after du lien a content: \\"\\""},{"t":"css","sel":".carte a::after|.carte h3 a::after|a::after","prop":"position","value":"absolute","msg":"Le ::after est en position: absolute"},{"t":"css","sel":".carte a::after|.carte h3 a::after|a::after","prop":"inset","in":["0","0px"],"msg":"Le ::after couvre la carte (inset: 0)"}]', 'Le pseudo-élément du lien se positionne par rapport à la carte.', 'Le `::after` absolu du lien couvre toute la carte (repère relatif) : un seul lien, une grande zone cliquable.', 15, 1),
+(108, 75, 'Amélioration progressive', 'bonnes-pratiques-css-performance-ex1', 'code', 2, 'Ajoutez un bloc `@supports (display: grid)` qui applique `display: grid` et `grid-template-columns: 1fr 1fr` à `.duo`. Sans support, les blocs restent empilés.', '<div class="duo">
+  <div class="bloc">Un</div>
+  <div class="bloc">Deux</div>
+</div>', '.bloc {
+  padding: 20px;
+  margin-bottom: 8px;
+  background: #e0e7ff;
+}', NULL, '.bloc {
+  padding: 20px;
+  margin-bottom: 8px;
+  background: #e0e7ff;
+}
+
+@supports (display: grid) {
+  .duo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+}', '[{"t":"match","re":"@supports\\\\s*\\\\(\\\\s*display\\\\s*:\\\\s*grid\\\\s*\\\\)","in":"css","msg":"Un bloc @supports (display: grid)"},{"t":"css","sel":".duo|div.duo","prop":"display","value":"grid","msg":".duo passe en grid"},{"t":"css","sel":".duo|div.duo","prop":"grid-template-columns","in":["1fr 1fr","repeat(2, 1fr)"],"msg":"Deux colonnes"}]', '`@supports (display: grid) { .duo { … } }`', 'Le contenu fonctionne partout ; la mise en page en grille s’ajoute là où elle est supportée.', 15, 1);
 
 INSERT INTO `questions` (`id`, `lesson_id`, `exercise_id`, `question`, `type`, `code_snippet`, `explanation`, `sort_order`) VALUES
 (1, NULL, 2, 'Quel langage est responsable de la **structure** et du **sens** du contenu d’une page web ?', 'single', NULL, NULL, 0),
@@ -4465,7 +6539,83 @@ INSERT INTO `questions` (`id`, `lesson_id`, `exercise_id`, `question`, `type`, `
 (180, 51, NULL, 'Supprimer le contour de focus sans le remplacer nuit à l’accessibilité.', 'truefalse', NULL, 'Vrai : les utilisateurs du clavier ne savent plus où ils sont.', 2),
 (181, 52, NULL, 'Quelle propriété est obligatoire pour afficher un `::before` ?', 'single', NULL, '`content`.', 0),
 (182, 52, NULL, 'Combien de deux-points pour un pseudo-élément ?', 'single', NULL, '`::before`, `::after`…', 1),
-(183, 52, NULL, 'Un pseudo-élément peut contenir une information essentielle au contenu.', 'truefalse', NULL, 'Faux : il n’est pas fiable pour les lecteurs d’écran.', 2);
+(183, 52, NULL, 'Un pseudo-élément peut contenir une information essentielle au contenu.', 'truefalse', NULL, 'Faux : il n’est pas fiable pour les lecteurs d’écran.', 2),
+(184, 53, NULL, 'Que signifie « sémantique » en HTML ?', 'single', NULL, 'La sémantique décrit la nature du contenu.', 0),
+(185, 53, NULL, 'Qui profite directement des balises sémantiques ?', 'single', NULL, 'Accessibilité, SEO et maintenance.', 1),
+(186, 53, NULL, 'Les balises sémantiques ont une apparence spéciale par défaut.', 'truefalse', NULL, 'Faux : elles s’affichent comme des blocs neutres ; le sens est invisible.', 2),
+(187, 54, NULL, 'Combien de `<main>` visibles par page ?', 'single', NULL, 'Un seul contenu principal.', 0),
+(188, 54, NULL, 'Comment distinguer deux `<nav>` ?', 'single', NULL, '`aria-label` leur donne un nom accessible.', 1),
+(189, 54, NULL, 'Un `<article>` peut avoir son propre `<header>`.', 'truefalse', NULL, 'Vrai : titre, auteur, date de l’article.', 2),
+(190, NULL, 83, 'Quel élément pour un commentaire laissé par un lecteur sous un article ?', 'single', NULL, NULL, 0),
+(191, 55, NULL, 'Un `<article>` est un contenu…', 'single', NULL, 'Il a du sens tout seul.', 0),
+(192, 55, NULL, 'Que doit généralement contenir une `<section>` ?', 'single', NULL, 'Une section thématique a un titre.', 1),
+(193, 55, NULL, 'Une biographie d’auteur en marge d’un article peut être un `<aside>`.', 'truefalse', NULL, 'Vrai : complémentaire au contenu principal.', 2),
+(194, 56, NULL, 'Quel attribut affiche les boutons de lecture ?', 'single', NULL, '`controls`.', 0),
+(195, 56, NULL, 'Quel élément ajoute des sous-titres ?', 'single', NULL, '`<track>` avec un fichier WebVTT.', 1),
+(196, 56, NULL, 'Lancer automatiquement un son à l’ouverture de la page est une bonne pratique.', 'truefalse', NULL, 'Faux : c’est intrusif et gênant pour l’accessibilité.', 2),
+(197, 57, NULL, 'Quel attribut est indispensable pour l’accessibilité d’une iframe ?', 'single', NULL, '`title` décrit le contenu intégré.', 0),
+(198, 57, NULL, 'À quoi sert `sandbox` ?', 'single', NULL, 'C’est une mesure de sécurité.', 1),
+(199, 57, NULL, 'Tous les sites peuvent être affichés dans une iframe.', 'truefalse', NULL, 'Faux : beaucoup l’interdisent pour se protéger du clickjacking.', 2),
+(200, 58, NULL, 'Quelle longueur viser pour une meta description ?', 'single', NULL, 'Au-delà, elle est tronquée dans les résultats.', 0);
+
+INSERT INTO `questions` (`id`, `lesson_id`, `exercise_id`, `question`, `type`, `code_snippet`, `explanation`, `sort_order`) VALUES
+(201, 58, NULL, 'À quoi servent les balises Open Graph ?', 'single', NULL, 'Elles contrôlent la carte de partage.', 1),
+(202, 58, NULL, '`<meta name="robots" content="noindex">` demande aux moteurs de ne pas indexer la page.', 'truefalse', NULL, 'Vrai.', 2),
+(203, 59, NULL, 'Quel est le premier facteur de référencement ?', 'single', NULL, 'Les moteurs cherchent à satisfaire l’utilisateur.', 0),
+(204, 59, NULL, 'Quel fichier liste les pages à indexer ?', 'single', NULL, '`sitemap.xml`.', 1),
+(205, 59, NULL, 'Un site accessible et rapide est généralement mieux référencé.', 'truefalse', NULL, 'Vrai : ce sont des signaux de qualité.', 2),
+(206, NULL, 89, 'Indiquer les champs en erreur uniquement par une bordure rouge est suffisant pour l’accessibilité.', 'truefalse', NULL, NULL, 0),
+(207, 60, NULL, 'Que signifie le « P » des principes WCAG ?', 'single', NULL, 'Perceptible, Opérable, Compréhensible, Robuste.', 0),
+(208, 60, NULL, 'Quel niveau WCAG est généralement exigé ?', 'single', NULL, 'Le niveau AA.', 1),
+(209, 60, NULL, 'Les outils d’audit automatiques détectent tous les problèmes d’accessibilité.', 'truefalse', NULL, 'Faux : environ 30 % seulement ; les tests manuels restent indispensables.', 2),
+(210, 61, NULL, 'Quelle est la règle n°1 d’ARIA ?', 'single', NULL, 'Le HTML natif apporte sémantique et comportement.', 0),
+(211, 61, NULL, 'Quel attribut indique qu’un menu est ouvert ?', 'single', NULL, '`aria-expanded`.', 1),
+(212, 61, NULL, '`aria-hidden="true"` peut être placé sur un bouton focusable sans problème.', 'truefalse', NULL, 'Faux : l’élément reste atteignable au clavier mais devient muet.', 2),
+(213, 62, NULL, 'Quel nom de fichier est le meilleur ?', 'single', NULL, 'Minuscules, sans espace.', 0),
+(214, 62, NULL, 'La balise `<center>` est…', 'single', NULL, 'Le centrage se fait en CSS.', 1),
+(215, 62, NULL, 'Un formateur automatique aide à garder une indentation cohérente.', 'truefalse', NULL, 'Vrai.', 2),
+(216, 63, NULL, 'Dans quel ordre corriger les erreurs de validation ?', 'single', NULL, 'Une erreur en haut peut en provoquer d’autres plus bas.', 0),
+(217, 63, NULL, 'L’onglet Éléments des outils de développement affiche…', 'single', NULL, 'Le DOM réel, éventuellement corrigé.', 1),
+(218, 63, NULL, 'Si la page s’affiche correctement, le HTML est forcément valide.', 'truefalse', NULL, 'Faux : le navigateur masque de nombreuses erreurs.', 2),
+(219, 64, NULL, 'Que signifie « mobile first » ?', 'single', NULL, 'Le CSS de base cible le mobile, les media queries `min-width` enrichissent.', 0),
+(220, 64, NULL, 'Quelle taille minimale recommandée pour une zone tactile ?', 'single', NULL, '44×44 pixels.', 1),
+(221, 64, NULL, 'Sans balise viewport, les media queries ne se comportent pas comme prévu sur mobile.', 'truefalse', NULL, 'Vrai : le mobile simule un écran large.', 2),
+(222, NULL, 95, 'Quelle media query détecte que l’utilisateur souhaite moins d’animations ?', 'single', NULL, NULL, 0),
+(223, 65, NULL, 'Quelle media query correspond à l’approche mobile first ?', 'single', NULL, '`min-width` enrichit progressivement.', 0),
+(224, 65, NULL, 'Où placer les media queries dans la feuille de style ?', 'single', NULL, 'Après, pour surcharger les styles de base grâce à la cascade.', 1),
+(225, 65, NULL, 'Les points de rupture doivent correspondre exactement aux modèles de téléphones récents.', 'truefalse', NULL, 'Faux : ils dépendent du contenu.', 2),
+(226, 66, NULL, 'Dans `clamp(1rem, 3vw, 2rem)`, que vaut le maximum ?', 'single', NULL, 'Le troisième argument est le maximum.', 0),
+(227, 66, NULL, 'Quelle valeur d’`object-fit` remplit la zone en rognant l’image ?', 'single', NULL, '`cover`.', 1),
+(228, 66, NULL, '`aspect-ratio: 16 / 9` garde les proportions quelle que soit la largeur.', 'truefalse', NULL, 'Vrai.', 2),
+(229, 67, NULL, 'Où déclarer la transition pour qu’elle joue dans les deux sens ?', 'single', NULL, 'Sur l’état de base de l’élément.', 0),
+(230, 67, NULL, 'Quelles propriétés sont les plus performantes à animer ?', 'single', NULL, 'Elles ne provoquent pas de recalcul de mise en page.', 1),
+(231, 67, NULL, 'Une transition de 2 secondes est idéale pour un survol de bouton.', 'truefalse', NULL, 'Faux : 150 à 300ms.', 2),
+(232, 68, NULL, 'Quelle fonction agrandit un élément ?', 'single', NULL, '`scale()`.', 0),
+(233, 68, NULL, 'Un élément transformé pousse-t-il ses voisins ?', 'single', NULL, 'Non : il garde sa place d’origine dans la mise en page.', 1),
+(234, 68, NULL, 'Dans `translate(-50%, -50%)`, les pourcentages sont relatifs à l’élément lui-même.', 'truefalse', NULL, 'Vrai.', 2),
+(235, 69, NULL, 'Quelle valeur répète une animation sans fin ?', 'single', NULL, '`animation-iteration-count: infinite`.', 0),
+(236, 69, NULL, 'Que fait `animation-fill-mode: forwards` ?', 'single', NULL, 'L’élément garde les styles de la dernière étape.', 1),
+(237, 69, NULL, 'Il faut respecter la préférence `prefers-reduced-motion`.', 'truefalse', NULL, 'Vrai : c’est une question d’accessibilité.', 2),
+(238, 70, NULL, 'Dans `box-shadow: 0 4px 12px black`, que vaut le flou ?', 'single', NULL, 'Troisième valeur : le rayon de flou.', 0),
+(239, 70, NULL, 'Quel mot-clé crée une ombre intérieure ?', 'single', NULL, '`inset`.', 1),
+(240, 70, NULL, 'On peut superposer plusieurs ombres séparées par des virgules.', 'truefalse', NULL, 'Vrai.', 2),
+(241, 71, NULL, 'Quelle propriété n’accepte PAS de dégradé ?', 'single', NULL, 'Un dégradé est une image, pas une couleur.', 0),
+(242, 71, NULL, 'Quel dégradé convient à un graphique en camembert ?', 'single', NULL, '`conic-gradient` tourne autour d’un point.', 1),
+(243, 71, NULL, 'Deux couleurs à la même position créent une transition nette.', 'truefalse', NULL, 'Vrai : c’est la technique des rayures.', 2),
+(244, NULL, 104, 'Que vaut `color: var(--accent, orange);` si `--accent` n’est définie nulle part ?', 'single', NULL, NULL, 0),
+(245, 72, NULL, 'Comment commence le nom d’une variable CSS ?', 'single', NULL, 'Deux tirets.', 0),
+(246, 72, NULL, 'Que désigne `:root` ?', 'single', NULL, '`<html>`.', 1),
+(247, 72, NULL, 'Une variable redéfinie sur un élément s’applique à ses descendants.', 'truefalse', NULL, 'Vrai : elle suit l’héritage.', 2),
+(248, NULL, 105, 'Selon BEM, quelle classe désigne une variante « désactivée » du bloc `bouton` ?', 'single', NULL, NULL, 0),
+(249, 73, NULL, 'Dans quel ordre organiser une feuille de style ?', 'single', NULL, 'Du général au particulier.', 0),
+(250, 73, NULL, 'Pourquoi éviter les sélecteurs longs ?', 'single', NULL, 'Forte spécificité et dépendance à la structure HTML.', 1),
+(251, 73, NULL, 'En BEM, `.menu__lien` est un élément du bloc `menu`.', 'truefalse', NULL, 'Vrai.', 2),
+(252, 74, NULL, 'Pourquoi éviter d’envelopper toute la carte dans un `<a>` ?', 'single', NULL, 'Le nom du lien devient interminable.', 0),
+(253, 74, NULL, 'Quelle pseudo-classe cible une carte dont un descendant a le focus ?', 'single', NULL, '`:focus-within`.', 1),
+(254, 74, NULL, '`margin-top: auto` dans un conteneur flex en colonne pousse l’élément vers le bas.', 'truefalse', NULL, 'Vrai.', 2),
+(255, 75, NULL, 'Quel site indique la compatibilité des propriétés CSS ?', 'single', NULL, 'caniuse.com.', 0),
+(256, 75, NULL, 'À quoi sert `font-display: swap` ?', 'single', NULL, 'Le texte reste lisible pendant le chargement de la police web.', 1),
+(257, 75, NULL, 'La minification réduit le poids des fichiers CSS.', 'truefalse', NULL, 'Vrai.', 2);
 
 INSERT INTO `answers` (`id`, `question_id`, `answer_text`, `is_correct`, `sort_order`) VALUES
 (1, 1, 'CSS', 0, 0),
@@ -5099,7 +7249,255 @@ INSERT INTO `answers` (`id`, `question_id`, `answer_text`, `is_correct`, `sort_o
 (623, 182, 'Trois', 0, 2),
 (624, 182, 'Aucun', 0, 3),
 (625, 183, 'Vrai', 0, 0),
-(626, 183, 'Faux', 1, 1);
+(626, 183, 'Faux', 1, 1),
+(627, 184, 'L’apparence', 0, 0),
+(628, 184, 'Le sens du contenu', 1, 1),
+(629, 184, 'La vitesse', 0, 2),
+(630, 184, 'La couleur', 0, 3),
+(631, 185, 'Les lecteurs d’écran', 0, 0),
+(632, 185, 'Les moteurs de recherche', 0, 1),
+(633, 185, 'Les développeurs', 0, 2),
+(634, 185, 'Tous', 1, 3),
+(635, 186, 'Vrai', 0, 0),
+(636, 186, 'Faux', 1, 1),
+(637, 187, 'Zéro', 0, 0),
+(638, 187, 'Un', 1, 1),
+(639, 187, 'Deux', 0, 2),
+(640, 187, 'Illimité', 0, 3),
+(641, 188, 'Avec des classes', 0, 0),
+(642, 188, 'Avec `aria-label`', 1, 1),
+(643, 188, 'Avec `id` uniquement', 0, 2),
+(644, 188, 'On ne peut pas', 0, 3),
+(645, 189, 'Vrai', 1, 0),
+(646, 189, 'Faux', 0, 1),
+(647, 190, '`<section>`', 0, 0),
+(648, 190, '`<article>`', 1, 1),
+(649, 190, '`<aside>`', 0, 2),
+(650, 190, '`<footer>`', 0, 3),
+(651, 191, 'décoratif', 0, 0),
+(652, 191, 'autonome', 1, 1),
+(653, 191, 'de navigation', 0, 2),
+(654, 191, 'invisible', 0, 3),
+(655, 192, 'Une image', 0, 0),
+(656, 192, 'Un titre', 1, 1),
+(657, 192, 'Un formulaire', 0, 2),
+(658, 192, 'Un lien', 0, 3),
+(659, 193, 'Vrai', 1, 0),
+(660, 193, 'Faux', 0, 1),
+(661, 194, '`player`', 0, 0),
+(662, 194, '`controls`', 1, 1),
+(663, 194, '`buttons`', 0, 2),
+(664, 194, '`play`', 0, 3),
+(665, 195, '`<caption>`', 0, 0),
+(666, 195, '`<subtitle>`', 0, 1),
+(667, 195, '`<track>`', 1, 2),
+(668, 195, '`<text>`', 0, 3),
+(669, 196, 'Vrai', 0, 0),
+(670, 196, 'Faux', 1, 1),
+(671, 197, '`name`', 0, 0),
+(672, 197, '`title`', 1, 1),
+(673, 197, '`alt`', 0, 2),
+(674, 197, '`label`', 0, 3),
+(675, 198, 'À agrandir l’iframe', 0, 0),
+(676, 198, 'À restreindre ce que le contenu intégré peut faire', 1, 1),
+(677, 198, 'À accélérer le chargement', 0, 2),
+(678, 198, 'À ajouter une bordure', 0, 3),
+(679, 199, 'Vrai', 0, 0),
+(680, 199, 'Faux', 1, 1),
+(681, 200, '20 caractères', 0, 0),
+(682, 200, '120 à 160 caractères', 1, 1),
+(683, 200, '500 caractères', 0, 2),
+(684, 200, 'Pas de limite', 0, 3),
+(685, 201, 'À accélérer la page', 0, 0),
+(686, 201, 'À définir l’aperçu lors d’un partage', 1, 1),
+(687, 201, 'À ajouter des cookies', 0, 2),
+(688, 201, 'À valider le HTML', 0, 3),
+(689, 202, 'Vrai', 1, 0),
+(690, 202, 'Faux', 0, 1),
+(691, 203, 'Le nombre de mots-clés', 0, 0),
+(692, 203, 'Un contenu utile et de qualité', 1, 1),
+(693, 203, 'La couleur du site', 0, 2),
+(694, 203, 'La meta keywords', 0, 3),
+(695, 204, '`robots.txt`', 0, 0),
+(696, 204, '`sitemap.xml`', 1, 1),
+(697, 204, '`index.html`', 0, 2),
+(698, 204, '`seo.json`', 0, 3),
+(699, 205, 'Vrai', 1, 0),
+(700, 205, 'Faux', 0, 1),
+(701, 206, 'Vrai', 1, 0),
+(702, 206, 'Faux', 0, 1),
+(703, 207, 'Performant', 0, 0),
+(704, 207, 'Perceptible', 1, 1),
+(705, 207, 'Prioritaire', 0, 2),
+(706, 207, 'Public', 0, 3),
+(707, 208, 'A', 0, 0),
+(708, 208, 'AA', 1, 1),
+(709, 208, 'AAA', 0, 2),
+(710, 208, 'Aucun', 0, 3),
+(711, 209, 'Vrai', 0, 0),
+(712, 209, 'Faux', 1, 1),
+(713, 210, 'Mettre ARIA partout', 0, 0),
+(714, 210, 'Utiliser un élément HTML natif quand il existe', 1, 1),
+(715, 210, 'Toujours ajouter un role', 0, 2),
+(716, 210, 'Remplacer les labels', 0, 3),
+(717, 211, '`aria-open`', 0, 0),
+(718, 211, '`aria-expanded="true"`', 1, 1),
+(719, 211, '`aria-visible`', 0, 2),
+(720, 211, '`aria-live`', 0, 3),
+(721, 212, 'Vrai', 0, 0),
+(722, 212, 'Faux', 1, 1),
+(723, 213, '`Page Contact.html`', 0, 0),
+(724, 213, '`page_Contact.HTML`', 0, 1),
+(725, 213, '`contact.html`', 1, 2),
+(726, 213, '`CONTACT.html`', 0, 3),
+(727, 214, 'recommandée', 0, 0),
+(728, 214, 'obsolète', 1, 1),
+(729, 214, 'obligatoire', 0, 2),
+(730, 214, 'sémantique', 0, 3),
+(731, 215, 'Vrai', 1, 0),
+(732, 215, 'Faux', 0, 1),
+(733, 216, 'De bas en haut', 0, 0),
+(734, 216, 'De haut en bas', 1, 1),
+(735, 216, 'Au hasard', 0, 2),
+(736, 216, 'Les avertissements d’abord', 0, 3),
+(737, 217, 'le code source exact', 0, 0),
+(738, 217, 'le DOM après interprétation par le navigateur', 1, 1),
+(739, 217, 'le CSS uniquement', 0, 2),
+(740, 217, 'les cookies', 0, 3),
+(741, 218, 'Vrai', 0, 0),
+(742, 218, 'Faux', 1, 1),
+(743, 219, 'Créer uniquement une version mobile', 0, 0),
+(744, 219, 'Écrire d’abord le CSS pour petits écrans puis l’enrichir', 1, 1),
+(745, 219, 'Tester sur mobile en premier', 0, 2),
+(746, 219, 'Utiliser des applications mobiles', 0, 3),
+(747, 220, '16×16px', 0, 0),
+(748, 220, '24×24px', 0, 1),
+(749, 220, '44×44px', 1, 2),
+(750, 220, '100×100px', 0, 3),
+(751, 221, 'Vrai', 1, 0),
+(752, 221, 'Faux', 0, 1),
+(753, 222, '`@media (no-animation)`', 0, 0),
+(754, 222, '`@media (prefers-reduced-motion: reduce)`', 1, 1),
+(755, 222, '`@media (motion: off)`', 0, 2),
+(756, 222, '`@media (reduced)`', 0, 3),
+(757, 223, '`max-width`', 0, 0),
+(758, 223, '`min-width`', 1, 1),
+(759, 223, '`orientation`', 0, 2),
+(760, 223, '`print`', 0, 3),
+(761, 224, 'Avant les styles de base', 0, 0),
+(762, 224, 'Après les styles de base', 1, 1),
+(763, 224, 'Dans le HTML', 0, 2),
+(764, 224, 'Peu importe', 0, 3),
+(765, 225, 'Vrai', 0, 0),
+(766, 225, 'Faux', 1, 1),
+(767, 226, '1rem', 0, 0),
+(768, 226, '3vw', 0, 1),
+(769, 226, '2rem', 1, 2),
+(770, 226, 'Aucun', 0, 3),
+(771, 227, '`fill`', 0, 0),
+(772, 227, '`contain`', 0, 1),
+(773, 227, '`cover`', 1, 2),
+(774, 227, '`none`', 0, 3),
+(775, 228, 'Vrai', 1, 0),
+(776, 228, 'Faux', 0, 1),
+(777, 229, 'Sur `:hover`', 0, 0),
+(778, 229, 'Sur l’état de repos', 1, 1),
+(779, 229, 'Dans une media query', 0, 2),
+(780, 229, 'Dans le HTML', 0, 3),
+(781, 230, '`width` et `height`', 0, 0),
+(782, 230, '`top` et `left`', 0, 1),
+(783, 230, '`transform` et `opacity`', 1, 2),
+(784, 230, '`margin` et `padding`', 0, 3),
+(785, 231, 'Vrai', 0, 0),
+(786, 231, 'Faux', 1, 1),
+(787, 232, '`translate`', 0, 0),
+(788, 232, '`scale`', 1, 1),
+(789, 232, '`rotate`', 0, 2),
+(790, 232, '`grow`', 0, 3),
+(791, 233, 'Oui', 0, 0),
+(792, 233, 'Non', 1, 1),
+(793, 234, 'Vrai', 1, 0),
+(794, 234, 'Faux', 0, 1),
+(795, 235, '`forever`', 0, 0),
+(796, 235, '`infinite`', 1, 1),
+(797, 235, '`loop`', 0, 2),
+(798, 235, '`always`', 0, 3),
+(799, 236, 'Accélère l’animation', 0, 0),
+(800, 236, 'Conserve l’état final après l’animation', 1, 1);
+
+INSERT INTO `answers` (`id`, `question_id`, `answer_text`, `is_correct`, `sort_order`) VALUES
+(801, 236, 'Joue l’animation à l’envers', 0, 2),
+(802, 236, 'Rien', 0, 3),
+(803, 237, 'Vrai', 1, 0),
+(804, 237, 'Faux', 0, 1),
+(805, 238, '0', 0, 0),
+(806, 238, '4px', 0, 1),
+(807, 238, '12px', 1, 2),
+(808, 238, 'black', 0, 3),
+(809, 239, '`inner`', 0, 0),
+(810, 239, '`inset`', 1, 1),
+(811, 239, '`inside`', 0, 2),
+(812, 239, '`internal`', 0, 3),
+(813, 240, 'Vrai', 1, 0),
+(814, 240, 'Faux', 0, 1),
+(815, 241, '`background`', 0, 0),
+(816, 241, '`background-image`', 0, 1),
+(817, 241, '`background-color`', 1, 2),
+(818, 241, '`border-image`', 0, 3),
+(819, 242, '`linear-gradient`', 0, 0),
+(820, 242, '`radial-gradient`', 0, 1),
+(821, 242, '`conic-gradient`', 1, 2),
+(822, 242, 'Aucun', 0, 3),
+(823, 243, 'Vrai', 1, 0),
+(824, 243, 'Faux', 0, 1),
+(825, 244, 'Rien (erreur)', 0, 0),
+(826, 244, '`orange`', 1, 1),
+(827, 244, 'noir', 0, 2),
+(828, 244, 'la couleur du parent', 0, 3),
+(829, 245, '`$`', 0, 0),
+(830, 245, '`@`', 0, 1),
+(831, 245, '`--`', 1, 2),
+(832, 245, '`#`', 0, 3),
+(833, 246, 'Le body', 0, 0),
+(834, 246, 'L’élément racine html', 1, 1),
+(835, 246, 'Le premier élément', 0, 2),
+(836, 246, 'Le head', 0, 3),
+(837, 247, 'Vrai', 1, 0),
+(838, 247, 'Faux', 0, 1),
+(839, 248, '`.bouton__desactive`', 0, 0),
+(840, 248, '`.bouton--desactive`', 1, 1),
+(841, 248, '`.bouton-desactive`', 0, 2),
+(842, 248, '`.desactive .bouton`', 0, 3),
+(843, 249, 'Composants, variables, base', 0, 0),
+(844, 249, 'Variables, base, layout, composants, utilitaires', 1, 1),
+(845, 249, 'Au hasard', 0, 2),
+(846, 249, 'Alphabétique', 0, 3),
+(847, 250, 'Ils sont interdits', 0, 0),
+(848, 250, 'Ils sont fragiles et difficiles à surcharger', 1, 1),
+(849, 250, 'Ils sont plus lents à écrire', 0, 2),
+(850, 250, 'Ils ne fonctionnent pas', 0, 3),
+(851, 251, 'Vrai', 1, 0),
+(852, 251, 'Faux', 0, 1),
+(853, 252, 'C’est invalide', 0, 0),
+(854, 252, 'Le lecteur d’écran annonce tout le contenu comme texte du lien', 1, 1),
+(855, 252, 'Le lien ne fonctionne pas', 0, 2),
+(856, 252, 'Le CSS ne s’applique plus', 0, 3),
+(857, 253, '`:focus`', 0, 0),
+(858, 253, '`:focus-within`', 1, 1),
+(859, 253, '`:active`', 0, 2),
+(860, 253, '`:has-focus`', 0, 3),
+(861, 254, 'Vrai', 1, 0),
+(862, 254, 'Faux', 0, 1),
+(863, 255, 'caniuse.com', 1, 0),
+(864, 255, 'github.com', 0, 1),
+(865, 255, 'css.fr', 0, 2),
+(866, 255, 'w3schools.com', 0, 3),
+(867, 256, 'À changer de police au survol', 0, 0),
+(868, 256, 'À afficher le texte avec une police de secours pendant le chargement', 1, 1),
+(869, 256, 'À réduire la taille du texte', 0, 2),
+(870, 256, 'Rien', 0, 3),
+(871, 257, 'Vrai', 1, 0),
+(872, 257, 'Faux', 0, 1);
 
 INSERT INTO `projects` (`id`, `category_id`, `title`, `slug`, `level`, `summary`, `objective`, `instructions`, `steps`, `resources`, `success_criteria`, `starter_html`, `starter_css`, `solution_html`, `solution_css`, `validation_rules`, `bonus_challenge`, `is_final`, `sort_order`) VALUES
 (1, 1, 'Ma première page personnelle', 'ma-premiere-page-personnelle', 1, 'Créez une page HTML complète qui vous présente : titres, paragraphes, liste, image et liens.', 'Mettre en pratique toutes les notions du cours **HTML — Les fondations** en construisant une page de présentation personnelle complète et valide, **uniquement en HTML**.', 'Créez une page qui vous présente (ou présente un personnage imaginaire). La page doit contenir :

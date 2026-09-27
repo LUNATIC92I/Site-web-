@@ -247,7 +247,9 @@ function level_label(int $level): string
 
 function slugify(string $text): string
 {
-    $text = transliterator_transliterate('Any-Latin; Latin-ASCII; Lower()', $text) ?: strtolower($text);
+    $text = function_exists('transliterator_transliterate')
+        ? (transliterator_transliterate('Any-Latin; Latin-ASCII; Lower()', $text) ?: strtolower($text))
+        : strtolower((string) iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $text));
     $text = preg_replace('/[^a-z0-9]+/', '-', $text);
     return trim($text, '-');
 }
@@ -267,10 +269,11 @@ function initials(string $first, string $last): string
 }
 
 /** Rend un fichier "partial" en lui passant des variables. */
-function partial(string $name, array $vars = []): void
+function partial(string $__partial, array $__vars = []): void
 {
-    extract($vars, EXTR_SKIP);
-    require ROOT_PATH . '/includes/partials/' . $name . '.php';
+    // Noms de paramètres préfixés : ils ne doivent pas masquer les variables transmises (ex. "name")
+    extract($__vars, EXTR_SKIP);
+    require ROOT_PATH . '/includes/partials/' . basename($__partial) . '.php';
 }
 
 /** Icône SVG du sprite (assets/icons/sprite.svg). */

@@ -37,7 +37,7 @@ require ROOT_PATH . '/includes/header.php';
     <h1><?= e($exercise['title']) ?></h1>
   </header>
 
-  <div class="exercise-layout" style="grid-template-columns:1fr">
+  <div class="exercise-layout" style="grid-template-columns:minmax(0, 1fr)">
     <div class="card">
       <?php partial('exercise-widget', ['exercise' => $exercise, 'user' => $user, 'passed' => $passed]); ?>
       <?php if ($isCode && $user): ?>

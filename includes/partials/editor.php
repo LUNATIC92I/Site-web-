@@ -26,10 +26,10 @@ $names = ['html' => 'HTML', 'css' => 'CSS'];
       <?php endforeach; ?>
     </div>
     <button type="button" class="btn btn--primary btn--sm" data-action="run" title="Exécuter (Ctrl + Entrée)"><?= icon('play') ?><span>Exécuter</span></button>
-    <button type="button" class="btn btn--sm" data-action="reset"><?= icon('refresh') ?><span>Réinitialiser</span></button>
-    <button type="button" class="btn btn--sm" data-action="copy"><?= icon('copy') ?><span>Copier</span></button>
-    <button type="button" class="btn btn--sm" data-action="fullscreen" aria-pressed="false"><?= icon('expand') ?><span>Agrandir</span></button>
-    <button type="button" class="btn btn--sm" data-action="preview" aria-pressed="true"><?= icon('eye-off') ?><span>Masquer l’aperçu</span></button>
+    <button type="button" class="btn btn--sm" data-action="reset" aria-label="Réinitialiser le code" title="Réinitialiser"><?= icon('refresh') ?><span>Réinitialiser</span></button>
+    <button type="button" class="btn btn--sm" data-action="copy" aria-label="Copier le code" title="Copier"><?= icon('copy') ?><span>Copier</span></button>
+    <button type="button" class="btn btn--sm" data-action="fullscreen" aria-pressed="false" aria-label="Agrandir l’éditeur" title="Agrandir"><?= icon('expand') ?><span>Agrandir</span></button>
+    <button type="button" class="btn btn--sm" data-action="preview" aria-pressed="true" aria-label="Afficher ou masquer l’aperçu" title="Aperçu"><?= icon('eye-off') ?><span>Masquer l’aperçu</span></button>
     <span class="spacer"></span>
     <label class="switch editor__status"><input type="checkbox" data-live checked><span class="switch__track" aria-hidden="true"></span>Live</label>
     <span class="editor__status" data-status aria-live="polite"></span>
@@ -53,7 +53,7 @@ $names = ['html' => 'HTML', 'css' => 'CSS'];
     </div>
     <div class="editor__preview">
       <p class="editor__label"><?= icon('eye', 'icon icon--sm') ?> Aperçu</p>
-      <iframe class="editor__frame" title="Aperçu du rendu de votre code" sandbox="" loading="lazy"></iframe>
+      <iframe class="editor__frame" title="Aperçu du rendu de votre code" sandbox=""></iframe>
     </div>
   </div>
   <p id="<?= e($id) ?>-help" class="sr-only">Tabulation pour indenter, Échap pour quitter la zone de code, Ctrl + Entrée pour exécuter.</p>

@@ -212,6 +212,7 @@
     });
 
     $$('[data-dismiss]').forEach((b) => b.addEventListener('click', () => b.closest('.flash').remove()));
+    $$('[data-print]').forEach((b) => b.addEventListener('click', () => window.print()));
 
     const motion = $('[data-motion-toggle]');
     if (motion) {

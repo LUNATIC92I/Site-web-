@@ -53,11 +53,15 @@ function url(string $path = ''): string
 /** URL absolue (SEO, e-mails). */
 function absolute_url(string $path = ''): string
 {
-    $root = config('app.url');
+    $root = rtrim((string) config('app.url'), '/');
     if ($root === '' && isset($_SERVER['HTTP_HOST'])) {
         $root = (is_https() ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'];
     }
-    return rtrim($root, '/') . url($path);
+    // APP_URL peut contenir le sous-dossier : on évite de le répéter
+    if (base_path() !== '' && str_ends_with($root, base_path())) {
+        $root = substr($root, 0, -strlen(base_path()));
+    }
+    return $root . url($path);
 }
 
 /** URL d'un fichier statique avec numéro de version (cache busting). */

@@ -300,7 +300,7 @@ BASE=http://localhost:8000 DB="mysql -uroot html_css_academy" bash tests/e2e.sh
 mysql -uroot < database/database.sql && mysql -uroot < database/seed.sql
 ```
 
-Vérifications réalisées pendant le développement : les ≈200 pages publiques répondent sans erreur ni avertissement PHP, aucun défilement horizontal de 320 à 1440 px, aucune erreur JavaScript, éditeur/exercices/quiz testés dans Chromium.
+Vérifications réalisées : les ≈200 pages publiques répondent sans erreur ni avertissement PHP, sous **Apache 2.4 + mod_php** (installation à la racine et en sous-dossier, `.htaccess` fourni) comme avec le serveur intégré de PHP ; les 60 tests de bout en bout passent dans les deux cas ; aucun défilement horizontal de 320 à 1440 px ; aucune erreur JavaScript (Chromium).
 
 ## Mise en production
 
@@ -327,7 +327,7 @@ Vérifications réalisées pendant le développement : les ≈200 pages publique
 |---|---|
 | Page « Une erreur est survenue » | Consulter `storage/logs/app.log` ; activer temporairement `APP_DEBUG=true` en local. |
 | Erreur 404 sur `/cours`, `/lecon/…` | `mod_rewrite` inactif ou `AllowOverride None` → l’activer, ou `pretty_urls => false`. |
-| Styles absents dans un sous-dossier | Vérifier `RewriteBase` et `app.base_path`. |
+| Styles absents / pages 404 dans un sous-dossier | Décommenter et adapter `RewriteBase` dans `.htaccess` (ex. `RewriteBase /academy/`) ; si besoin, régler `app.base_path`. `APP_URL` peut inclure le sous-dossier. |
 | « could not find driver » | Installer/activer l’extension `pdo_mysql`. |
 | Accents mal affichés | Base et tables en `utf8mb4` (créées ainsi par `database.sql`). |
 | E-mails non reçus | Driver `log` par défaut : voir `storage/logs/mail.log`. |

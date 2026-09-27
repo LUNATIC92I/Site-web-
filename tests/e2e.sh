@@ -28,7 +28,7 @@ t "$(curl -s -o /dev/null -w '%{http_code}' -b $J "$B/dashboard/index.php")" "20
 t "$(curl -s -o /dev/null -w '%{http_code}' -b $J "$B/admin/dashboard.php")" "403" "admin interdit à un apprenant"
 # --- API sans CSRF / sans session
 t "$(curl -s -o /dev/null -w '%{http_code}' -X POST -H 'Content-Type: application/json' -d '{}' "$B/api/quiz.php")" "401" "API sans session -> 401"
-t "$(curl -s -o /dev/null -w '%{http_code}' -b $J -X POST -H 'Content-Type: application/json' -d '{}' "$B/api/quiz.php")" "419" "API sans CSRF -> 419"
+t "$(curl -s -o /dev/null -w '%{http_code}' -b $J -X POST -H 'Content-Type: application/json' -d '{}' "$B/api/quiz.php")" "403" "API sans CSRF -> 403"
 C=$(bodycsrf /dashboard/index.php)
 # --- Validation leçon sans quiz réussi
 LID=$(q "SELECT id FROM lessons WHERE slug='qu-est-ce-que-html'")

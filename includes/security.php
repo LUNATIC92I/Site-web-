@@ -94,7 +94,7 @@ function csrf_valid(?string $token): bool
 function verify_csrf(): void
 {
     if (!csrf_valid($_POST['_csrf'] ?? null)) {
-        http_response_code(419);
+        http_response_code(403);
         flash('error', 'Votre session a expiré ou le formulaire est invalide. Merci de réessayer.');
         $ref = parse_url((string) ($_SERVER['HTTP_REFERER'] ?? ''));
         $back = ($ref['path'] ?? '') . (isset($ref['query']) ? '?' . $ref['query'] : '');
@@ -106,7 +106,7 @@ function verify_csrf(): void
 function verify_api_csrf(): void
 {
     if (!csrf_valid($_SERVER['HTTP_X_CSRF_TOKEN'] ?? null)) {
-        json_response(['ok' => false, 'error' => 'Jeton de sécurité invalide. Rechargez la page.'], 419);
+        json_response(['ok' => false, 'error' => 'Jeton de sécurité invalide. Rechargez la page.'], 403);
     }
 }
 

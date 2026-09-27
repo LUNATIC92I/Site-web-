@@ -5,7 +5,6 @@
 Options -Indexes
 DirectoryIndex index.php
 AddDefaultCharset UTF-8
-ErrorDocument 404 /404.php
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -30,10 +29,17 @@ ErrorDocument 404 /404.php
   RewriteRule ^editeur/?$                  playground.php [L,QSA]
   RewriteRule ^certificat/([A-Za-z0-9]+)/?$ certificate.php?id=$1 [L,QSA]
   RewriteRule ^sitemap\.xml$               sitemap.php [L]
+
+  # Toute autre adresse inexistante : page 404 du site (fonctionne aussi en sous-dossier)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ 404.php [L]
 </IfModule>
 
 <IfModule mod_headers.c>
-  Header always set X-Content-Type-Options "nosniff"
+  <FilesMatch "\.(css|js|svg|png|jpg|jpeg|webp|woff2|txt|xml)$">
+    Header set X-Content-Type-Options "nosniff"
+  </FilesMatch>
   <FilesMatch "\.(css|js|svg|png|jpg|jpeg|webp|woff2)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>

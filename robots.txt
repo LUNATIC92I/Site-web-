@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /dashboard/
+Disallow: /certificate.php
+Disallow: /certificat/
+
+Sitemap: /sitemap.xml

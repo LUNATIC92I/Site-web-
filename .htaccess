@@ -1,0 +1,51 @@
+# =====================================================================
+# HTML & CSS Academy — configuration Apache
+# Nécessite : mod_rewrite, AllowOverride All
+# =====================================================================
+Options -Indexes
+DirectoryIndex index.php
+AddDefaultCharset UTF-8
+ErrorDocument 404 /404.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Si le projet est installé dans un sous-dossier, décommentez et adaptez :
+  # RewriteBase /html-css-academy/
+
+  # Dossiers et fichiers internes : jamais accessibles depuis le Web
+  RewriteRule ^(config|includes|database|storage)(/|$) - [F,L,NC]
+  RewriteRule (^|/)\.(git|env) - [F,L,NC]
+  RewriteRule \.(sql|log|md|lock|dist)$ - [F,L,NC]
+
+  # URLs propres
+  RewriteRule ^cours/?$                    courses/index.php [L,QSA]
+  RewriteRule ^cours/([a-z0-9-]+)/?$       courses/course.php?slug=$1 [L,QSA]
+  RewriteRule ^lecon/([a-z0-9-]+)/?$       courses/lesson.php?slug=$1 [L,QSA]
+  RewriteRule ^parcours/?$                 parcours.php [L,QSA]
+  RewriteRule ^exercices/?$                exercises/index.php [L,QSA]
+  RewriteRule ^exercice/([a-z0-9-]+)/?$    exercises/exercise.php?slug=$1 [L,QSA]
+  RewriteRule ^projets/?$                  projects/index.php [L,QSA]
+  RewriteRule ^projet/([a-z0-9-]+)/?$      projects/project.php?slug=$1 [L,QSA]
+  RewriteRule ^classement/?$               leaderboard.php [L,QSA]
+  RewriteRule ^editeur/?$                  playground.php [L,QSA]
+  RewriteRule ^certificat/([A-Za-z0-9]+)/?$ certificate.php?id=$1 [L,QSA]
+  RewriteRule ^sitemap\.xml$               sitemap.php [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  <FilesMatch "\.(css|js|svg|png|jpg|jpeg|webp|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml text/xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>
